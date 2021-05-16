@@ -8,6 +8,7 @@ use Dotenv\Dotenv;
 
 use Paw\Core\Router;
 use Paw\Core\Config;
+use Paw\Core\Request;
 
 $dotenv = Dotenv::createUnsafeImmutable(__DIR__ . '/../');
 $dotenv->load();
@@ -23,7 +24,7 @@ $whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
 
-
+$request = new Request();
 
 // Rutas
 $router = new Router();
@@ -47,7 +48,3 @@ $router->get('/solicitarTurno', 'PageController@solicitarTurno');
 $router->get('/turnoSolicitado', 'PageController@turnoSolicitado');
 
 $router->post('/obras_sociales', 'PageController@procesar');
-
-$router->get('not_found', 'ErrorController@notFound');
-$router->get('internal_error', 'ErrorController@internalError');
-

@@ -33,17 +33,18 @@ $router->setLogger($log);
 // Terminadas
 $router->get('/', 'PageController@index');
 $router->get('/obrasSociales', 'PageController@obrasSociales');
+$router->get('/institucional', 'PageController@institucional');
+$router->get('/noticias', 'PageController@noticias');
+$router->get('/profesionales', 'PageController@profesionales');
+$router->get('/login', 'PageController@login');
+
 
 
 // Faltantes
 $router->get('/imprimirListadoTurnos', 'PageController@imprimirListadoTurnos');
 $router->get('/imprimirTurnoSolicitado', 'PageController@imprimirTurnoSolicitado');
-$router->get('/institucional', 'PageController@institucional');
 $router->get('/listadoTurno', 'PageController@listadoTurno');
-$router->get('/login', 'PageController@login');
 $router->get('/noticia', 'PageController@noticia');
-$router->get('/noticias', 'PageController@noticias');
-$router->get('/profesionales', 'PageController@profesionales');
 $router->get('/registro', 'PageController@registro');
 $router->get('/solicitarTurno', 'PageController@solicitarTurno');
 $router->get('/turnoSolicitado', 'PageController@turnoSolicitado');

@@ -10,11 +10,14 @@
                 require __DIR__ . '/parts/nav.view.php';
             ?>
         </header>
+        <main>
 
-
-        <footer>
             <?php
                 require __DIR__ . '/parts/nav-mobile.view.php';
+            ?> 
+        </main>
+        <footer>
+            <?php
                 require __DIR__ . '/parts/footer.view.php';
             ?>        
         </footer>

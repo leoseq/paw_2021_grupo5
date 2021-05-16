@@ -33,6 +33,30 @@ class PageController
         require $this->viewDir . "/obras-sociales.view.php";
     }
 
+    public function institucional()
+    {
+        $titulo = "Institucional";
+        require $this->viewDir . "/institucional.view.php";
+    }
+
+    public function profesionales()
+    {
+        $titulo = "Profesionales";
+        require $this->viewDir . "/profesionales.view.php";
+    }
+
+    public function noticias()
+    {
+        $titulo = "Noticias";
+        require $this->viewDir . "/noticias.view.php";
+    }
+
+    public function login()
+    {
+        $titulo = "Login";
+        require $this->viewDir . "/login.view.php";
+    }
+
     public function procesar()
     {
         $formulario = $_POST;

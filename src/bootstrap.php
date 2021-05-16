@@ -13,9 +13,9 @@ use Paw\Core\Request;
 $dotenv = Dotenv::createUnsafeImmutable(__DIR__ . '/../');
 $dotenv->load();
 
-//$config = new Config();
+$config = new Config();
 
-//$log = new Logger('mvc-app');
+$log = new Logger('mvc-app');
 //$handler = new StreamHandler($config->get("LOG_PATH"));
 //$handler->setLevel($config->get("LOG_LEVEL"));
 //$log->pushHandler($handler);
@@ -28,6 +28,7 @@ $request = new Request();
 
 // Rutas
 $router = new Router();
+$router->setLogger($log);
 
 // Terminadas
 $router->get('/', 'PageController@index');

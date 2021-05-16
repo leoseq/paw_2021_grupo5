@@ -30,7 +30,7 @@ class PageController
     public function obrasSociales($procesado = false)
     {
         $titulo = "Obras Sociales";
-        require $this->viewDir . "/obras-sociales.view.php";
+        require $this->viewDir . "/obrasSociales.view.php";
     }
 
     public function institucional()
@@ -56,6 +56,59 @@ class PageController
         $titulo = "Login";
         require $this->viewDir . "/login.view.php";
     }
+
+    public function registro()
+    {
+        $titulo = "Registro";
+        require $this->viewDir . "/registro.view.php";
+    }
+
+    public function noticia()
+    {
+        $titulo = "Noticia";
+        require $this->viewDir . "/noticia.view.php";
+    }
+
+    public function listadoTurno()
+    {
+        $titulo = "Listado de Turnos";
+        require $this->viewDir . "/listadoTurno.view.php";
+    }
+    
+    public function solicitarTurno()
+    {
+        $titulo = "Solicitar Turno";
+        require $this->viewDir . "/solicitarTurno.view.php";
+    }
+    
+    public function turnoSolicitado()
+    {
+        $titulo = "Turno Solicitado";
+        require $this->viewDir . "/turnoSolicitado.view.php";
+    }
+
+    public function imprimirListadoTurnos()
+    {
+        $titulo = "Imprimir Listado de Turnos";
+        require $this->viewDir . "/imprimirListadoTurnos.view.php";
+    }
+
+    public function imprimirTurnoSolicitado()
+    {
+        $titulo = "Imprimir Turno Solicitado";
+        require $this->viewDir . "/imprimirTurnoSolicitado.view.php";
+    }
+    
+    
+    
+
+
+
+
+
+
+
+
 
     public function procesar()
     {

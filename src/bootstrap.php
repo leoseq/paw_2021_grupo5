@@ -37,16 +37,18 @@ $router->get('/institucional', 'PageController@institucional');
 $router->get('/noticias', 'PageController@noticias');
 $router->get('/profesionales', 'PageController@profesionales');
 $router->get('/login', 'PageController@login');
+$router->get('/registro', 'PageController@registro');
+$router->get('/noticia', 'PageController@noticia');
+$router->get('/listadoTurno', 'PageController@listadoTurno');
+$router->get('/solicitarTurno', 'PageController@solicitarTurno');
+
+
+$router->get('/turnoSolicitado', 'PageController@turnoSolicitado');
 
 
 
 // Faltantes
 $router->get('/imprimirListadoTurnos', 'PageController@imprimirListadoTurnos');
 $router->get('/imprimirTurnoSolicitado', 'PageController@imprimirTurnoSolicitado');
-$router->get('/listadoTurno', 'PageController@listadoTurno');
-$router->get('/noticia', 'PageController@noticia');
-$router->get('/registro', 'PageController@registro');
-$router->get('/solicitarTurno', 'PageController@solicitarTurno');
-$router->get('/turnoSolicitado', 'PageController@turnoSolicitado');
 
 $router->post('/obras_sociales', 'PageController@procesar');

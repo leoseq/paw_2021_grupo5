@@ -13,6 +13,7 @@
         <main>
 
             <?php
+                echo "Pagin de " . $titulo;
                 require __DIR__ . '/parts/nav-mobile.view.php';
             ?> 
         </main>

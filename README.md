@@ -17,3 +17,12 @@
 ---
 
 [**Proyecto Figma**](https://www.figma.com/file/MK7rWjurfTGyPTFLBqy9gA/Wireframs?node-id=0%3A1)
+
+---
+ 
+* git clone <url-remo>
+* cd project-name
+* composer install
+* cp .env.example //Editar el .env
+* Ejecutar php -S localhost:8888 -t public
+ 

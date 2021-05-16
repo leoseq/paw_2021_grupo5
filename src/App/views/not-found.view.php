@@ -1,9 +1,12 @@
 <html>
     <head>
-        <title>Page Not Found</title>
+        <?php
+            require __DIR__ . '/parts/head.view.php';
+        ?>
     </head>
     <body>
-        <h1>Pagina NO Encontrada</h1>
+        <h1><?= $titulo ?></h1>
+        
         <?php
             require __DIR__ . '/parts/nav.view.php';
         ?>

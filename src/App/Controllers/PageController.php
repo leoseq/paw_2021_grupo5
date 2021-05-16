@@ -23,11 +23,13 @@ class PageController
 
     public function index()
     {
+        $titulo = "Index";
         require $this->viewDir . "/index.view.php";
     }
 
     public function obrasSociales($procesado = false)
     {
+        $titulo = "Obras Sociales";
         require $this->viewDir . "/obras-sociales.view.php";
     }
 

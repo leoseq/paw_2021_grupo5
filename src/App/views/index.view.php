@@ -1,12 +1,22 @@
 <html>
     <head>
-        <title>Home</title>
+        <?php
+            require __DIR__ . '/parts/head.view.php';
+        ?>
     </head>
     <body>
-        <h1>Pagina HOME</h1>
+        <header>
+            <?php
+                require __DIR__ . '/parts/nav.view.php';
+            ?>
+        </header>
 
-        <?php
-            require __DIR__ . '/parts/nav.view.php';
-        ?>
+
+        <footer>
+            <?php
+                require __DIR__ . '/parts/nav-mobile.view.php';
+                require __DIR__ . '/parts/footer.view.php';
+            ?>        
+        </footer>
     </body>
 </html>

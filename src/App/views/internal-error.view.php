@@ -1,9 +1,12 @@
 <html>
     <head>
-        <title>Internal Error Server</title>
+        <?php
+            require __DIR__ . '/parts/head.view.php';
+        ?>
     </head>
     <body>
-        <h1>Internal Error Server</h1>
+        <h1><?= $titulo ?></h1>
+        
         <?php
             require __DIR__ . '/parts/nav.view.php';
         ?>

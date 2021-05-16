@@ -26,9 +26,15 @@ class PageController
         require $this->viewDir . "/index.view.php";
     }
 
-    public function obrasSociales()
+    public function obrasSociales($procesado = false)
     {
         require $this->viewDir . "/obras-sociales.view.php";
+    }
+
+    public function procesar()
+    {
+        $formulario = $_POST;
+        $this->obrasSociales(true);
     }
     
 }

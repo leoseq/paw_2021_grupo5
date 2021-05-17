@@ -31,24 +31,25 @@ $router = new Router();
 $router->setLogger($log);
 
 // Terminadas
-$router->get('/', 'PageController@index');
-$router->get('/obrasSociales', 'PageController@obrasSociales');
 $router->get('/institucional', 'PageController@institucional');
+$router->get('/obrasSociales', 'PageController@obrasSociales');
+$router->get('/noticia', 'PageController@noticia');
 $router->get('/noticias', 'PageController@noticias');
 $router->get('/profesionales', 'PageController@profesionales');
-$router->get('/login', 'PageController@login');
 $router->get('/registro', 'PageController@registro');
-$router->get('/noticia', 'PageController@noticia');
+
+
+
+
+
+// Pendientes
+$router->get('/', 'PageController@index');
+$router->get('/login', 'PageController@login');
 $router->get('/listadoTurno', 'PageController@listadoTurno');
 $router->get('/solicitarTurno', 'PageController@solicitarTurno');
-
-
 $router->get('/turnoSolicitado', 'PageController@turnoSolicitado');
-
-
-
-// Faltantes
 $router->get('/imprimirListadoTurnos', 'PageController@imprimirListadoTurnos');
 $router->get('/imprimirTurnoSolicitado', 'PageController@imprimirTurnoSolicitado');
+
 
 $router->post('/obras_sociales', 'PageController@procesar');

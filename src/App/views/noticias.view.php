@@ -10,11 +10,41 @@
                 require __DIR__ . '/parts/nav.view.php';
             ?>
         </header>
-        <main>
+        <main class="noticias">
+            <?php
+                require __DIR__ . '/parts/turnero.view.php';
+            ?>
+            
+            <header>
+                <h2>Noticias</h2>
+            </header>
+      
+            <section class="fichasNoticias">
+                <h4>Últimas Noticias</h4>
+                <?php
+                    require __DIR__ . '/noticias/noticiaCard.view.php';
+                    require __DIR__ . '/noticias/noticiaCard.view.php';
+                    require __DIR__ . '/noticias/noticiaCard.view.php';
+                    require __DIR__ . '/noticias/noticiaCard.view.php';
+                    require __DIR__ . '/noticias/noticiaCard.view.php';
+                    require __DIR__ . '/noticias/noticiaCard.view.php';
+                ?>
+            </section>
+
+            <section class="paginador">
+                <h4>Paginador</h4>
+                <ul>
+                    <li><a href="#">«</a></li>
+                    <li><a class="active" href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">»</a></li>
+                </ul>
+            </section>
 
             <?php
-                echo "Pagin de " . $titulo;
-                require __DIR__ . '/parts/turnero.view.php';
                 require __DIR__ . '/parts/nav-mobile.view.php';
             ?> 
         </main>

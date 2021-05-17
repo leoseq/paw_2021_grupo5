@@ -5,10 +5,22 @@
         ?>
     </head>
     <body>
-        <h1><?= $titulo ?></h1>
-        
-        <?php
-            require __DIR__ . '/parts/nav.view.php';
-        ?>
+        <header>
+            <?php
+                require __DIR__ . '/parts/nav.view.php';
+            ?>
+        </header>
+        <main>
+
+            <?php
+                echo "Pagin de " . $titulo;
+                require __DIR__ . '/parts/nav-mobile.view.php';
+            ?> 
+        </main>
+        <footer>
+            <?php
+                require __DIR__ . '/parts/footer.view.php';
+            ?>        
+        </footer>
     </body>
 </html>

@@ -22,4 +22,6 @@
         <li><a href="/noticias">Noticias</a></li>
         <li><a href="/login">Iniciar Sesión</a></li>
     </ul>
+
+    <a href="login.html" class="btn-iniciarSesion">Iniciar Sesión</a>
 </nav>

@@ -11,7 +11,6 @@
             ?>
         </header>
         <main>
-
             <?php
                 echo "Pagin de " . $titulo;
                 require __DIR__ . '/parts/turnero.view.php';

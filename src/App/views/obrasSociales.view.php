@@ -11,9 +11,30 @@
             ?>
         </header>
         <main>
+            <section class="profesionales">
+                <header>
+                    <h2>Obras Sociales</h2>
+                </header>
+
+                <input
+                    class="buscador"
+                    type="search"
+                    placeholder="Buscar obra social"
+                />
+
+                <section class="resultado-busqueda">
+                    <?php
+                        require __DIR__ . '/obrasSociales/obrasSocialesCard.view.php';
+                        require __DIR__ . '/obrasSociales/obrasSocialesCard.view.php';
+                        require __DIR__ . '/obrasSociales/obrasSocialesCard.view.php';
+                        require __DIR__ . '/obrasSociales/obrasSocialesCard.view.php';
+                        require __DIR__ . '/obrasSociales/obrasSocialesCard.view.php';
+                        require __DIR__ . '/obrasSociales/obrasSocialesCard.view.php';
+                    ?>
+                </section>
+            </section>
 
             <?php
-                echo "Pagin de " . $titulo;
                 require __DIR__ . '/parts/nav-mobile.view.php';
             ?> 
         </main>

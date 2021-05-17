@@ -9,16 +9,6 @@ class ErrorController
     public function __construct() 
     {
         $this->viewDir = __DIR__ . "/../views";
-        $this->menu = [
-            [
-                "href" => "/",
-                "name" => "Home"
-            ],
-            [
-                "href" => "/obras_sociales",
-                "name" => "Obras Sociales"
-            ]
-        ];
     }
     
     public function notFound()

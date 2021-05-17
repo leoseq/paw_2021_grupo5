@@ -5,22 +5,28 @@
         ?>
     </head>
     <body>
-        <header>
+        <header class="headerImpresion">
             <?php
-                require __DIR__ . '/parts/nav.view.php';
+                require __DIR__ . '/parts/header.view.php';
             ?>
         </header>
-        <main>
+        
+        <main class="listadoTurnos">
+            <section class="fichas">
+                <h3>Turnos del usuario</h3>
 
-            <?php
-                echo "Pagin de " . $titulo;
-                require __DIR__ . '/parts/nav-mobile.view.php';
-            ?> 
+                <?php
+                    require __DIR__ . '/cards/fichaCard.view.php';
+                    require __DIR__ . '/cards/turnoCard.view.php';
+                ?>
+
+            </section>
         </main>
+
         <footer>
             <?php
-                require __DIR__ . '/parts/footer.view.php';
-            ?>        
+                require __DIR__ . '/parts/footerImpresion.view.php';
+            ?> 
         </footer>
     </body>
 </html>

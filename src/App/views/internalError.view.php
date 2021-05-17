@@ -10,5 +10,11 @@
         <?php
             require __DIR__ . '/parts/nav.view.php';
         ?>
+        
+        <footer>
+            <?php
+                require __DIR__ . '/parts/footer.view.php';
+            ?>        
+        </footer>
     </body>
 </html>

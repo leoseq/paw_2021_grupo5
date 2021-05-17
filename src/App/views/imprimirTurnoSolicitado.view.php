@@ -5,21 +5,23 @@
         ?>
     </head>
     <body>
-        <header>
+        <header class="headerImpresion">
             <?php
-                require __DIR__ . '/parts/nav.view.php';
+                require __DIR__ . '/parts/header.view.php';
             ?>
         </header>
+        
         <main>
-
+            <section class="turnoSolicitado">
             <?php
-                echo "Pagin de " . $titulo;
-                require __DIR__ . '/parts/nav-mobile.view.php';
-            ?> 
+                require __DIR__ . '/parts/turnoInfo.view.php';
+            ?>
+            </section>
         </main>
+
         <footer>
             <?php
-                require __DIR__ . '/parts/footer.view.php';
+                require __DIR__ . '/parts/footerImpresion.view.php';
             ?>        
         </footer>
     </body>

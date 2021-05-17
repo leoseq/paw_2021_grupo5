@@ -11,7 +11,7 @@
         </li>
         <hr/>
         <li>
-            <a href="/listadoTurno">
+            <a href="/listadoTurnos">
                 <span class="listado-turnos-icon-50"></span>
                 <span>Listar Turnos</span>
             </a>

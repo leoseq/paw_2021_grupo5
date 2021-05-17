@@ -59,10 +59,10 @@ class PageController
         require $this->viewDir . "/noticia.view.php";
     }
 
-    public function listadoTurno()
+    public function listadoTurnos()
     {
         $titulo = "Listado de Turnos";
-        require $this->viewDir . "/listadoTurno.view.php";
+        require $this->viewDir . "/listadoTurnos.view.php";
     }
     
     public function solicitarTurno()

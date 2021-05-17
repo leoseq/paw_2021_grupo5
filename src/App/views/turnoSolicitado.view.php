@@ -7,16 +7,30 @@
     <body>
         <header>
             <?php
+                require __DIR__ . '/parts/header.view.php';
                 require __DIR__ . '/parts/nav.view.php';
             ?>
         </header>
+        
         <main>
+            <section class="turnoSolicitado">
+               
+                <?php
+                    require __DIR__ . '/parts/turnoInfo.view.php';
+                ?> 
+
+                <article style="justify-content: space-around">
+                    <h5>Botones</h5>
+                    <a href="/listadoTurnos">Ver turnos</a>
+                    <button>Agregar al calendario</button>
+                </article>
+            </section>
 
             <?php
-                echo "Pagin de " . $titulo;
-                require __DIR__ . '/parts/nav-mobile.view.php';
+                require __DIR__ . '/parts/navMobile.view.php';
             ?> 
         </main>
+        
         <footer>
             <?php
                 require __DIR__ . '/parts/footer.view.php';

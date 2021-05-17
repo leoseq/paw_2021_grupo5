@@ -7,6 +7,7 @@
     <body>
         <header>
             <?php
+                require __DIR__ . '/parts/header.view.php';
                 require __DIR__ . '/parts/nav.view.php';
             ?>
         </header>
@@ -22,12 +23,12 @@
             <section class="fichasNoticias">
                 <h4>Últimas Noticias</h4>
                 <?php
-                    require __DIR__ . '/noticias/noticiaCard.view.php';
-                    require __DIR__ . '/noticias/noticiaCard.view.php';
-                    require __DIR__ . '/noticias/noticiaCard.view.php';
-                    require __DIR__ . '/noticias/noticiaCard.view.php';
-                    require __DIR__ . '/noticias/noticiaCard.view.php';
-                    require __DIR__ . '/noticias/noticiaCard.view.php';
+                    require __DIR__ . '/cards/noticiaCard.view.php';
+                    require __DIR__ . '/cards/noticiaCard.view.php';
+                    require __DIR__ . '/cards/noticiaCard.view.php';
+                    require __DIR__ . '/cards/noticiaCard.view.php';
+                    require __DIR__ . '/cards/noticiaCard.view.php';
+                    require __DIR__ . '/cards/noticiaCard.view.php';
                 ?>
             </section>
 
@@ -45,7 +46,7 @@
             </section>
 
             <?php
-                require __DIR__ . '/parts/nav-mobile.view.php';
+                require __DIR__ . '/parts/navMobile.view.php';
             ?> 
         </main>
         <footer>

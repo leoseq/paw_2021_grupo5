@@ -7,6 +7,7 @@
     <body>
         <header>
             <?php
+                require __DIR__ . '/parts/header.view.php';
                 require __DIR__ . '/parts/nav.view.php';
             ?>
         </header>
@@ -24,18 +25,18 @@
 
                 <section class="resultado-busqueda">
                     <?php
-                        require __DIR__ . '/obrasSociales/obrasSocialesCard.view.php';
-                        require __DIR__ . '/obrasSociales/obrasSocialesCard.view.php';
-                        require __DIR__ . '/obrasSociales/obrasSocialesCard.view.php';
-                        require __DIR__ . '/obrasSociales/obrasSocialesCard.view.php';
-                        require __DIR__ . '/obrasSociales/obrasSocialesCard.view.php';
-                        require __DIR__ . '/obrasSociales/obrasSocialesCard.view.php';
+                        require __DIR__ . '/cards/obrasSocialesCard.view.php';
+                        require __DIR__ . '/cards/obrasSocialesCard.view.php';
+                        require __DIR__ . '/cards/obrasSocialesCard.view.php';
+                        require __DIR__ . '/cards/obrasSocialesCard.view.php';
+                        require __DIR__ . '/cards/obrasSocialesCard.view.php';
+                        require __DIR__ . '/cards/obrasSocialesCard.view.php';
                     ?>
                 </section>
             </section>
 
             <?php
-                require __DIR__ . '/parts/nav-mobile.view.php';
+                require __DIR__ . '/parts/navMobile.view.php';
             ?> 
         </main>
         <footer>

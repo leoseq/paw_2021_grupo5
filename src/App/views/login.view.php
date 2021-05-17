@@ -14,8 +14,8 @@
         
         <main class="containerLogin">
            <?php
-                require __DIR__ . '/parts/loginForm.view.php';
-                require __DIR__ . '/parts/numerosTurno.view.php';
+                require __DIR__ . '/sections/loginForm.view.php';
+                require __DIR__ . '/sections/numerosTurno.view.php';
                 require __DIR__ . '/parts/navMobile.view.php';
             ?>  
         </main>

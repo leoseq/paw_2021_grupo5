@@ -16,7 +16,7 @@
             <section class="turnoSolicitado">
                
                 <?php
-                    require __DIR__ . '/parts/turnoInfo.view.php';
+                    require __DIR__ . '/sections/turnoInfo.view.php';
                 ?> 
 
                 <article style="justify-content: space-around">

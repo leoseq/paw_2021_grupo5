@@ -37,16 +37,16 @@ $router->get('/noticia', 'PageController@noticia');
 $router->get('/noticias', 'PageController@noticias');
 $router->get('/profesionales', 'PageController@profesionales');
 $router->get('/registro', 'PageController@registro');
+$router->get('/solicitarTurno', 'PageController@solicitarTurno');
 
 
+$router->get('/login', 'PageController@login');
 
 
 
 // Pendientes
 $router->get('/', 'PageController@index');
-$router->get('/login', 'PageController@login');
 $router->get('/listadoTurno', 'PageController@listadoTurno');
-$router->get('/solicitarTurno', 'PageController@solicitarTurno');
 $router->get('/turnoSolicitado', 'PageController@turnoSolicitado');
 $router->get('/imprimirListadoTurnos', 'PageController@imprimirListadoTurnos');
 $router->get('/imprimirTurnoSolicitado', 'PageController@imprimirTurnoSolicitado');

@@ -25,11 +25,11 @@
             El Grito de Alcorta Nº 110, B6620 Chivilcoy, Provincia de Buenos
             Aires
         </address>
-        <a href="tel:+2364537977" style="color: #ffffff"
-            ><span
-            class="phone-celeste-icon-24"
-            style="margin-right: 0.5em"
-            ></span>
+        <a href="tel:+2364537977" style="color: #ffffff">
+            <span
+                class="phone-celeste-icon-24"
+                style="margin-right: 0.5em">
+            </span>
             Teléfono: 02345-485562
         </a>
     </article>

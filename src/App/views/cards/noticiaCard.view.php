@@ -1,5 +1,5 @@
 <article>
-    <img src="/images/noticias/noticia_1.jpg" alt="imagen-noticia" />
+    <img src="../assets/images/noticias/noticia_1.jpg" alt="imagen-noticia" />
     <h3>Titulo de la noticia</h3>
 
     <p>21 de Enero de 2021</p>

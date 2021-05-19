@@ -17,7 +17,7 @@
             ?>
 
             <section class="noticia">
-                <img src="/images/noticias/noticia_1.jpg" alt="imagen-noticia" />
+                <img src="../assets/images/noticias/noticia_1.jpg" alt="imagen-noticia" />
 
                 <h2>Titulo de la noticia</h2>
 

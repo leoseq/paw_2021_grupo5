@@ -2,14 +2,11 @@
 
 namespace Paw\App\Controllers;
 
-class PageController
-{
-    public string $viewDir;
+use Paw\Core\Controller;
+use Paw\App\Models\Turno;
 
-    public function __construct() 
-    {
-        $this->viewDir = __DIR__ . "/../views";
-    }
+class PageController extends Controller
+{
 
     public function index()
     {
@@ -71,7 +68,7 @@ class PageController
         require $this->viewDir . "/solicitarTurno.view.php";
     }
     
-    public function turnoSolicitado()
+    public function turnoSolicitado($turno = null)
     {
         $titulo = "Turno Solicitado";
         require $this->viewDir . "/turnoSolicitado.view.php";
@@ -87,23 +84,6 @@ class PageController
     {
         $titulo = "Imprimir Turno Solicitado";
         require $this->viewDir . "/imprimirTurnoSolicitado.view.php";
-    }
-    
-    
-    
-
-
-
-
-
-
-
-
-
-    public function procesar()
-    {
-        $formulario = $_POST;
-        $this->obrasSociales(true);
     }
     
 }

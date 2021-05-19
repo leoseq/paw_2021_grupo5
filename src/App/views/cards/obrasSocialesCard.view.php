@@ -1,6 +1,6 @@
 <article class="card-persona" id="obras-sociales">
     <h3>OBRA SOCIAL</h3>
-    <img src="../images/obras-sociales/omint.png" alt="Omint" />
+    <img src="../assets/images/obras-sociales/omint.png" alt="Omint" />
 
     <ul class="datos-persona">
         <li>50 profesionales adheridos</li>

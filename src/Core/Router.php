@@ -42,7 +42,7 @@ class Router
     public function direct(Request $request)
     {
         try {
-            list($path, $http_method) = $request->route();    
+            list($path, $http_method) = $request->route(); 
             list($controller, $method) = $this->getController($path, $http_method);            
             //$this->logger->debug(
             //            "Status Code: 200",

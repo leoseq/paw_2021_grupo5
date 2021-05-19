@@ -17,7 +17,7 @@
             ?>
             
             <section class="institucional">
-                <img alt="Noticia" src="/images/portadas/edificio.jpg" />
+                <img alt="Noticia" src="../assets/images/portadas/edificio.jpg" />
 
                 <section class="nosotros">
                     <h2>Nosotros</h2>

@@ -27,6 +27,6 @@
     </article>
 
     <a href="/">
-        <img alt="UNLuPAW Medical Group" src="/images/logo-white.png"/>
+        <img alt="UNLuPAW Medical Group" src="../assets/images/logo-white.png"/>
     </a>
 </section>

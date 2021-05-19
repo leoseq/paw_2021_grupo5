@@ -133,28 +133,13 @@ class Turno extends Model
 
     public function set(array $values)
     {
-       //echo "<pre>";
-       // var_dump($values);
-        
-
-        //foreach ($this->fields as $key => $value) {
-            
-        //    echo "Key: ". $key ." -- Valor: ". $this->fields[$key] ."<br>";
-        //}
-        
-
-        
         foreach (array_keys($this->fields) as $field) {
             if (!isset($values[$field])) {
                 continue;
             }
             $method = "set" . ucfirst($field);
-            //echo $method ."<br>";
-            
-            
             $this->$method($values[$field]);
         }
-       // die;
     }
 
     public function getNombre()

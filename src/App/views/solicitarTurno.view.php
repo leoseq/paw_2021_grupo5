@@ -21,7 +21,7 @@
 
                 <hr />
             
-                <form href="/saveTurno" method="POST" class="form">
+                <form action="/saveTurno" method="POST" class="form">
                     <h3>Datos del Profesional</h3>
 
                     <label for="specialty_input">Especialidad</label>

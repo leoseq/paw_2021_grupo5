@@ -1,14 +1,14 @@
 <?php
 
-namespace Paw\App\Models;
+namespace Paw\App\Model;
 
-use Paw\Core\Models;
+use Paw\Core\Model;
 use Paw\Core\Exceptions\InvalidValueFormatException;
 use Paw\Core\Exceptions\MandatoryValueException;
 
 use Exception;
 
-class Turno extends Model
+ class Turno extends Model
 {
     public $table = 'nombre_tabla_db';
 

@@ -4,16 +4,16 @@ namespace Paw\App\Controllers;
 
 use Paw\App\Controllers\PageController;
 use Paw\Core\Controller;
-use Paw\App\Models\Turno;
+//use Paw\App\Models\Turno;
 
 class TurnoController extends Controller
 {
-    public ?string $modelName = Turno::class; // Devuelve 'Paw\App\Models\Turno'
+//    public ?string $modelName = Turno::class; // Devuelve 'Paw\App\Models\Turno'
 
 
     public function saveTurno()
     {
-        $turno = new Turno();
+//        $turno = new Turno();
 
         $datos = [];
         $datos["nombre"] = $_POST["name_input"];         
@@ -26,10 +26,10 @@ class TurnoController extends Controller
         $datos["especialidad"] = $_POST["specialty_input"]; 
         $datos["profesional"] = $_POST["profesional_input"]; 
         
-        $turno->set($datos);
+//        $turno->set($datos);
 
         $pageController = new PageController();
-        $pageController->turnoSolicitado($turno);
+        $pageController->turnoSolicitado($datos);
 
     }
 

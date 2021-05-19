@@ -68,7 +68,7 @@ class PageController extends Controller
         require $this->viewDir . "/solicitarTurno.view.php";
     }
     
-    public function turnoSolicitado(Turno $turno = null)
+    public function turnoSolicitado($turno = null)
     {
         $titulo = "Turno Solicitado";
         require $this->viewDir . "/turnoSolicitado.view.php";
@@ -84,28 +84,6 @@ class PageController extends Controller
     {
         $titulo = "Imprimir Turno Solicitado";
         require $this->viewDir . "/imprimirTurnoSolicitado.view.php";
-    }
-    
-    
-    
-
-
-
-
-
-
-
-
-
-    public function procesar()
-    {
-        $formulario = $_POST;
-
-        echo "<pre>";
-        var_dump($formulario);
-        die;
-
-        $this->solicitarTurno();
     }
     
 }

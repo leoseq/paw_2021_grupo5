@@ -1,6 +1,6 @@
 <?php
 
-namespace Paw\App;
+namespace Paw\Core;
 
 //use Paw\Core\Database\QueryBuilder;
 //use Paw\Core\Traits\Loggable;

@@ -6,8 +6,8 @@
 
 <article>
     <h5>Profesional y especialidad seleccionada</h5>
-    <p>Profesional: <?= $turno["profesional"]; ?> </p>
-    <p>Especialidad:<?= $turno["especialidad"]; ?></p>
+    <p>Profesional: <?= $turno->getProfesional(); ?> </p>
+    <p>Especialidad: <?= $turno->getEspecialidad(); ?></p>
 </article>
 
 <hr />
@@ -16,9 +16,9 @@
 <h4>Datos personales</h4>
 <article>
     <h5>Datos personales del paciente</h5>
-    <p>Nombre y Apellido: <?= $turno["nombre"]; ?>, <?= $turno["apellido"]; ?></p>
-    <p>Fecha de nacimiento: <?= $turno["fechaNacimiento"]; ?></p>
-    <p>Edad: <?= $turno["edad"]; ?></p>
+    <p>Nombre y Apellido: <?= $turno->getNombre(); ?>, <?= $turno->getApellido(); ?></p>
+    <p>Fecha de nacimiento: <?= $turno->getFechaNacimiento(); ?></p>
+    <p>Edad: <?= $turno->getEdad(); ?></p>
 </article>
 
 <hr />
@@ -26,8 +26,8 @@
 <h4>Datos de contacto</h4>
 <article>
     <h5>Datos de contacto del paciente</h5>
-    <p>Telefono: <?= $turno["tel"]; ?></p>
-    <p>Email: <?= $turno["email"]; ?></p>
+    <p>Telefono: <?= $turno->getTel(); ?></p>
+    <p>Email: <?= $turno->getEmail(); ?></p>
 </article>
 
 <hr />
@@ -35,6 +35,6 @@
 <h4>Datos de turno</h4>
 <article>
     <h5>Datos del turno solicitado por el paciente</h5>
-    <p>Fecha:</p>
-    <p>Hora:</p>
+    <p>Fecha: <?= $turno->getFechaTurno(); ?></p>
+    <p>Hora: <?= $turno->getFechaTurno(); ?></p>
 </article>

@@ -14,7 +14,7 @@ class PageController extends Controller
         require $this->viewDir . "/index.view.php";
     }
 
-    public function obrasSociales($procesado = false)
+    public function obrasSociales()
     {
         $titulo = "Obras Sociales";
         require $this->viewDir . "/obrasSociales.view.php";

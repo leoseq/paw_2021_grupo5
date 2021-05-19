@@ -1,6 +1,6 @@
 <?php
 
-namespace Paw\App\Model;
+namespace Paw\App\Models;
 
 use Paw\Core\Model;
 use Paw\Core\Exceptions\InvalidValueFormatException;
@@ -8,7 +8,7 @@ use Paw\Core\Exceptions\MandatoryValueException;
 
 use Exception;
 
- class Turno extends Model
+class Turno extends Model
 {
     public $table = 'nombre_tabla_db';
 
@@ -22,10 +22,9 @@ use Exception;
         "fechaTurno" => null,
         "horaTurno" => null,
         "especialidad" => null,
-        "profesional" => null,
-//        "estado" = null
+        "profesional" => null
     ];
-
+        
     public function setNombre(string $nombre)
     {
         if (is_null($nombre)) {
@@ -52,7 +51,7 @@ use Exception;
 
     public function setEmail(string $email)
     {
-        if (!filter_var($datos["email"], FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw InvalidValueFormatException("El email del paciente no tiene el formato correcto.");
         }
 
@@ -134,13 +133,77 @@ use Exception;
 
     public function set(array $values)
     {
-        foreach (array_key($this->fields) as $field) {
+       //echo "<pre>";
+       // var_dump($values);
+        
+
+        //foreach ($this->fields as $key => $value) {
+            
+        //    echo "Key: ". $key ." -- Valor: ". $this->fields[$key] ."<br>";
+        //}
+        
+
+        
+        foreach (array_keys($this->fields) as $field) {
             if (!isset($values[$field])) {
                 continue;
             }
             $method = "set" . ucfirst($field);
+            //echo $method ."<br>";
+            
+            
             $this->$method($values[$field]);
         }
+       // die;
     }
 
+    public function getNombre()
+    {
+        return $this->fields["nombre"];
+    }
+
+    public function getApellido()
+    {
+        return $this->fields["apellido"];
+    }
+
+    public function getEmail()
+    {
+        return $this->fields["email"];
+    }
+
+    public function getTel()
+    {
+        return $this->fields["tel"];
+    }
+
+    public function getFechaNacimiento()
+    {
+        return $this->fields["fechaNacimiento"];
+    }
+
+    public function getEdad()
+    {
+        return $this->fields["edad"];
+    }
+    
+    public function getFechaTurno()
+    {
+        return $this->fields["fechaTurno"];
+    }
+
+    public function getHoraTurno()
+    {
+        return $this->fields["horaTurno"];
+    }
+    
+    public function getEspecialidad()
+    {
+        return $this->fields["especialidad"];
+    }
+
+    public function getProfesional()
+    {
+        return $this->fields["profesional"];
+    }
 }

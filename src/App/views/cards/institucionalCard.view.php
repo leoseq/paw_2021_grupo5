@@ -1,7 +1,7 @@
 <article class="card-persona">
     <img
         class="img-persona"
-        src="../images/personas/doctor_2.jpg"
+        src="../assets/images/personas/doctor_2.jpg"
         alt="foto doctor"
     />
     <h4>Dr. Luis Cordoba</h4>

@@ -2,14 +2,10 @@
 
 namespace Paw\App\Controllers;
 
-class ErrorController
-{
-    public string $viewDir;
+use Paw\Core\Controller;
 
-    public function __construct() 
-    {
-        $this->viewDir = __DIR__ . "/../views";
-    }
+class ErrorController extends Controller
+{
     
     public function notFound()
     {

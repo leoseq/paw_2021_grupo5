@@ -12,9 +12,8 @@
             ?>
         </header>
         <main>
-
+            <img src="../assets/images/404.png">
             <?php
-                echo "Pagin de " . $titulo;
                 require __DIR__ . '/parts/navMobile.view.php';
             ?> 
         </main>

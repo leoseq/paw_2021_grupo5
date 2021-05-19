@@ -21,7 +21,7 @@
 
                 <hr />
             
-                <form class="form">
+                <form href="/saveTurno" method="POST" class="form">
                     <h3>Datos del Profesional</h3>
 
                     <label for="specialty_input">Especialidad</label>
@@ -113,7 +113,7 @@
                     <i class="escoba-icon-24"> <input type="reset" value=" " /></i>
                 </form>
             </section>
-
+           
             <?php
                 require __DIR__ . '/sections/numerosTurno.view.php';
                 require __DIR__ . '/parts/navMobile.view.php';

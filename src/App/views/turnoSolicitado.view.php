@@ -16,6 +16,15 @@
             <section class="turnoSolicitado">
                
                 <?php
+                /*  $turno = [];
+                    $turno["nombre"] = "Luis Alberto";         
+                    $turno["apellido"] = "Romero"; 
+                    $turno["email"] = "robert@mail.com"; 
+                    $turno["tel"] = "1133445566"; 
+                    $turno["edad"] = "23"; 
+                    $turno["especialidad"] = "Cardiología"; 
+                    $turno["profesional"] = "Dr. Agustin Ledesma"; */
+
                     require __DIR__ . '/sections/turnoInfo.view.php';
                 ?> 
 

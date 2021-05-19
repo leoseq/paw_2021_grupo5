@@ -44,5 +44,5 @@ $router->get('/imprimirListadoTurnos', 'PageController@imprimirListadoTurnos');
 $router->get('/imprimirTurnoSolicitado', 'PageController@imprimirTurnoSolicitado');
 $router->get('/turnoSolicitado', 'PageController@turnoSolicitado');
 
-// Borrar
-$router->post('/obras_sociales', 'PageController@procesar');
+
+$router->post('/saveTurno', 'TurnoController@saveTurno');

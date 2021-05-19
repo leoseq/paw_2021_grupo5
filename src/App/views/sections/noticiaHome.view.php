@@ -3,7 +3,7 @@
         <h2>Ultimas noticias</h2>
     </header>
 
-    <img alt="Noticia" src="/images/noticias/noticia_1.jpg" />
+    <img alt="Noticia" src="../assets/images/noticias/noticia_1.jpg" />
     <article>
         <h2>Titulo noticia</h2>
         <a href="/noticia" style="color: black">

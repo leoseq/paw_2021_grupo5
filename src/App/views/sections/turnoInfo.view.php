@@ -7,8 +7,8 @@
 
     <article>
         <h5>Profesional y especialidad seleccionada</h5>
-        <p>Profesional:</p>
-        <p>Especialidad:</p>
+        <p>Profesional: <?= $turno["profesional"]; ?> </p>
+        <p>Especialidad:<?= $turno["especialidad"]; ?></p>
     </article>
 
     <hr />
@@ -17,9 +17,9 @@
     <h4>Datos personales</h4>
     <article>
         <h5>Datos personales del paciente</h5>
-        <p>Nombre y Apellido:</p>
-        <p>Fecha de nacimiento:</p>
-        <p>Edad:</p>
+        <p>Nombre y Apellido: <?= $turno["nombre"]; ?>, <?= $turno["apellido"]; ?></p>
+        <p>Fecha de nacimiento: </p>
+        <p>Edad: <?= $turno["edad"]; ?></p>
     </article>
 
     <hr />
@@ -27,8 +27,8 @@
     <h4>Datos de contacto</h4>
     <article>
         <h5>Datos de contacto del paciente</h5>
-        <p>Telefono</p>
-        <p>Email</p>
+        <p>Telefono: <?= $turno["tel"]; ?></p>
+        <p>Email: <?= $turno["email"]; ?></p>
     </article>
 
     <hr />

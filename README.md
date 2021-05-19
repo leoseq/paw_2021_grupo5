@@ -1,8 +1,6 @@
-# <img src="http://www.atunlu.org.ar/wp-content/uploads/2018/12/logo-unlu.png" height="60" width="60"/> Programación en Ambiente Web 2021 - 11086
+# <img src="http://www.atunlu.org.ar/wp-content/uploads/2018/12/logo-unlu.png" height="60" width="60"/> Programación en Ambiente Web 2021 - Grupo N°5
 
-# Grupo N°5
-
- ## Tabla de Contenidos
+#### Tabla de Contenidos
 1. [Info del Grupo](#info-del-grupo)
 2. [Instalación](#instalación)
 3. [Site Map](#site-map)
@@ -10,7 +8,7 @@
 
 ---
 
-### Info del Grupo
+## Info del Grupo
 #### **_Autores:_**
 | Alumno | Legajo |
 | :--------- | :--------- |
@@ -19,7 +17,7 @@
 
 ---
 
-### Instalación
+## Instalación
 Pasos a ejecutar:
 
 * Clonar el proyecto:
@@ -39,10 +37,10 @@ Ejecutar php -S localhost:8888 -t public
  
 ---
 
-### Site Map
+## Site Map
 ![Site Map](https://github.com/leoseq/paw_2021_grupo5/blob/main/images/SiteMap.png "Site Map")
 
 ---
 
-### Maquetación 
+## Maquetación 
 * [**Link a Figma**](https://www.figma.com/file/MK7rWjurfTGyPTFLBqy9gA/Wireframs?node-id=0%3A1)

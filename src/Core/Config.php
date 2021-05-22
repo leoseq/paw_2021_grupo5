@@ -35,6 +35,6 @@ class Config
 
     public function get($name)
     { 
-        return $this->config[$name] ?? null;
+        return $this->configs[$name] ?? null;
     }
 }

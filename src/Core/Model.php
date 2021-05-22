@@ -3,11 +3,11 @@
 namespace Paw\Core;
 
 //use Paw\Core\Database\QueryBuilder;
-//use Paw\Core\Traits\Loggable;
+use Paw\Core\Traits\Loggable;
 
 class Model
 {
-    //use Loggable;
+    use Loggable;
 
     //public function setQueryBuilder(QueryBuilder $qb)
     //{

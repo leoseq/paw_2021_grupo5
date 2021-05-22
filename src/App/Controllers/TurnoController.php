@@ -7,12 +7,11 @@ use Paw\App\Models\Turno;
 
 class TurnoController extends Controller
 {
-    public ?string $modelName = Turno::class; // Devuelve 'Paw\App\Models\Turno'
+    public ?string $modelName = Turno::class;
 
     public function saveTurno()
     {
-        $titulo = "";
-        $turno = new Turno();
+        $turno = new $this->modelName;
 
         $datos = [];
         $datos["nombre"] = $_POST["name_input"];         

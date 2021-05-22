@@ -10,7 +10,7 @@ trait Loggable
 
     public function setLogger(Logger $logger)
     {
-        $this->loger = $logger;
+        $this->logger = $logger;
     }
 
 }

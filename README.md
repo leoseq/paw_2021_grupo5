@@ -30,6 +30,11 @@ composer install
 ```
 * Editar el archivo .env.example:
 
+* Ejecutar la migrations:
+```
+Ejecutar migracion phinx migrate -e development
+```
+
 * Levantar el servidor web stand alone desde el directorio raiz:
 ```
 Ejecutar php -S localhost:8888 -t public

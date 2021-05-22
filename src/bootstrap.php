@@ -9,6 +9,7 @@ use Dotenv\Dotenv;
 use Paw\Core\Router;
 use Paw\Core\Config;
 use Paw\Core\Request;
+use Paw\Core\Database\ConnectionBuilder;
 
 $dotenv = Dotenv::createUnsafeImmutable(__DIR__ . '/../');
 $dotenv->load();
@@ -23,6 +24,10 @@ $log = new Logger('mvc-app');
 $whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
+
+$connectionBuilder = new ConnectionBuilder();
+$connectionBuilder->setLogger($log);
+$connection = $connectionBuilder->make($config);
 
 $request = new Request();
 
@@ -46,3 +51,4 @@ $router->get('/turnoSolicitado', 'PageController@turnoSolicitado');
 
 
 $router->post('/saveTurno', 'TurnoController@saveTurno');
+$router->get('/listadoTurnos', 'TurnoController@index');

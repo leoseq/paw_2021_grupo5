@@ -5,12 +5,11 @@ namespace Paw\App\Models;
 use Paw\Core\Model;
 use Paw\Core\Exceptions\InvalidValueFormatException;
 use Paw\Core\Exceptions\MandatoryValueException;
-
 use Exception;
 
 class Turno extends Model
 {
-    public $table = 'nombre_tabla_db';
+    public $table = 'turnos';
 
     public $fields = [
         "nombre" => null,

@@ -3,6 +3,7 @@
 namespace Paw\Core;
 
 use Paw\Core\Model;
+use Paw\Core\Database\QueryBuilder;
 
 class Controller
 {
@@ -11,10 +12,14 @@ class Controller
 
     public function __construct() 
     {
+        global $connection, $log;
         $this->viewDir = __DIR__ . "/../App/views";
         
         if (!is_null($this->modelName)) {
-            $this->setModel(new $this->modelName); 
+            $qb = new QueryBuilder($connection, $log);
+            $model = new $this->modelName;
+            $model->setQueryBuilder($qb);
+            $this->setModel($model);
         }
     }
 

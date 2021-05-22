@@ -16,9 +16,9 @@ $dotenv->load();
 $config = new Config();
 
 $log = new Logger('mvc-app');
-//$handler = new StreamHandler($config->get("LOG_PATH"));
-//$handler->setLevel($config->get("LOG_LEVEL"));
-//$log->pushHandler($handler);
+$handler = new StreamHandler($config->get("LOG_PATH"));
+$handler->setLevel($config->get("LOG_LEVEL"));
+$log->pushHandler($handler);
 
 $whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
@@ -43,6 +43,5 @@ $router->get('/login', 'PageController@login');
 $router->get('/imprimirListadoTurnos', 'PageController@imprimirListadoTurnos');
 $router->get('/imprimirTurnoSolicitado', 'PageController@imprimirTurnoSolicitado');
 $router->get('/turnoSolicitado', 'PageController@turnoSolicitado');
-
 
 $router->post('/saveTurno', 'TurnoController@saveTurno');

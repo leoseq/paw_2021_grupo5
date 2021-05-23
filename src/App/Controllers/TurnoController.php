@@ -17,7 +17,7 @@ class TurnoController extends Controller
     {
         $titulo = "Listado de Turnos";
         $turnos = $this->model->getAll();
-        require $this->viewDir . "/listadoTurnos.view.php";
+        require $this->viewDir . "listadoTurnos.view.php";
     }
 
 
@@ -45,7 +45,7 @@ class TurnoController extends Controller
         $titulo = "Turno Solicitado";
 
 
-        require $this->viewDir . "/turnoSolicitado.view.php";
+        require $this->viewDir . "turnoSolicitado.view.php";
     }
 
 }

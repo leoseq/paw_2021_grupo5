@@ -18,7 +18,7 @@ class Config
         $this->configs['DB_USERNAME'] = getenv('DB_USERNAME') ?? 'root';
         $this->configs['DB_PASSWORD'] = getenv('DB_PASSWORD') ?? '';
         $this->configs['DB_PORT'] = getenv('DB_PORT') ?? '3306';
-        $this->configs['DB_CHARSET'] = getenv('DB_CHARSET') ?? 'utf8';
+        $this->configs['DB_CHARSET'] = getenv('DB_CHARSET') ?? 'utf8 ';
 
     }
 

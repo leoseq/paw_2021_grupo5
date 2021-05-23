@@ -15,4 +15,34 @@ class Especialidad extends Model
         "nombre" => null,
         "estado" => null,
     ];
+
+    public function setNombre(string $nombre)
+    {
+        if (strlen($nombre) > 60) {
+            throw new InvalidValueFormatException("El nombre de la especialidad no debe ser mayor a 60 caracteres");
+        }
+
+        $this->fields["nombre"] = $nombre;
+    }
+
+    public function setEstado(int $estado)
+    {
+        if ($estado > 60) {
+            throw new InvalidValueFormatException("El nombre de la especialidad no debe ser mayor a 60 caracteres");
+        }
+
+        $this->fields["estado"] = $estado;
+    }
+
+    public function set(array $values)
+    {
+        foreach (array_keys($this->fields) as $field) {
+            if (!isset($values[$field])){
+                continue;
+            }
+            $method = "set" . ucfirst($field);
+            $this->$method($values[$field]);
+
+        }
+    }
 }

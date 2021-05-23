@@ -19,7 +19,7 @@ class EspecialidadesCollection extends Model
 
 
         foreach ($especialidades as $especialidad) {
-            $newEspecialidad = new Especialidad();
+            $newEspecialidad = new Especialidad;
             $newEspecialidad->set($especialidad);
             $especialidadesCollection[] = $newEspecialidad;
         }

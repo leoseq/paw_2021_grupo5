@@ -52,12 +52,19 @@ $router->get('/imprimirListadoTurnos', 'PageController@imprimirListadoTurnos');
 $router->get('/imprimirTurnoSolicitado', 'PageController@imprimirTurnoSolicitado');
 $router->get('/turnoSolicitado', 'PageController@turnoSolicitado');
 
+
+
 $router->post('/saveTurno', 'TurnoController@saveTurno');
 $router->get('/listadoTurnos', 'TurnoController@index');
-
 
 
 $router->get('/especialidades', 'EspecialidadController@index');
 $router->get('/especialidad', 'EspecialidadController@get');
 $router->get('/especialidad/edit', 'EspecialidadController@edit');
 $router->post('/especialidad/edit', 'EspecialidadController@set');
+
+
+$router->get('/especialidades/test', 'EspecialidadController@test');
+$router->post('/hola', 'EspecialidadController@hola');
+
+

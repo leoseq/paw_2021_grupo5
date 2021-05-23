@@ -32,7 +32,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="be962252-61e7-4fcb-9c15-57e5f1948285">
-      <console name="UNLuPaw" type="STANDARD" schema="unlupaw" session="Main" />
+      <console name="UNLuPaw" type="STANDARD" schema="unlupaw" session="Main"><![CDATA[select * from especialidades]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

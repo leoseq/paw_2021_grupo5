@@ -1035,6 +1035,26 @@ footer h2 {
   color: #ffff;
 }
 
+.datalist {
+  min-width: 26.3vw;
+  width: auto;
+  height: 3vh;
+  border-radius: 1px;
+  background: var(--secondary-color1);
+  color: #ffff;
+  border: 2px solid var(--secondary-color1);
+  font-weight: bold;
+  outline: none;
+  padding: 10px;
+  margin: 10px 0px;
+  color: #ffffff;
+}
+
+.datalist::placeholder {
+  color: #ffff;
+}
+
+
 .sectionForm form input[type="email"] {
   min-width: 26.3vw;
   width: auto;

@@ -36,10 +36,22 @@ class TurnoController extends Controller
         $datos["fechaTurno"] = $_POST["turn_date_input"];
         $datos["especialidad"] = $_POST["specialty_input"];
         $datos["profesional"] = $_POST["profesional_input"];
+        $datos["fileToUpload"] = $_FILES["file"];
 
-        $turno->set($datos);
 
-        $turnos = $this->queryBuilder->insert($this->table, $datos);
+
+        #$turno->set($datos);
+
+
+
+        echo "<pre>";
+        var_dump($datos);
+        die;
+
+        #$turno->guardarImagen($datos["fileToUpload"]);
+
+
+       # $turnos = $this->queryBuilder->insert($this->table, $datos);
 
      #   $turno->insertTurno($this->table, $datos);
         $titulo = "Turno Solicitado";

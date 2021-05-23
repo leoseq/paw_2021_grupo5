@@ -4,10 +4,14 @@ namespace Paw\App\Controllers;
 
 use Paw\Core\Controller;
 use Paw\App\Models\TurnoCollection;
+use Paw\App\Models\Turno;
+
 
 class TurnoController extends Controller
 {
-    public ?string $modelName = TurnoCollection::class; // Devuelve 'Paw\App\Models\Turno'
+    public ?string $modelName = Turno::class; // Devuelve 'Paw\App\Models\Turno'
+
+    public $table = 'turnos';
 
     public function index()
     {
@@ -35,7 +39,12 @@ class TurnoController extends Controller
 
         $turno->set($datos);
 
+        $turnos = $this->queryBuilder->insert($this->table, $datos);
+
+     #   $turno->insertTurno($this->table, $datos);
         $titulo = "Turno Solicitado";
+
+
         require $this->viewDir . "/turnoSolicitado.view.php";
     }
 

@@ -23,7 +23,7 @@ class Turno extends Model
         "especialidad" => null,
         "profesional" => null
     ];
-        
+
     public function setNombre(string $nombre)
     {
         if (is_null($nombre)) {
@@ -33,7 +33,7 @@ class Turno extends Model
         if (strlen($nombre) > 60) {
             throw InvalidValueFormatException("El nombre del paciente no debe ser mayor a 60 caracteres.");
         }
-        $this->fields["nombre"] = $nombre; 
+        $this->fields["nombre"] = $nombre;
     }
 
     public function setApellido(string $apellido)
@@ -45,7 +45,7 @@ class Turno extends Model
         if (strlen($apellido) > 60) {
             throw InvalidValueFormatException("El apellido del paciente no debe ser mayor a 60 caracteres");
         }
-        $this->fields["apellido"] = $apellido; 
+        $this->fields["apellido"] = $apellido;
     }
 
     public function setEmail(string $email)
@@ -58,7 +58,7 @@ class Turno extends Model
             throw MandatoryValueException("El email es obligatorio.");
         }
 
-        $this->fields["email"] = $email; 
+        $this->fields["email"] = $email;
     }
 
     public function setTel(string $tel)
@@ -70,7 +70,7 @@ class Turno extends Model
         if (strlen($tel) > 15) {
             throw InvalidValueFormatException("El telefono del paciente no debe ser mayor a 15 caracteres.");
         }
-        $this->fields["tel"] = $tel; 
+        $this->fields["tel"] = $tel;
     }
 
     public function setFechaNacimiento(string $fechaNacimiento)
@@ -79,7 +79,7 @@ class Turno extends Model
             throw MandatoryValueException("La fecha de nacimiento es obligatoria.");
         }
 
-        $this->fields["fechaNacimiento"] = $fechaNacimiento; 
+        $this->fields["fechaNacimiento"] = $fechaNacimiento;
     }
 
     public function setEdad(string $edad)
@@ -91,16 +91,16 @@ class Turno extends Model
         if ($edad < 1 || $edad > 131) {
             throw InvalidValueFormatException("La edad del paciente debe ser entre 1 y 130.");
         }
-        $this->fields["edad"] = $edad; 
+        $this->fields["edad"] = $edad;
     }
-    
+
     public function setFechaTurno(string $fechaTurno)
     {
         if (is_null($fechaTurno)) {
             throw MandatoryValueException("La Fecha del Turno es obligatoria.");
         }
 
-        $this->fields["fechaTurno"] = $fechaTurno; 
+        $this->fields["fechaTurno"] = $fechaTurno;
     }
 
     public function setHoraTurno(string $horaTurno)
@@ -109,16 +109,16 @@ class Turno extends Model
             throw MandatoryValueException("La Hora del Turno es obligatoria.");
         }
 
-        $this->fields["horaTurno"] = $horaTurno; 
+        $this->fields["horaTurno"] = $horaTurno;
     }
-    
+
     public function setEspecialidad(string $especialidad)
     {
         if (is_null($especialidad)) {
             throw MandatoryValueException("La Especialidad del Turno es obligatoria.");
         }
 
-        $this->fields["especialidad"] = $especialidad; 
+        $this->fields["especialidad"] = $especialidad;
     }
 
     public function setProfesional(string $profesional)
@@ -127,7 +127,7 @@ class Turno extends Model
             throw MandatoryValueException("El Profesional del Turno es obligatorio.");
         }
 
-        $this->fields["profesional"] = $profesional; 
+        $this->fields["profesional"] = $profesional;
     }
 
     public function set(array $values)
@@ -139,6 +139,11 @@ class Turno extends Model
             $method = "set" . ucfirst($field);
             $this->$method($values[$field]);
         }
+    }
+
+    public function insertTurno($table, array $values)
+    {
+        $turnos = $this->queryBuilder->insert($this->table, $values);
     }
 
     public function getNombre()
@@ -170,7 +175,7 @@ class Turno extends Model
     {
         return $this->fields["edad"];
     }
-    
+
     public function getFechaTurno()
     {
         return $this->fields["fechaTurno"];
@@ -180,7 +185,7 @@ class Turno extends Model
     {
         return $this->fields["horaTurno"];
     }
-    
+
     public function getEspecialidad()
     {
         return $this->fields["especialidad"];

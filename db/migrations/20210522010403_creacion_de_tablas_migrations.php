@@ -32,7 +32,6 @@ final class CreacionDeTablasMigrations extends AbstractMigration
 
 
         $tableTurno = $this->table('turnos');
-        //TODO: cambiar especialidad y profesionl a integer para asignar el id de las mismas.
         $tableTurno->addColumn('id_especialidad', 'integer')
             ->addColumn('id_profesional', 'integer')
             ->addColumn('nombre_paciente', 'string', ['limit' => 40])

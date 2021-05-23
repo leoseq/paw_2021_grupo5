@@ -21,13 +21,16 @@ $handler = new StreamHandler($config->get("LOG_PATH"));
 $handler->setLevel($config->get("LOG_LEVEL"));
 $log->pushHandler($handler);
 
+
+$connectionBuilder = new ConnectionBuilder;
+$connectionBuilder->setLogger($log);
+$connection = $connectionBuilder->make($config);
+
+
 $whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
 
-$connectionBuilder = new ConnectionBuilder();
-$connectionBuilder->setLogger($log);
-$connection = $connectionBuilder->make($config);
 
 $request = new Request();
 
@@ -51,3 +54,6 @@ $router->get('/turnoSolicitado', 'PageController@turnoSolicitado');
 
 $router->post('/saveTurno', 'TurnoController@saveTurno');
 $router->get('/listadoTurnos', 'TurnoController@index');
+
+$router->get('/listadoEspecialidades', 'EspecialidadController@index');
+

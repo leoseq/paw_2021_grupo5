@@ -33,6 +33,11 @@
                         required
                     />
 
+                    <select name="specialty_input" id="specialty_input" required>
+                        <option value="value1" selected>Todas las especialidades</option>
+
+                    </select>
+
                     <label for="profesional_input">Profesional</label>
                     <input
                         type="text"

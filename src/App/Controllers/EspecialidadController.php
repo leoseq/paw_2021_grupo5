@@ -45,14 +45,25 @@ class EspecialidadController extends Controller
     public function hola()
     {
 
-        $extensiones = array(0=>'image/jpg',1=>'image/jpeg',2=>'image/png');
-        $max_tamanyo = 1024 * 1024 * 8;
-        if ( in_array($_FILES['imagen1']['type'], $extensiones) ) {
-            echo 'Es una imagen';
-            if ( $_FILES['imagen1']['size']< $max_tamanyo ) {
-                echo 'Pesa menos de 1 MB';
-            }
-        }
+        $datos = [];
+        $datos["nombre"] = $_POST["name_input"];
+
+        echo "<pre>";
+        var_dump( $_FILES);
+        die;
+
+        # Handling upload
+        $timestamp =    time();
+        $targetDir =    '/public/';
+        $targetName =   $targetDir . $_FILES["archivo"]['name'];
+        $targetDbName = $targetDir . $timestamp;
+        $targetType =   $_FILES['archivo']['type'];
+        $targetSize =   $_FILES['archivo']['size'];
+
+
+
+
+
 
     }
 

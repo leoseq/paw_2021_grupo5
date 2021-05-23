@@ -14,8 +14,19 @@
 
 <main >
     <form action="/hola" method="POST" enctype="multipart/formdata">
-        <input type="file" name="imagen1" />
-        <input type="submit" name="subir-imagen" value="Enviar imagen" />
+
+        <label for="name_input">Nombre:</label>
+        <input
+                type="text"
+                name="name_input"
+                id="name_input"
+                placeholder="Juan"
+                required
+        />
+
+        <input type="file" name="archivo" id="archivo">
+
+        <input type="submit" value="Enviar" />
     </form>
 
 </main>

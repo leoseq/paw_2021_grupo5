@@ -28,4 +28,9 @@ class Controller
     {
         $this->model = $model;
     }
+    
+    public function sanitizeValue($value)
+    {
+        return htmlspecialchars($value);
+    }
 }

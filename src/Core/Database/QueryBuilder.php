@@ -3,53 +3,57 @@
 namespace Paw\Core\Database;
 
 use PDO;
+//use Paw\Core\Traits\Loggable;
 use Monolog\Logger;
 
-class QueryBuilder {
+class QueryBuilder
+{
+    //use Loggable;
+
     public function __construct(PDO $pdo, Logger $logger = null)
     {
         $this->pdo = $pdo;
         $this->logger = $logger;
     }
 
-    public function select ($table){
+    public function select ($table, $datos = []){
 
-        $query = "select * from {$table}";
+        $where = "1 = 1";
+
+        if (!empty($datos)){
+            $where = sprintf(
+                        '%s = %s',
+                        implode(', ', array_keys($datos)),
+                        ':' . implode(', :', array_keys($datos))
+            );
+        }
+
+        $query = "SELECT * FROM {$table} WHERE {$where}";
+
+        $this->logger->debug($query);
 
         $sentencia = $this->pdo->prepare($query);
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
-        $sentencia->execute();
+        $sentencia->execute($datos);
 
         return $sentencia->fetchAll();
     }
 
-    public function insert($table, $datos) {
+    public function insert($table, $datos) 
+    {
+        $query = sprintf(
+            'INSERT INTO %s (%s) VALUES (%s)',
+            $table,
+            implode(', ', array_keys($datos)),
+            ':' . implode(', :', array_keys($datos))
+        );
 
-
-        $insert = "INSERT INTO {$table} (";
-        $values = " VALUES (";
-
-
-
-        foreach ( $datos as $key => $value ) {
-            $insert .= "$key, ";
-            $values .= " '$value', ";
+        try {
+            $sentencia = $this->pdo->prepare($query);
+            $sentencia->execute($datos);
+        } catch (Exception $e) {
+            $this->logger->error("Error en el Insert");
         }
-
-// Eliminar las ultimas comas y cerrar los parentesis
-        $insert = substr($insert, 0, -2).')';
-        $values = substr($values, 0, -2).')';
-
-        $query = $insert.$values;
-
-        $sentencia = $this->pdo->prepare($query);
-        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
-        $sentencia->execute();
-
-        #$sql = $insert.$values;
-
-
-
     }
 
     public function update(){

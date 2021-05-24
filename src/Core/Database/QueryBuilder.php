@@ -57,6 +57,7 @@ class QueryBuilder
         } catch (Exception $e) {
             $this->logger->error("Error en el Insert");
         }
+
         return  $this->pdo->lastInsertId();
     }
 

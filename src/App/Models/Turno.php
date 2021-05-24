@@ -245,6 +245,6 @@ class Turno extends Model
 
     public function insertTurno()
     {
-        $this->queryBuilder->insert($this->table, $this->fields);
+        return $this->queryBuilder->insert($this->table, $this->fields);
     }
 }

@@ -65,6 +65,6 @@ $router->post('/especialidad/edit', 'EspecialidadController@set');
 
 
 $router->get('/especialidades/test', 'EspecialidadController@test');
-$router->post('/hola', 'EspecialidadController@hola');
+$router->post('/testArchivo', 'EspecialidadController@testArchivo');
 
 

@@ -13,13 +13,23 @@
 </header>
 
 <main >
-    <form action="/hola" method="POST" enctype="multipart/formdata">
+    <form action="/testArchivo" method="POST" enctype='multipart/form-data'>
 
-        <label for="name_input">Nombre:</label>
+        <label for="name_input">Especialidad:</label>
         <input
                 type="text"
                 name="name_input"
                 id="name_input"
+                placeholder="Juan"
+                required
+        />
+
+
+        <label for="name_input">Estado:</label>
+        <input
+                type="number"
+                name="estado_input"
+                id="estado_input"
                 placeholder="Juan"
                 required
         />

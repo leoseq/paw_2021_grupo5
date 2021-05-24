@@ -42,27 +42,21 @@ class EspecialidadController extends Controller
     }
 
 
-    public function hola()
+    public function testArchivo()
     {
+
+        $turno = new Especialidad();
 
         $datos = [];
         $datos["nombre"] = $_POST["name_input"];
-
-        echo "<pre>";
-        var_dump( $_FILES);
-        die;
-
-        # Handling upload
-        $timestamp =    time();
-        $targetDir =    '/public/';
-        $targetName =   $targetDir . $_FILES["archivo"]['name'];
-        $targetDbName = $targetDir . $timestamp;
-        $targetType =   $_FILES['archivo']['type'];
-        $targetSize =   $_FILES['archivo']['size'];
+        $datos["estado"] = $_POST["estado_input"];
 
 
+        $especialidades = $this->model->insertTurno($this->table, $datos);
 
+       # $turnos = $this->queryBuilder->insert($this->table, $datos);
 
+        #$turno->guardarImagen($_FILES["archivo"]);
 
 
     }

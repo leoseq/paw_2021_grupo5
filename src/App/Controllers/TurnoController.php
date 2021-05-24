@@ -48,7 +48,7 @@ class TurnoController extends Controller
         var_dump($datos);
         die;
 
-        #$turno->guardarImagen($datos["fileToUpload"]);
+        $turno->guardarImagen($datos["fileToUpload"]);
 
 
        # $turnos = $this->queryBuilder->insert($this->table, $datos);

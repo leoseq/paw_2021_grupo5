@@ -12,20 +12,18 @@ class Turno extends Model
     public $table = 'turnos';
 
     public $fields = [
-        "nombre" => null,
-        "apellido" => null,
-        "email" => null,
-        "tel" => null,
-        "fechaNacimiento" => null,
-        "edad" => null,
-        "fechaTurno" => null,
-        "horaTurno" => null,
-        "especialidad" => null,
-        "profesional" => null,
-        "fileToUpload" => null,
+        "nombre_paciente" => null,
+        "apellido_paciente" => null,
+        "email_paciente" => null,
+        "telefono_paciente" => null,
+        "fecha_nacimiento_paciente" => null,
+        "edad_paciente" => null,
+        "fecha_turno" => null,
+        "id_especialidad" => null,
+        "id_profesional" => null,
     ];
 
-    public function setNombre(string $nombre)
+    public function setNombre_paciente(string $nombre)
     {
         if (is_null($nombre)) {
             throw MandatoryValueException("El nombre es obligatorio.");
@@ -34,10 +32,10 @@ class Turno extends Model
         if (strlen($nombre) > 60) {
             throw InvalidValueFormatException("El nombre del paciente no debe ser mayor a 60 caracteres.");
         }
-        $this->fields["nombre"] = $nombre;
+        $this->fields["nombre_paciente"] = $nombre;
     }
 
-    public function setApellido(string $apellido)
+    public function setApellido_paciente(string $apellido)
     {
         if (is_null($apellido)) {
             throw MandatoryValueException("El apellido es obligatorio.");
@@ -46,10 +44,10 @@ class Turno extends Model
         if (strlen($apellido) > 60) {
             throw InvalidValueFormatException("El apellido del paciente no debe ser mayor a 60 caracteres");
         }
-        $this->fields["apellido"] = $apellido;
+        $this->fields["apellido_paciente"] = $apellido;
     }
 
-    public function setEmail(string $email)
+    public function setEmail_paciente(string $email)
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw InvalidValueFormatException("El email del paciente no tiene el formato correcto.");
@@ -59,10 +57,10 @@ class Turno extends Model
             throw MandatoryValueException("El email es obligatorio.");
         }
 
-        $this->fields["email"] = $email;
+        $this->fields["email_paciente"] = $email;
     }
 
-    public function setTel(string $tel)
+    public function setTelefono_paciente(string $tel)
     {
         if (is_null($tel)) {
             throw MandatoryValueException("El telefono es obligatorio.");
@@ -71,19 +69,19 @@ class Turno extends Model
         if (strlen($tel) > 15) {
             throw InvalidValueFormatException("El telefono del paciente no debe ser mayor a 15 caracteres.");
         }
-        $this->fields["tel"] = $tel;
+        $this->fields["telefono_paciente"] = $tel;
     }
 
-    public function setFechaNacimiento(string $fechaNacimiento)
+    public function setFecha_nacimiento_paciente(string $fechaNacimiento)
     {
         if (is_null($fechaNacimiento)) {
             throw MandatoryValueException("La fecha de nacimiento es obligatoria.");
         }
 
-        $this->fields["fechaNacimiento"] = $fechaNacimiento;
+        $this->fields["fecha_nacimiento_paciente"] = $fechaNacimiento;
     }
 
-    public function setEdad(string $edad)
+    public function setEdad_paciente(string $edad)
     {
         if (is_null($edad)) {
             throw MandatoryValueException("La edad es obligatoria.");
@@ -92,16 +90,16 @@ class Turno extends Model
         if ($edad < 1 || $edad > 131) {
             throw InvalidValueFormatException("La edad del paciente debe ser entre 1 y 130.");
         }
-        $this->fields["edad"] = $edad;
+        $this->fields["edad_paciente"] = $edad;
     }
 
-    public function setFechaTurno(string $fechaTurno)
+    public function setFecha_turno(string $fechaTurno)
     {
         if (is_null($fechaTurno)) {
             throw MandatoryValueException("La Fecha del Turno es obligatoria.");
         }
 
-        $this->fields["fechaTurno"] = $fechaTurno;
+        $this->fields["fecha_turno"] = $fechaTurno;
     }
 
     public function setHoraTurno(string $horaTurno)
@@ -113,26 +111,27 @@ class Turno extends Model
         $this->fields["horaTurno"] = $horaTurno;
     }
 
-    public function setEspecialidad(string $especialidad)
+    public function setId_especialidad(string $especialidad)
     {
         if (is_null($especialidad)) {
             throw MandatoryValueException("La Especialidad del Turno es obligatoria.");
         }
 
-        $this->fields["especialidad"] = $especialidad;
+        $this->fields["id_especialidad"] = $especialidad;
     }
 
-    public function setProfesional(string $profesional)
+    public function setId_profesional(string $profesional)
     {
         if (is_null($profesional)) {
             throw MandatoryValueException("El Profesional del Turno es obligatorio.");
         }
 
-        $this->fields["profesional"] = $profesional;
+        $this->fields["id_profesional"] = $profesional;
     }
 
     public function set(array $values)
     {
+
         foreach (array_keys($this->fields) as $field) {
             if (!isset($values[$field])) {
                 continue;
@@ -226,7 +225,7 @@ class Turno extends Model
 
     public function getFechaTurno()
     {
-        return $this->fields["fechaTurno"];
+        return $this->fields["fecha_turno"];
     }
 
     public function getHoraTurno()

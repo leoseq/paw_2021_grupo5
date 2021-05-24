@@ -116,7 +116,6 @@
             />
 
 
-            <input type="file" name="archivo" id="archivo" accept="image/png, image/gif, image/jpeg , image/jpg">
 
             <hr/>
 

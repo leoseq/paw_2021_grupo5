@@ -25,15 +25,17 @@ class TurnoController extends Controller
     {
 
         $datos = [];
-        $datos["especialidad"] = $_POST["specialty_input"];
-        $datos["profesional"] = $_POST["profesional_input"];
-        $datos["nombre"] = $_POST["name_input"];
-        $datos["apellido"] = $_POST["surname_input"];
-        $datos["email"] = $_POST["email_input"];
-        $datos["tel"] = $_POST["tel_input"];
-        $datos["fechaNacimiento"] = $_POST["birth_date_input"];
-        $datos["edad"] = $_POST["age_input"];
+        $datos["id_especialidad"] = $_POST["specialty_input"];
+        $datos["id_profesional"] = $_POST["profesional_input"];
+        $datos["nombre_paciente"] = $_POST["name_input"];
+        $datos["apellido_paciente"] = $_POST["surname_input"];
+        $datos["email_paciente"] = $_POST["email_input"];
+        $datos["telefono_paciente"] = $_POST["tel_input"];
+        $datos["fecha_nacimiento_paciente"] = $_POST["birth_date_input"];
+        $datos["edad_paciente"] = $_POST["age_input"];
         $datos["fechaTurno"] = $_POST["turn_date_input"];
+        $datos["estadoTurno"] = 1;
+
 
         $this->model->set($datos);
 

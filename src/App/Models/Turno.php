@@ -195,32 +195,32 @@ class Turno extends Model
 
     public function getNombre()
     {
-        return $this->fields["nombre"];
+        return $this->fields["nombre_paciente"];
     }
 
     public function getApellido()
     {
-        return $this->fields["apellido"];
+        return $this->fields["apellido_paciente"];
     }
 
     public function getEmail()
     {
-        return $this->fields["email"];
+        return $this->fields["email_paciente"];
     }
 
     public function getTel()
     {
-        return $this->fields["tel"];
+        return $this->fields["telefono_paciente"];
     }
 
     public function getFechaNacimiento()
     {
-        return $this->fields["fechaNacimiento"];
+        return $this->fields["fecha_nacimiento_paciente"];
     }
 
     public function getEdad()
     {
-        return $this->fields["edad"];
+        return $this->fields["edad_paciente"];
     }
 
     public function getFechaTurno()
@@ -235,12 +235,12 @@ class Turno extends Model
 
     public function getEspecialidad()
     {
-        return $this->fields["especialidad"];
+        return $this->fields["id_especialidad"];
     }
 
     public function getProfesional()
     {
-        return $this->fields["profesional"];
+        return $this->fields["id_profesional"];
     }
 
     public function insertTurno()

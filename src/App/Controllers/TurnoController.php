@@ -39,13 +39,15 @@ class TurnoController extends Controller
 
         $this->model->set($datos);
 
-        $turnos_id = $this->model->insertTurno();
+        $turno_id = $this->model->insertTurno();
 
-        $this->model->guardarImagen($_FILES["archivo"], $turnos_id);
+        $this->model->guardarImagen($_FILES["archivo"], $turno_id);
 
         $titulo = "Turno Solicitado";
 
-        #require $this->viewDir . "turnoSolicitado.view.php";
+
+
+        require $this->viewDir . "turnoSolicitado.view.php";
     }
 
 }

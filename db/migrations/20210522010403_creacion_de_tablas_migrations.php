@@ -25,13 +25,18 @@ final class CreacionDeTablasMigrations extends AbstractMigration
             ->addColumn('horario_atencion', 'time')
             ->addColumn('dias_atencion', 'string')
             ->addColumn('estado', 'boolean')
-            ->addForeignKey('id_especialidad','especialidades', 'id')
-            ->addForeignKey('id_obra_social','obras_sociales', 'id')
             ->create();
 
+        //TODO: Cambiar id_prof e id_espe por claves foraneas, tipo int
+        /*
+        ->addForeignKey('id_especialidad', 'especialidades', 'id')
+        ->addForeignKey('id_obra_social', 'obras_sociales', 'id')
+        */
+
+
         $tableTurno = $this->table('turnos');
-        $tableTurno->addColumn('id_especialidad', 'integer')
-            ->addColumn('id_profesional', 'integer')
+        $tableTurno->addColumn('id_especialidad', 'string')
+            ->addColumn('id_profesional', 'string')
             ->addColumn('nombre_paciente', 'string', ['limit' => 40])
             ->addColumn('apellido_paciente', 'string', ['limit' => 40])
             ->addColumn('email_paciente', 'string', ['limit' => 60])
@@ -40,10 +45,13 @@ final class CreacionDeTablasMigrations extends AbstractMigration
             ->addColumn('edad_paciente', 'integer')
             ->addColumn('fecha_turno', 'timestamp')
             ->addColumn('estado_turno', 'integer')
-            ->addForeignKey('id_especialidad','especialidades', 'id')
-            ->addForeignKey('id_profesional','profesionales', 'id')
             ->create();
 
+        //TODO: Cambiar id_prof e id_espe por claves foraneas, tipo int
+        /*
+                ->addForeignKey('id_especialidad','especialidades', 'id')
+                ->addForeignKey('id_profesional','profesionales', 'id')
+        */
         $tableUsuario = $this->table('usuarios');
         $tableUsuario->addColumn('id_usuario', 'integer')
             ->addColumn('nombre', 'string', ['limit' => 40])

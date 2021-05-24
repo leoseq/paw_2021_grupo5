@@ -41,6 +41,8 @@ class QueryBuilder
 
     public function insert($table, $datos)
     {
+
+
         $query = sprintf(
             'INSERT INTO %s (%s) VALUES (%s)',
             $table,
@@ -51,9 +53,11 @@ class QueryBuilder
         try {
             $sentencia = $this->pdo->prepare($query);
             $sentencia->execute($datos);
+
         } catch (Exception $e) {
             $this->logger->error("Error en el Insert");
         }
+        return  $this->pdo->lastInsertId();
     }
 
     public function update(){
@@ -63,4 +67,5 @@ class QueryBuilder
     public function delete() {
 
     }
+
 }

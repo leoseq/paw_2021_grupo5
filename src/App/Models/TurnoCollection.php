@@ -25,5 +25,7 @@ class TurnoCollection extends Model
         return $turnosCollection;
     }
 
+
+
 }
 

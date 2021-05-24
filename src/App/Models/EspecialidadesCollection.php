@@ -31,6 +31,7 @@ class EspecialidadesCollection extends Model
     {
 
         $turnos = $this->queryBuilder->insert($this->table, $values);
+        return  $turnos;
     }
 
 }

@@ -24,15 +24,11 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="be962252-61e7-4fcb-9c15-57e5f1948285">
-        <schema name="unlupaw" object-types="table, view, procedure, function" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="be962252-61e7-4fcb-9c15-57e5f1948285">
-      <console name="UNLuPaw" type="STANDARD" schema="unlupaw" session="Main"><![CDATA[select * from especialidades]]></console>
+      <console name="UNLuPaw" type="STANDARD" schema="unlupaw" session="Main"><![CDATA[select * from turnos]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

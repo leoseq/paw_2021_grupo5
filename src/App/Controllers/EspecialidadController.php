@@ -51,9 +51,10 @@ class EspecialidadController extends Controller
         $datos["nombre"] = $_POST["name_input"];
         $datos["estado"] = $_POST["estado_input"];
 
-        $especialidades = $this->model->insertTurno($this->table, $datos);
+        $especialidades_id = $this->model->insertTurno($this->table, $datos);
 
-        #$turno->guardarImagen($_FILES["archivo"]);
+
+        $turno->guardarImagen($_FILES["archivo"], $especialidades_id);
 
 
     }

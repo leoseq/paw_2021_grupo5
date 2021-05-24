@@ -34,7 +34,7 @@
                 required
         />
 
-        <input type="file" name="archivo" id="archivo">
+        <input type="file" name="archivo" id="archivo" accept="image/png, image/gif, image/jpeg , image/jpg">
 
         <input type="submit" value="Enviar" />
     </form>

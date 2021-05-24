@@ -21,7 +21,7 @@
 
         <hr/>
 
-        <form action="/saveTurno" method="POST" class="form" enctype="multipart/formdata">
+        <form action="/saveTurno" method="POST" class="form" enctype='multipart/form-data'>
             <h3>Datos del Profesional</h3>
 
             <label for="specialty_input">Especialidad</label>
@@ -116,11 +116,7 @@
             />
 
 
-            <input type="file"
-                   id="file"
-                   name="file"
-                   accept="image/png, .jpeg, .jpg, image/gif"/>
-
+            <input type="file" name="archivo" id="archivo" accept="image/png, image/gif, image/jpeg , image/jpg">
 
             <hr/>
 

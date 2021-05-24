@@ -23,10 +23,10 @@ class TurnoController extends Controller
 
     public function saveTurno()
     {
-        $titulo = "";
-        $turno = new Turno();
 
         $datos = [];
+        $datos["especialidad"] = $_POST["specialty_input"];
+        $datos["profesional"] = $_POST["profesional_input"];
         $datos["nombre"] = $_POST["name_input"];
         $datos["apellido"] = $_POST["surname_input"];
         $datos["email"] = $_POST["email_input"];
@@ -34,28 +34,14 @@ class TurnoController extends Controller
         $datos["fechaNacimiento"] = $_POST["birth_date_input"];
         $datos["edad"] = $_POST["age_input"];
         $datos["fechaTurno"] = $_POST["turn_date_input"];
-        $datos["especialidad"] = $_POST["specialty_input"];
-        $datos["profesional"] = $_POST["profesional_input"];
-        $datos["fileToUpload"] = $_FILES["file"];
 
+        $this->model->set($datos);
 
+        $turnos_id = $this->model->insertTurno();
 
-        #$turno->set($datos);
+        #$this->model->guardarImagen($_FILES["archivo"], $turnos_id);
 
-
-
-        echo "<pre>";
-        var_dump($datos);
-        die;
-
-        $turno->guardarImagen($datos["fileToUpload"]);
-
-
-       # $turnos = $this->queryBuilder->insert($this->table, $datos);
-
-     #   $turno->insertTurno($this->table, $datos);
         $titulo = "Turno Solicitado";
-
 
         require $this->viewDir . "turnoSolicitado.view.php";
     }

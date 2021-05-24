@@ -25,18 +25,15 @@ class QueryBuilder {
 
     public function insert($table, $datos) {
 
-
         $insert = "INSERT INTO {$table} (";
         $values = " VALUES (";
-
-
 
         foreach ( $datos as $key => $value ) {
             $insert .= "$key, ";
             $values .= " '$value', ";
         }
 
-// Eliminar las ultimas comas y cerrar los parentesis
+        // Eliminar las ultimas comas y cerrar los parentesis
         $insert = substr($insert, 0, -2).')';
         $values = substr($values, 0, -2).')';
 
@@ -45,10 +42,6 @@ class QueryBuilder {
         $sentencia = $this->pdo->prepare($query);
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
         $sentencia->execute();
-
-        #$sql = $insert.$values;
-
-
 
     }
 

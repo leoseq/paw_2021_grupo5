@@ -5,7 +5,7 @@
 
     <hr />
 
-    <form>
+    <form action="/login" method="POST">
         <label for="email_input">Email:</label>
         <input
             type="email"

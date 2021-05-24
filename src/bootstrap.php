@@ -68,3 +68,7 @@ $router->get('/especialidades/test', 'EspecialidadController@test');
 $router->post('/testArchivo', 'EspecialidadController@testArchivo');
 
 
+
+// Usuarios
+$router->post('/guardarUsuario', 'UsuarioController@register');
+$router->post('/login', 'UsuarioController@login');

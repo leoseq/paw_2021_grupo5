@@ -8,7 +8,6 @@ final class CreacionDeTablasMigrations extends AbstractMigration
     public function change(): void
     {
         $tableEspecialidades = $this->table('especialidades');
-
         $tableEspecialidades->addColumn('nombre', 'string')
             ->addColumn('estado', 'boolean')
             ->create();
@@ -30,7 +29,6 @@ final class CreacionDeTablasMigrations extends AbstractMigration
             ->addForeignKey('id_obra_social','obras_sociales', 'id')
             ->create();
 
-
         $tableTurno = $this->table('turnos');
         $tableTurno->addColumn('id_especialidad', 'integer')
             ->addColumn('id_profesional', 'integer')
@@ -46,6 +44,13 @@ final class CreacionDeTablasMigrations extends AbstractMigration
             ->addForeignKey('id_profesional','profesionales', 'id')
             ->create();
 
+        $tableUsuario = $this->table('usuarios');
+        $tableUsuario->addColumn('id_usuario', 'integer')
+            ->addColumn('nombre', 'string', ['limit' => 40])
+            ->addColumn('apellido', 'string', ['limit' => 40])
+            ->addColumn('email', 'string', ['limit' => 60])
+            ->addColumn('password', 'string')
+            ->create();
 
     }
 }

@@ -11,10 +11,18 @@ class Model
 
     public function setQueryBuilder(QueryBuilder $qb)
     {
-
         $this->queryBuilder = $qb;
+    }
 
-
+    public function set(array $values)
+    {
+        foreach (array_keys($this->fields) as $field) {
+            if (!isset($values[$field])){
+                continue;
+            }
+            $method = "set" . ucfirst($field);
+            $this->$method($values[$field]);
+        }
     }
 
 }

@@ -1250,16 +1250,474 @@ footer h2 {
 
 
 
+/*--------------------------                     MOBILE                              ------------------------------ */
 
+@media screen and (max-width: 768px) {
+  header {
+    height: 9vh;
+    display: flex;
+    justify-content: space-evenly;
+  }
 
+  body {
+    display: flex;
+    flex-direction: column;
+  }
 
+  header nav {
+    display: none;
+  }
 
+  .btn-iniciarSesion {
+    display: flex;
+    background: var(--principal-color1);
+    color: white;
+    width: 30vw;
+    height: 4vh;
+    padding: 0.3em 1em 0.3em 1em;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+  }
 
+  .navbar {
+    background-color: var(--principal-color2);
+    width: 100vw;
+    box-shadow: none;
+    height: 8vh;
+    bottom: 0px;
+    color: #ffffff;
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    font-size: 12px;
+    justify-content: space-evenly;
+    padding-top: 0.313em;
+    align-items: center;
+  }
 
+  .navbar a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 1em;
+  }
 
+  .homeContainer {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+  }
 
+  footer {
+    margin-bottom: 4.5em;
+  }
 
+  footer section {
+    min-height: 17vh;
+    height: auto;
+  }
 
+  .btn-flotante {
+    display: inline-block;
+    padding: 1.25em 1.563em;
+    bottom: 14vh;
+    right: 2.5vh;
+    color: #ffffff;
+    border-radius: 1.25em;
+    background-color: var(--secondary-color2);
+    position: fixed;
+    transition: all 300ms ease 0ms;
+    z-index: 99;
+  }
+
+  .cardNoticias {
+    display: flex;
+    background: white;
+    width: 90vw;
+    min-height: 40vh;
+    height: auto;
+    border-radius: 5px;
+    flex-direction: column;
+    margin: 0vh 4vw;
+    border: 2px solid var(--principal-color2);
+  }
+
+  .cardNoticias img {
+    width: 100%;
+    height: 50%;
+    border-radius: 0px;
+  }
+
+  .cardNoticias article {
+    display: flex;
+    margin: 0em 1.25em;
+  }
+
+  .cardNoticias article::before {
+    display: none;
+  }
+
+  .cardNoticias h2 {
+    margin-bottom: 0px;
+  }
+
+  .serviciosMedicos {
+    display: none;
+  }
+
+  .turnero-flotante {
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    position: unset;
+    z-index: 0;
+    background: var(--principal-color2);
+    width: 91vw;
+    margin: 2vh 4vw;
+    border-radius: 3px;
+  }
+
+  .menu-turnero {
+    display: flex;
+    flex-direction: unset;
+    align-items: center;
+    min-width: 50vh;
+    width: auto;
+    margin: 0px;
+    height: 9vh;
+    justify-content: space-evenly;
+  }
+
+  .menu-turnero hr {
+    width: 0vw;
+    height: 6vh;
+    border-left: 6px solid var(--principal-color1);
+    margin: 0px;
+  }
+
+  .menu-turnero a span:last-child {
+    position: unset;
+    top: unset;
+    right: unset;
+    bottom: unset;
+    left: unset;
+    display: unset;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+  }
+
+  .menu-turnero a span:first-child {
+    padding: 0px;
+    margin-bottom: 0vh;
+    font-size: 30px;
+  }
+
+  .menu-turnero a {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    align-items: center;
+    font-size: 10px;
+  }
+
+  .menu-turnero[data-animation="to-top"] a span:last-child {
+    transform: none;
+  }
+
+  .menu-turnero[data-animation="to-top"] a:hover span:first-child {
+    transform: none;
+  }
+
+  .cardDatos {
+    display: none;
+  }
+
+  .cardInstitucional {
+    display: flex;
+    flex-direction: column;
+    width: 44vh;
+    align-items: center;
+    margin: 1vh 4vw;
+    border: 2px solid var(--principal-color2);
+    border-radius: 5px;
+  }
+
+  .cardInstitucional header {
+    border-bottom: none;
+    background-color: transparent;
+    color: var(--principal-color2);
+  }
+
+  .cardInstitucional section header {
+    display: none;
+  }
+
+  .cardInstitucional img {
+    border-radius: 7px;
+    width: 72px;
+  }
+
+  .cardInstitucional section {
+    display: flex;
+    margin-bottom: 0.625em;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1em 0;
+  }
+
+  .cardInstitucional article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardInstitucional p {
+    margin-bottom: 0px;
+    margin-top: 4px;
+  }
+
+  .resultado-busqueda {
+    flex-direction: column;
+  }
+
+  .card-persona {
+    width: 90%;
+    padding: 0.5rem 0em 2rem 0.5em;
+  }
+
+  .card-persona a {
+    width: 81vw;
+  }
+
+  .profesionales input[type="search"] {
+    width: 86vw;
+  }
+
+  .card-persona a {
+    display: flex;
+  }
+
+  #obras-sociales {
+    width: 89%;
+  }
+
+  #obras-sociales a {
+    width: 80vw;
+  }
+
+  .listadoTurnos {
+    padding: 0em;
+  }
+
+  .footerImpresion article {
+    min-width: 50vw;
+    width: auto;
+  }
+
+  .listadoTurnos .turnero-flotante {
+    display: none;
+  }
+
+  .listadoTurnos .fichas {
+    width: 87vw;
+    gap: 0.8em;
+    margin: 0em 2.5em;
+  }
+
+  .listadoTurnos header {
+    color: var(--principal-color2);
+  }
+
+  .listadoTurnos .ficha {
+    min-height: 20vh;
+    min-width: 75vw;
+  }
+
+  .listadoTurnos select {
+    min-width: 82vw;
+    height: 4vh;
+    border-radius: 2px;
+    margin: 0em 3em;
+  }
+
+  .listadoTurnos h3 {
+    font-size: 16px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-right: 0.2em;
+  }
+
+  .listadoTurnos article {
+    margin-bottom: 0em;
+  }
+
+  .listadoTurnos p {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+  }
+
+  .listadoTurnos button {
+    color: #ffff;
+    background: var(--principal-color1);
+  }
+
+  .noticias .fichasNoticias {
+    display: flex;
+    justify-content: space-evenly;
+    width: 93vw;
+    flex-wrap: unset;
+    gap: 2.8em;
+    padding: 2.5em 1em;
+    background: white;
+    border: none;
+    flex-direction: column;
+  }
+
+  .noticias article {
+    min-width: 72vw;
+    width: auto;
+  }
+
+  .noticias .fichasNoticias {
+    width: 80vw;
+    padding: 0em 3.5em;
+  }
+
+  .noticias {
+    padding: 0em 0em;
+  }
+
+  .paginador ul li a {
+    padding: 0.5em 0.8em;
+  }
+
+  .noticia {
+    margin: 2em 0em;
+  }
+
+  .turnoSolicitado header a {
+    min-width: 3em;
+  }
+
+  .turnoSolicitado article {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0em;
+    align-items: unset;
+  }
+  .turnoSolicitado hr {
+    min-width: 70vw;
+    width: auto;
+  }
+
+  .turnoSolicitado a {
+    min-width: 72vw;
+    width: auto;
+  }
+
+  .turnoSolicitado button {
+    min-width: 72vw;
+    width: auto;
+    margin-top: 0.5em;
+  }
+
+  .headerImpresion::before {
+    left: 48%;
+    width: 4%;
+    min-height: 9%;
+    height: auto;
+    z-index: 100;
+  }
+
+  .headerImpresion::after {
+    margin: 0px;
+    content: "";
+    position: absolute;
+    left: 1%;
+    transform: skew(0deg) translateX(5%);
+    width: 47%;
+    min-height: 6%;
+  }
+
+  .containerLogin {
+    display: flex;
+    margin: 0;
+  }
+
+  .telefonos {
+    display: none;
+  }
+
+  .sectionForm {
+    padding: 3vh 17vw;
+  }
+
+  .sectionForm hr {
+    width: 62vw;
+  }
+
+  .sectionForm form input[type="submit"] {
+    width: 63vw;
+  }
+
+  .sectionForm form input[type="reset"] {
+    width: 42vw;
+  }
+
+  .sectionForm form input[type="password"] {
+    width: 57vw;
+  }
+
+  .sectionForm form input[type="email"] {
+    width: 57vw;
+  }
+
+  .sectionForm form input[type="text"] {
+    width: 57vw;
+  }
+
+  .sectionForm form input[type="date"] {
+    width: 57vw;
+  }
+
+  .sectionForm form input[type="number"] {
+    width: 57vw;
+  }
+
+  .sectionForm form input[type="tel"] {
+    width: 57vw;
+  }
+
+  .sectionForm form input[type="datetime-local"] {
+    width: 57vw;
+  }
+
+  .sectionForm form input[type="file"] {
+    width: 57vw;
+    height: 6vh;
+  }
+
+  .sectionForm header {
+    justify-content: center;
+  }
+
+  .sectionForm a {
+    width: 61.726vw;
+  }
+
+  .sectionForm a:hover {
+    width: 61.726vw;
+  }
+}
 
 @media print {
 

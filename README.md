@@ -32,7 +32,7 @@ composer install
 
 * Ejecutar la migrations:
 ```
-Ejecutar migracion phinx migrate -e development
+phinx migrate -e development
 ```
 
 * Levantar el servidor web stand alone desde el directorio raiz:

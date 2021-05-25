@@ -6,6 +6,8 @@ use Paw\Core\Controller;
 use Paw\App\Models\Usuario;
 use Paw\Core\Exceptions\UserExistsException;
 use Paw\Core\Exceptions\UserNotExistsException;
+use Paw\Core\Exceptions\UserPasswordWrongException;
+
 
 class UsuarioController extends Controller
 {
@@ -37,6 +39,9 @@ class UsuarioController extends Controller
             throw new UserExistsException("El usuario ya existe");
         }
 
+        $mensaje = "Registro Exitoso..!";
+        $titulo = "";
+        require $this->viewDir . "temporal.view.php";
     }
 
     public function login()
@@ -47,20 +52,19 @@ class UsuarioController extends Controller
     
         $this->model->set($datos);
 
-
         if (!$this->model->existsUser()) {
             throw new UserNotExistsException("No existe el usuario");
         } else {
 
             if ($this->model->verifyPassword()) {
-                echo "Login Exitoso..!";
+                $mensaje = "Login Exitoso..!";
             } else {
-                echo "Password Incorrecta..!";
+                throw new UserPasswordWrongException("La password es incorrecta");
             }
         }
-        die;
 
+        $titulo = "Login Exitoso";
+        require $this->viewDir . "temporal.view.php";
     }
-
 
 }

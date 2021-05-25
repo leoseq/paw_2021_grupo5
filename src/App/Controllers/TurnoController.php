@@ -3,23 +3,32 @@
 namespace Paw\App\Controllers;
 
 use Paw\Core\Controller;
-use Paw\App\Models\TurnoCollection;
 use Paw\App\Models\Turno;
-
 
 class TurnoController extends Controller
 {
-    public ?string $modelName = Turno::class; // Devuelve 'Paw\App\Models\Turno'
-
+    public ?string $modelName = Turno::class;
+    public $turnosCollection = [];
     public $table = 'turnos';
 
     public function index()
     {
         $titulo = "Listado de Turnos";
-        #$turnos = $this->model->getAll();
+
+        //TODO refactorizar a otro patron
+        global $request;
+        $email = $request->get('email');
+
+        $turnos = $this->model->getAll($email);
+
+        foreach ($turnos as $turno) {
+            $newTurno = new Turno();
+            $newTurno->set($turno);
+            $turnosCollection[] = $newTurno;
+        }
+
         require $this->viewDir . "listadoTurnos.view.php";
     }
-
 
     public function saveTurno()
     {

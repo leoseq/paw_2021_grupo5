@@ -135,18 +135,6 @@ class Turno extends Model
         $this->fields["id_profesional"] = $profesional;
     }
 
-    public function set(array $values)
-    {
-
-        foreach (array_keys($this->fields) as $field) {
-            if (!isset($values[$field])) {
-                continue;
-            }
-            $method = "set" . ucfirst($field);
-            $this->$method($values[$field]);
-        }
-    }
-
     public function guardarImagen($fileToUpload, $id)
     {
 
@@ -252,7 +240,19 @@ class Turno extends Model
     public function insertTurno()
     {
         $turnos = $this->queryBuilder->insert($this->table, $this->fields);
-        return  $turnos;
+        return $turnos;
+    }
 
+    public function getAll($email = '')
+    {
+        if ($email == '') {
+            $params = [];
+        } else {
+            $params = ["email_paciente" => $email ];
+        }
+
+        $turnos = $this->queryBuilder->select($this->table, $params);
+
+        return $turnos;
     }
 }

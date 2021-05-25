@@ -32,9 +32,9 @@
                 <h3>Turnos del usuario</h3>
 
                 <?php
-                    require __DIR__ . '/cards/turnoCard.view.php';
-                    require __DIR__ . '/cards/turnoCard.view.php';
-                    require __DIR__ . '/cards/turnoCard.view.php';
+                    foreach ($turnosCollection as $turno) {
+                        require __DIR__ . '/cards/turnoCard.view.php';
+                    }
                 ?>
             </section>
             

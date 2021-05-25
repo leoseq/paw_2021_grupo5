@@ -2,17 +2,17 @@
     <h3>Ficha de turno</h3>
     <article>
         <h4>Paciente:</h4>
-        <p>Joaquin Bert</p>
+        <p><?= $turno->getNombre().', '.$turno->getApellido(); ?></p>
     </article>
 
     <article>
         <h4>Fecha y hora:</h4>
-        <p>10/05/2021 18:00</p>
+        <p><?= $turno->getFechaTurno(); ?></p>
     </article>
 
     <article>
         <h4>Profesional:</h4>
-        <p>Juan Perez</p>
+        <p><?= $turno->getProfesional(); ?></p>
     </article>
 
     <article>

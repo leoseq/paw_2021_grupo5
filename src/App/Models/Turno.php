@@ -5,27 +5,26 @@ namespace Paw\App\Models;
 use Paw\Core\Model;
 use Paw\Core\Exceptions\InvalidValueFormatException;
 use Paw\Core\Exceptions\MandatoryValueException;
-
 use Exception;
 
 class Turno extends Model
 {
-    public $table = 'nombre_tabla_db';
+    public $table = 'turnos';
 
     public $fields = [
-        "nombre" => null,
-        "apellido" => null,
-        "email" => null,
-        "tel" => null,
-        "fechaNacimiento" => null,
-        "edad" => null,
-        "fechaTurno" => null,
-        "horaTurno" => null,
-        "especialidad" => null,
-        "profesional" => null
+        "nombre_paciente" => null,
+        "apellido_paciente" => null,
+        "email_paciente" => null,
+        "telefono_paciente" => null,
+        "fecha_nacimiento_paciente" => null,
+        "edad_paciente" => null,
+        "fecha_turno" => null,
+        "estado_turno" => null,
+        "id_especialidad" => null,
+        "id_profesional" => null,
     ];
-        
-    public function setNombre(string $nombre)
+
+    public function setNombre_paciente(string $nombre)
     {
         if (is_null($nombre)) {
             throw MandatoryValueException("El nombre es obligatorio.");
@@ -34,10 +33,10 @@ class Turno extends Model
         if (strlen($nombre) > 60) {
             throw InvalidValueFormatException("El nombre del paciente no debe ser mayor a 60 caracteres.");
         }
-        $this->fields["nombre"] = $nombre; 
+        $this->fields["nombre_paciente"] = $nombre;
     }
 
-    public function setApellido(string $apellido)
+    public function setApellido_paciente(string $apellido)
     {
         if (is_null($apellido)) {
             throw MandatoryValueException("El apellido es obligatorio.");
@@ -46,10 +45,10 @@ class Turno extends Model
         if (strlen($apellido) > 60) {
             throw InvalidValueFormatException("El apellido del paciente no debe ser mayor a 60 caracteres");
         }
-        $this->fields["apellido"] = $apellido; 
+        $this->fields["apellido_paciente"] = $apellido;
     }
 
-    public function setEmail(string $email)
+    public function setEmail_paciente(string $email)
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw InvalidValueFormatException("El email del paciente no tiene el formato correcto.");
@@ -59,10 +58,10 @@ class Turno extends Model
             throw MandatoryValueException("El email es obligatorio.");
         }
 
-        $this->fields["email"] = $email; 
+        $this->fields["email_paciente"] = $email;
     }
 
-    public function setTel(string $tel)
+    public function setTelefono_paciente(string $tel)
     {
         if (is_null($tel)) {
             throw MandatoryValueException("El telefono es obligatorio.");
@@ -71,19 +70,19 @@ class Turno extends Model
         if (strlen($tel) > 15) {
             throw InvalidValueFormatException("El telefono del paciente no debe ser mayor a 15 caracteres.");
         }
-        $this->fields["tel"] = $tel; 
+        $this->fields["telefono_paciente"] = $tel;
     }
 
-    public function setFechaNacimiento(string $fechaNacimiento)
+    public function setFecha_nacimiento_paciente(string $fechaNacimiento)
     {
         if (is_null($fechaNacimiento)) {
             throw MandatoryValueException("La fecha de nacimiento es obligatoria.");
         }
 
-        $this->fields["fechaNacimiento"] = $fechaNacimiento; 
+        $this->fields["fecha_nacimiento_paciente"] = $fechaNacimiento;
     }
 
-    public function setEdad(string $edad)
+    public function setEdad_paciente(string $edad)
     {
         if (is_null($edad)) {
             throw MandatoryValueException("La edad es obligatoria.");
@@ -92,16 +91,16 @@ class Turno extends Model
         if ($edad < 1 || $edad > 131) {
             throw InvalidValueFormatException("La edad del paciente debe ser entre 1 y 130.");
         }
-        $this->fields["edad"] = $edad; 
+        $this->fields["edad_paciente"] = $edad;
     }
-    
-    public function setFechaTurno(string $fechaTurno)
+
+    public function setFecha_turno(string $fechaTurno)
     {
         if (is_null($fechaTurno)) {
             throw MandatoryValueException("La Fecha del Turno es obligatoria.");
         }
 
-        $this->fields["fechaTurno"] = $fechaTurno; 
+        $this->fields["fecha_turno"] = $fechaTurno;
     }
 
     public function setHoraTurno(string $horaTurno)
@@ -110,85 +109,150 @@ class Turno extends Model
             throw MandatoryValueException("La Hora del Turno es obligatoria.");
         }
 
-        $this->fields["horaTurno"] = $horaTurno; 
+        $this->fields["horaTurno"] = $horaTurno;
     }
-    
-    public function setEspecialidad(string $especialidad)
+
+    public function setEstado_turno(int $estado_turno)
+    {
+        $this->fields["estado_turno"] = $estado_turno;
+    }
+
+    public function setId_especialidad(string $especialidad)
     {
         if (is_null($especialidad)) {
             throw MandatoryValueException("La Especialidad del Turno es obligatoria.");
         }
 
-        $this->fields["especialidad"] = $especialidad; 
+        $this->fields["id_especialidad"] = $especialidad;
     }
 
-    public function setProfesional(string $profesional)
+    public function setId_profesional(string $profesional)
     {
         if (is_null($profesional)) {
             throw MandatoryValueException("El Profesional del Turno es obligatorio.");
         }
 
-        $this->fields["profesional"] = $profesional; 
+        $this->fields["id_profesional"] = $profesional;
     }
 
-    public function set(array $values)
+    public function guardarImagen($fileToUpload, $id)
     {
-        foreach (array_keys($this->fields) as $field) {
-            if (!isset($values[$field])) {
-                continue;
+
+        $turnos_dir = "uploads/turnos/{$id}/"; //directorio en el que se subira
+
+        if (!file_exists($turnos_dir)) {
+            mkdir($turnos_dir, 0777, true);
+        }
+
+        $filename = $fileToUpload["name"];
+        $path = $turnos_dir . $filename;//se añade el directorio y el nombre del archivo
+        $uploadOk = 1;//se añade un valor determinado en 1
+
+
+        $imageFileType = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+
+
+        // Comprueba si el archivo de imagen es una imagen real o una imagen falsa
+        if (isset($_POST["submit"])) {
+            $check = getimagesize($fileToUpload);
+            if ($check !== false) {//si es falso es una imagen y si no lanza error
+                $uploadOk = 1;
+            } else {
+                $uploadOk = 0;
             }
-            $method = "set" . ucfirst($field);
-            $this->$method($values[$field]);
+        }
+
+        // Comprueba el peso
+        if ($fileToUpload["size"] > 500000) {
+            echo "Perdon pero el archivo es muy pesado";
+            $uploadOk = 0;
+        }
+
+        // Permitir ciertos formatos de archivo
+        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif") {
+            echo "Perdon solo, JPG, JPEG, PNG & GIF Estan soportados";
+            $uploadOk = 0;
+        }
+
+        //Comprueba si $ uploadOk se establece en 0 por un error
+        if ($uploadOk == 0) {
+            echo "Perdon, pero el archivo no se subio";
+        } else {
+            if (move_uploaded_file($fileToUpload["tmp_name"], $path)) {
+                echo "El archivo " . basename($fileToUpload["name"]) . " Se subio correctamente";
+            } else {
+                echo "Error al cargar el archivo";
+            }
         }
     }
 
     public function getNombre()
     {
-        return $this->fields["nombre"];
+        return $this->fields["nombre_paciente"];
     }
 
     public function getApellido()
     {
-        return $this->fields["apellido"];
+        return $this->fields["apellido_paciente"];
     }
 
     public function getEmail()
     {
-        return $this->fields["email"];
+        return $this->fields["email_paciente"];
     }
 
     public function getTel()
     {
-        return $this->fields["tel"];
+        return $this->fields["telefono_paciente"];
     }
 
     public function getFechaNacimiento()
     {
-        return $this->fields["fechaNacimiento"];
+        return $this->fields["fecha_nacimiento_paciente"];
     }
 
     public function getEdad()
     {
-        return $this->fields["edad"];
+        return $this->fields["edad_paciente"];
     }
-    
+
     public function getFechaTurno()
     {
-        return $this->fields["fechaTurno"];
+        return $this->fields["fecha_turno"];
     }
 
     public function getHoraTurno()
     {
         return $this->fields["horaTurno"];
     }
-    
+
     public function getEspecialidad()
     {
-        return $this->fields["especialidad"];
+        return $this->fields["id_especialidad"];
     }
 
     public function getProfesional()
     {
-        return $this->fields["profesional"];
+        return $this->fields["id_profesional"];
+    }
+
+    public function insertTurno()
+    {
+        $turnos = $this->queryBuilder->insert($this->table, $this->fields);
+        return $turnos;
+    }
+
+    public function getAll($email = '')
+    {
+        if ($email == '') {
+            $params = [];
+        } else {
+            $params = ["email_paciente" => $email ];
+        }
+
+        $turnos = $this->queryBuilder->select($this->table, $params);
+
+        return $turnos;
     }
 }

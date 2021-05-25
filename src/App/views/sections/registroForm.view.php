@@ -5,7 +5,8 @@
 
     <hr />
 
-    <form>
+    <form action="/guardarUsuario" method="POST">
+    
         <label for="name_input">Nombre:</label>
         <input
             type="text"

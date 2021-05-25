@@ -11,25 +11,20 @@
                 require __DIR__ . '/parts/nav.view.php';
             ?>
         </header>
-        
-        <main>
-            <section class="turnoSolicitado">
-               
-                <?php
-                    require __DIR__ . '/sections/turnoInfo.view.php';
-                ?> 
 
-                <article style="justify-content: space-around">
-                    <h5>Botones</h5>
-                    <a href="/listadoTurnos?email=<?= $this->model->getEmail(); ?>">Ver turnos</a>
-                    <button>Agregar al calendario</button>
-                </article>
-            </section>
+        <main class="homeContainer">
+
+            <h2> - VISTA TEMPORAL - </h2>
+            
+            <h3>
+                <?= $mensaje; ?>
+            </h3>
 
             <?php
+                require __DIR__ . '/parts/turnero.view.php';
                 require __DIR__ . '/parts/navMobile.view.php';
-            ?> 
-        </main>
+            ?>
+        </main>           
         
         <footer>
             <?php

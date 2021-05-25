@@ -24,7 +24,7 @@
         <form action="/saveTurno" method="POST" class="form" enctype='multipart/form-data'>
             <h3>Datos del Profesional</h3>
 
-            <label for="specialty_input">Especialidad</label>
+            <label for="specialty_input">Especialidad:</label>
             <input list="especialidad-lista" id="specialty_input" name="specialty_input"
                    placeholder="Cardiologia"
                    autofocus tabindex="1"
@@ -38,7 +38,7 @@
             </datalist>
 
 
-            <label for="profesional_input">Especialidad</label>
+            <label for="profesional_input">Profesional:</label>
             <input list="profesional-lista" id="profesional_input" name="profesional_input"
                    placeholder="Juan Perez"
                    autofocus tabindex="1"
@@ -81,7 +81,7 @@
                     required
             />
 
-            <label for="tel_input">Telefono celular</label>
+            <label for="tel_input">Telefono celular:</label>
             <input
                     type="tel"
                     name="tel_input"
@@ -90,7 +90,7 @@
                     required
             />
 
-            <label for="birth_date_input">Fecha de nacimiento</label>
+            <label for="birth_date_input">Fecha de nacimiento:</label>
             <input
                     type="date"
                     name="birth_date_input"
@@ -98,7 +98,7 @@
                     required
             />
 
-            <label for="age_input">Edad</label>
+            <label for="age_input">Edad:</label>
             <input
                     type="number"
                     name="age_input"
@@ -107,14 +107,14 @@
                     required
             />
 
-            <label for="turn_date_input">Fecha del turno</label>
+            <label for="turn_date_input">Fecha del turno:</label>
             <input
                     type="datetime-local"
                     name="turn_date_input"
                     id="turn_date_input"
                     required
             />
-
+            <label for="file" >Orden Médica:</label>
             <input type="file" name="archivo" id="archivo" accept="image/png, image/gif, image/jpeg , image/jpg">
 
             <hr/>

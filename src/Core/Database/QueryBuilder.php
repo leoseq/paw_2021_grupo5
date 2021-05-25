@@ -41,7 +41,6 @@ class QueryBuilder
 
     public function insert($table, $datos)
     {
-
         $query = sprintf(
             'INSERT INTO %s (%s) VALUES (%s)',
             $table,
@@ -49,8 +48,8 @@ class QueryBuilder
             ':' . implode(', :', array_keys($datos))
         );
 
-
         try {
+
             $sentencia = $this->pdo->prepare($query);
             $sentencia->execute($datos);
 

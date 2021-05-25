@@ -16,7 +16,7 @@ class TurnoController extends Controller
     public function index()
     {
         $titulo = "Listado de Turnos";
-        $turnos = $this->model->getAll();
+        #$turnos = $this->model->getAll();
         require $this->viewDir . "listadoTurnos.view.php";
     }
 
@@ -33,8 +33,8 @@ class TurnoController extends Controller
         $datos["telefono_paciente"] = $_POST["tel_input"];
         $datos["fecha_nacimiento_paciente"] = $_POST["birth_date_input"];
         $datos["edad_paciente"] = $_POST["age_input"];
-        $datos["fechaTurno"] = $_POST["turn_date_input"];
-        $datos["estadoTurno"] = 1;
+        $datos["fecha_turno"] = $_POST["turn_date_input"];
+        $datos["estado_turno"] = 1;
 
 
         $this->model->set($datos);

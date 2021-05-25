@@ -19,6 +19,7 @@ class Turno extends Model
         "fecha_nacimiento_paciente" => null,
         "edad_paciente" => null,
         "fecha_turno" => null,
+        "estado_turno" => null,
         "id_especialidad" => null,
         "id_profesional" => null,
     ];
@@ -109,6 +110,11 @@ class Turno extends Model
         }
 
         $this->fields["horaTurno"] = $horaTurno;
+    }
+
+    public function setEstado_turno(int $estado_turno)
+    {
+        $this->fields["estado_turno"] = $estado_turno;
     }
 
     public function setId_especialidad(string $especialidad)
@@ -245,6 +251,8 @@ class Turno extends Model
 
     public function insertTurno()
     {
-        return $this->queryBuilder->insert($this->table, $this->fields);
+        $turnos = $this->queryBuilder->insert($this->table, $this->fields);
+        return  $turnos;
+
     }
 }

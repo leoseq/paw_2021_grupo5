@@ -5,7 +5,7 @@
         ?>
     </head>
     <body>
-        <header class="headerImpresion">
+        <header >
             <?php
                 require __DIR__ . '/parts/header.view.php';
             ?>

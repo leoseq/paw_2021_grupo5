@@ -2,13 +2,14 @@
 
 namespace Paw\App\Controllers;
 
+use Paw\App\Models\TurnoCollection;
 use Paw\Core\Controller;
 use Paw\App\Models\Turno;
 
 class TurnoController extends Controller
 {
-    public ?string $modelName = Turno::class;
-    public $turnosCollection = [];
+    public ?string $modelName = TurnoCollection::class;
+    #public $turnosCollection = [];
     public $table = 'turnos';
 
     public function index()
@@ -18,20 +19,14 @@ class TurnoController extends Controller
         //TODO refactorizar a otro patron
         global $request;
         $email = $request->get('email');
-
         $turnos = $this->model->getAll($email);
-
-        foreach ($turnos as $turno) {
-            $newTurno = new Turno();
-            $newTurno->set($turno);
-            $turnosCollection[] = $newTurno;
-        }
 
         require $this->viewDir . "listadoTurnos.view.php";
     }
 
     public function saveTurno()
     {
+        $turno = new Turno();
 
         $datos = [];
         $datos["id_especialidad"] = $_POST["specialty_input"];
@@ -46,11 +41,11 @@ class TurnoController extends Controller
         $datos["estado_turno"] = 1;
 
 
-        $this->model->set($datos);
+        $turno->set($datos);
 
-        $turno_id = $this->model->insertTurno();
+        $turno_id = $this->model->insertTurno($this->table, $datos);
 
-        $this->model->guardarImagen($_FILES["archivo"], $turno_id);
+        $turno->guardarImagen($_FILES["archivo"], $turno_id);
 
         $titulo = "Turno Solicitado";
 

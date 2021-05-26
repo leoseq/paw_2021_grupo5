@@ -27,7 +27,7 @@ class EspecialidadesCollection extends Model
         return $especialidadesCollection;
     }
 
-    public function insertTurno($table, array $values)
+    public function insertEspecialidad($table, array $values)
     {
 
         $turnos = $this->queryBuilder->insert($this->table, $values);

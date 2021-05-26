@@ -243,16 +243,4 @@ class Turno extends Model
         return $turnos;
     }
 
-    public function getAll($email = '')
-    {
-        if ($email == '') {
-            $params = [];
-        } else {
-            $params = ["email_paciente" => $email ];
-        }
-
-        $turnos = $this->queryBuilder->select($this->table, $params);
-
-        return $turnos;
-    }
 }

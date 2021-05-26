@@ -1,3 +1,7 @@
 node_modules
 ejemplos
-Intro - WebFont
+Intro-WebFont
+vendor
+logs
+.env
+.idea

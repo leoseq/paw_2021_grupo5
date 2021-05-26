@@ -43,7 +43,7 @@ Ejecutar php -S localhost:8000 -t public
 ---
 
 ## Site Map
-![Site Map](https://github.com/leoseq/paw_2021_grupo5/blob/main/images/SiteMap.png "Site Map")
+![Site Map](https://github.com/leoseq/paw_2021_grupo5/blob/main//public/assets/images/SiteMap.png "Site Map")
 
 ---
 

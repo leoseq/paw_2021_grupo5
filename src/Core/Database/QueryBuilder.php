@@ -3,6 +3,7 @@
 namespace Paw\Core\Database;
 
 use PDO;
+
 //use Paw\Core\Traits\Loggable;
 use Monolog\Logger;
 
@@ -16,15 +17,16 @@ class QueryBuilder
         $this->logger = $logger;
     }
 
-    public function select ($table, $datos = []){
+    public function select($table, $datos = [])
+    {
 
         $where = "1 = 1";
 
-        if (!empty($datos)){
+        if (!empty($datos)) {
             $where = sprintf(
-                        '%s = %s',
-                        implode(', ', array_keys($datos)),
-                        ':' . implode(', :', array_keys($datos))
+                '%s = %s',
+                implode(', ', array_keys($datos)),
+                ':' . implode(', :', array_keys($datos))
             );
         }
 
@@ -57,14 +59,16 @@ class QueryBuilder
             $this->logger->error("Error en el Insert");
         }
 
-        return  $this->pdo->lastInsertId();
+        return $this->pdo->lastInsertId();
     }
 
-    public function update(){
+    public function update()
+    {
 
     }
 
-    public function delete() {
+    public function delete()
+    {
 
     }
 

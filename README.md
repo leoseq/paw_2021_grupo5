@@ -28,7 +28,7 @@ git clone https://github.com/leoseq/paw_2021_grupo5.git
 ```
 composer install
 ```
-* Editar el archivo .env.example:
+* Editar el archivo .env.example con los datos de la DB a conectarse:
 
 * Ejecutar la migrations:
 ```
@@ -37,7 +37,7 @@ phinx migrate -e development
 
 * Levantar el servidor web stand alone desde el directorio raiz:
 ```
-Ejecutar php -S localhost:8888 -t public
+Ejecutar php -S localhost:8000 -t public
 ```
  
 ---

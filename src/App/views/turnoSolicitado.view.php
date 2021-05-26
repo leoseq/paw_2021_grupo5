@@ -21,7 +21,7 @@
 
                 <article style="justify-content: space-around">
                     <h5>Botones</h5>
-                    <a href="/listadoTurnos?email=<?= $this->model->getEmail(); ?>">Ver turnos</a>
+                    <a href="/listadoTurnos?email=<?= $turno->getEmail(); ?>">Ver turnos</a>
                     <button>Agregar al calendario</button>
                 </article>
             </section>

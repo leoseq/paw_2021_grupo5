@@ -1,42 +1,53 @@
 class BotonLlamar {
 	constructor(pContenedor) {
 		
-		//Conseguir Nodo
+		// Obtener el Nodo Contenedor
 		let contenedor = pContenedor.tagName
 			? pContenedor
 			: document.querySelector(pContenedor);
 
 		if (contenedor) {
-			contenedor.classList.add("PAW-Menu");
+
+			// Clases Iniciales
+			contenedor.classList.add("Boton-Llamar");
 			contenedor.classList.add("BotonCerrado");
 
+			// Inserto CSS
 			let css = Clinica.nuevoElemento("link", "", {
 				rel: "stylesheet",
 				href: "assets/js/components/styles/botonLlamar.css",
 			});
 			document.head.appendChild(css);
 
-			// Armar Boton
+			// Obtener el Nodo de la seccion de Numeros
+			let section = document.querySelector(pContenedor + "> article");
+			section.classList.add("Info-Oculta");
+
+			// Creo boton para cerrar
 			let boton = Clinica.nuevoElemento("button", "", {
-				class: "PAW-MenuAbrir",
+				class: "BotonCerrar",
 			});
+			section.prepend(boton);
 
-			boton.addEventListener("click", (event) => {
-				if (event.target.classList.contains("PAW-MenuAbrir")) {
-					event.target.classList.add("PAW-MenuCerrar");
-					event.target.classList.remove("PAW-MenuAbrir");
-					contenedor.classList.add("PAW-MenuAbierto");
-					contenedor.classList.remove("PAW-MenuCerrado");
+			// Cambio eventos en el Click
+			contenedor.addEventListener("click", (event) => {
+				
+				if (event.target.classList.contains("BotonCerrado")) {
+
+					section.classList.add("Info-Mostrada");
+					section.classList.remove("Info-Oculta");
+					contenedor.classList.add("BotonAbierto");
+					contenedor.classList.remove("BotonCerrado");
+
 				} else {
-					event.target.classList.add("PAW-MenuAbrir");
-					event.target.classList.remove("PAW-MenuCerrar");
-					contenedor.classList.add("PAW-MenuCerrado");
-					contenedor.classList.remove("PAW-MenuAbierto");
-				}
+				
+					section.classList.remove("Info-Mostrada");
+					section.classList.add("Info-Oculta");
+					contenedor.classList.remove("BotonAbierto");
+					contenedor.classList.add("BotonCerrado");
+				}			
 			});
 
-			// Insertar boton en el NAV
-			contenedor.prepend(boton);
 		} else {
 			console.error("Elemento HTML para generar el MENU no encontrado");
 		}

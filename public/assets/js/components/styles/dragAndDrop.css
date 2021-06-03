@@ -1,0 +1,33 @@
+
+.Input-File {
+
+	min-width: 28vw;
+	width: auto;
+
+	height: 17.5vh;
+
+	border-radius: 5px;
+
+	color: var(--principal-color1);
+	border: 2px solid var(--secondary-color1);
+	border-style: dashed;
+
+	font-weight: bold;
+	outline: none;
+	padding: 10px;
+	margin: 10px 0px;
+}
+
+
+  
+
+
+@media screen and (max-width: 768px) {
+
+
+	.Input-File {
+		width: 57vw;
+		height: 17.5vh;
+	}
+
+}

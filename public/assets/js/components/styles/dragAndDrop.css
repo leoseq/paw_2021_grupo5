@@ -1,33 +1,62 @@
 
-.Input-File {
-
-	min-width: 28vw;
-	width: auto;
-
-	height: 17.5vh;
-
-	border-radius: 5px;
-
-	color: var(--principal-color1);
-	border: 2px solid var(--secondary-color1);
-	border-style: dashed;
-
-	font-weight: bold;
-	outline: none;
-	padding: 10px;
-	margin: 10px 0px;
+.drop-zone {
+    width: auto;    
+    height: 200px;
+    padding: 10px;
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--secondary-color1);
+    border: 4px dashed var(--secondary-color1);
+    border-radius: 10px;
 }
 
+.drop-zone--over {
+    border-style: solid;
+}
 
+.drop-zone__input {
+    display: none;
+}
+
+.drop-zone__thumb {
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    position: relative;
+}
+
+.drop-zone__thumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    text-align: center;
+}
   
-
 
 @media screen and (max-width: 768px) {
 
+    .drop-zone {
+        width: 57vw;
+      }
 
-	.Input-File {
-		width: 57vw;
-		height: 17.5vh;
-	}
-
+    .drop-zone__thumb {
+        width: 70%;
+        height: 100%;
+    }
 }

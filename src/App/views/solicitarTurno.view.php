@@ -115,10 +115,12 @@
                     required
             />
             <label for="file" >Orden Médica:</label>
-            <input type="file" name="archivo" id="archivo" accept="image/png, image/gif, image/jpeg , image/jpg">
-
+            
+            <fieldset class="inputDrop">
+                <input type="file" name="archivo" id="archivo" accept="image/png, image/gif, image/jpeg , image/jpg">
+            </fieldset>
+            
             <hr/>
-
 
             <input type="submit" value="Solicitar"/>
 

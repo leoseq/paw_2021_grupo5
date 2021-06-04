@@ -11,7 +11,7 @@ class appClinica {
 		//Inicializa la funcionalidad del Drag And Drop
 		document.addEventListener("DOMContentLoaded", () => {
 			Clinica.cargarScript("DragAndDrop", "assets/js/components/dragAndDrop.js", () => {	
-				let dragAndDrop = new DragAndDrop("#archivo");		
+				let dragAndDrop = new DragAndDrop(".inputDrop");		
 			});
 		});
 		

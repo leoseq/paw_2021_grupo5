@@ -12,6 +12,10 @@ class appClinica {
 			Clinica.cargarScript("BotonLlamar", "assets/js/components/botonLlamar.js", () => {	
 				let botonLlamar = new BotonLlamar("body > main > button");
 			});
+
+			Clinica.cargarScript("Carrusel", "assets/js/components/carrusel.js", () => {
+				let botonLlamar = new Carrusel("#container");
+			});
 		});
 		
     }

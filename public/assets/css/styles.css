@@ -345,7 +345,7 @@ footer section article a {
   display: flex;
   align-items: center;
   margin-bottom: 3vh;
-  font-size: 20x;
+  font-size: 20px;
 }
 
 .cardDatos a {
@@ -1347,6 +1347,10 @@ footer h2 {
 
   .cardNoticias article::before {
     display: none;
+  }
+
+  .cardNoticias a {
+    z-index: 1;
   }
 
   .cardNoticias h2 {

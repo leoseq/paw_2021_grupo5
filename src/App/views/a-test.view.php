@@ -12,7 +12,7 @@
     ?>
 </header>
 
-<main >
+<main>
     <form action="/testArchivo" method="POST" enctype='multipart/form-data'>
 
         <label for="name_input">Especialidad:</label>
@@ -36,10 +36,14 @@
 
         <input type="file" name="archivo" id="archivo" accept="image/png, image/gif, image/jpeg , image/jpg">
 
-        <input type="submit" value="Enviar" />
+        <input type="submit" value="Enviar"/>
     </form>
 
+    
+
 </main>
+
+
 
 <footer>
     <?php

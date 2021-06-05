@@ -6,36 +6,75 @@
 </head>
 <body>
 <header>
-    <?php
-    require __DIR__ . '/parts/header.view.php';
-    require __DIR__ . '/parts/nav.view.php';
-    ?>
+
 </header>
 
-<main >
-    <table>
-        <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Estado</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($especialidades as $especialidad) : ?>
-        <tr>
-            <td><?= $especialidad->fields["nombre"] ?></td>
-            <td><?= $especialidad->fields["estado"] ?></td>
-        </tr>
-        <?php endforeach ?>
-        </tbody>
-    </table>
+<main>
+
+    <!-- Slider -->
+    <section id="container" class="container">
+        <div id="slide-container">
+            <div id="slide">
+                <img src="../assets/images/portadas/edificio.jpg" alt="Img 0">
+            </div>
+            <div id="slide" >
+                <img src="../assets/images/portadas/consulta.jpg" alt="Img 1">
+            </div>
+            <div id="slide">
+                <img src="../assets/images/portadas/guardia.jpg" alt="Img 2">
+            </div>
+            <div id="slide">
+                <img src="../assets/images/portadas/laboral.jpg" alt="Img 2">
+            </div>
+        </div>
+        <div id="arrows-wrapper">
+            <p id="arrow-prev">
+                &#10094;
+            </p>
+            <p id="arrow-next">
+                &#10095;
+            </p>
+        </div>
+        <div id="dots-wrapper"></div>
+    </section>
+
+
+<!--
+    <section id="container" class="container">
+        <div id="slide" >
+            <div class="box">
+                <img src="../assets/images/portadas/edificio.jpg" alt="Img 2">
+            </div>
+            <div class="box">
+                <img src="../assets/images/portadas/guardia.jpg" alt="Img 2">
+            </div>
+            <div class="box">
+                <img src="../assets/images/portadas/consulta.jpg" alt="Img 2">
+            </div>
+            <div class="box">
+                <img src="../assets/images/portadas/guardia.jpg" alt="Img 2">
+            </div>
+        </div>
+
+        <div id="arrows-wrapper">
+            <p id="arrow-prev">
+                &#10094;
+            </p>
+            <p id="arrow-next">
+                &#10095;
+            </p>
+        </div>
+
+        <div id="dots-wrapper"></div>
+
+
+    </section>-->
+
 
 </main>
 
 <footer>
-    <?php
-    require __DIR__ . '/parts/footer.view.php';
-    ?>
+
 </footer>
 </body>
 </html>

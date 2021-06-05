@@ -3,6 +3,7 @@
         <?php
             require __DIR__ . '/parts/head.view.php';
         ?>
+
     </head>
     <body>
         <header>

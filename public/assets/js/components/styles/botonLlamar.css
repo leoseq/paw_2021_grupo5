@@ -84,7 +84,6 @@
 		padding: 0;
 		cursor: pointer;
 		background-color: transparent;
-		/*position: relative;*/
 		overflow: hidden;
 	}
 
@@ -109,9 +108,5 @@
 	.BotonCerrar::after {
 		transform: translateY(0) rotate(-45deg);
 	}
-
-	/*.BotonCerrar {
-		float: left;
-	}*/
 
 }

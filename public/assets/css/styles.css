@@ -1054,21 +1054,6 @@ footer h2 {
   color: #ffff;
 }
 
-/*
-.sectionForm form input[type="file"] {
-  min-width: 28vw;
-  width: auto;
-  height: 7.5vh;
-  border-radius: 1px;
-  background: var(--secondary-color1);
-  color: #ffff;
-  border: 2px solid var(--secondary-color1);
-  font-weight: bold;
-  outline: none;
-  padding: 10px;
-  margin: 10px 0px;
-}
-*/
 .sectionForm form input[type="email"]::placeholder {
   color: #ffff;
 }
@@ -1688,11 +1673,6 @@ footer h2 {
   .sectionForm form input[type="datetime-local"] {
     width: 57vw;
   }
-  /*
-  .sectionForm form input[type="file"] {
-    width: 57vw;
-    height: 6vh;
-  }*/
 
   .sectionForm header {
     justify-content: center;

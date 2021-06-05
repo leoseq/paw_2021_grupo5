@@ -34,10 +34,10 @@ class Clinica {
         let elemento = document.querySelector("script#" + nombre);
         
         if (!elemento) {
-            //Creo el tag script
+            // Creo el tag script
             elemento = this.nuevoElemento("script","",{src: url, id: nombre});
         
-            //Funcion de Callback
+            // Funcion de Callback
             if (fnCallback)
                 elemento.addEventListener("load", fnCallback);
 

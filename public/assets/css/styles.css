@@ -191,7 +191,7 @@ footer section article a {
 }
 
 .cardNoticias a {
-  z-index: 1000;
+  z-index: 100;
 }
 
 .cardNoticias article::before {
@@ -641,7 +641,7 @@ footer h2 {
   margin-bottom: 0.3em;
 }
 
-.listadoTurnos button {
+.listadoTurnos #buttonCancelar {
   min-width: 27vw;
   width: auto;
   height: 5vh;
@@ -655,12 +655,12 @@ footer h2 {
   position: relative;
 }
 
-.listadoTurnos button:hover {
+.listadoTurnos #buttonCancelar:hover {
   color: #ffff;
   background: var(--principal-color1);
 }
 
-.listadoTurnos button:focus {
+.listadoTurnos #buttonCancelar:focus {
   outline: none;
 }
 
@@ -1054,21 +1054,6 @@ footer h2 {
   color: #ffff;
 }
 
-/*
-.sectionForm form input[type="file"] {
-  min-width: 28vw;
-  width: auto;
-  height: 7.5vh;
-  border-radius: 1px;
-  background: var(--secondary-color1);
-  color: #ffff;
-  border: 2px solid var(--secondary-color1);
-  font-weight: bold;
-  outline: none;
-  padding: 10px;
-  margin: 10px 0px;
-}
-*/
 .sectionForm form input[type="email"]::placeholder {
   color: #ffff;
 }
@@ -1553,7 +1538,7 @@ footer h2 {
     margin-block-end: 0em;
   }
 
-  .listadoTurnos button {
+  .listadoTurnos #buttonCancelar {
     color: #ffff;
     background: var(--principal-color1);
   }
@@ -1576,7 +1561,7 @@ footer h2 {
   }
 
   .noticias .fichasNoticias {
-    width: 80vw;
+    width: 72vw;
     padding: 0em 3.5em;
   }
 
@@ -1688,11 +1673,6 @@ footer h2 {
   .sectionForm form input[type="datetime-local"] {
     width: 57vw;
   }
-  /*
-  .sectionForm form input[type="file"] {
-    width: 57vw;
-    height: 6vh;
-  }*/
 
   .sectionForm header {
     justify-content: center;

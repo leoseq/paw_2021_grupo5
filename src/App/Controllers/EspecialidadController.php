@@ -9,7 +9,7 @@ use Paw\Core\Controller;
 
 class EspecialidadController extends Controller
 {
-    public ?string $modelName = EspecialidadesCollection::class; // Devuelve 'Paw\App\Models\'
+    public ?string $modelName = EspecialidadesCollection::class;
 
     public $table = 'especialidades';
 

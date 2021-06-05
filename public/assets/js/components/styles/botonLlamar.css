@@ -7,7 +7,7 @@
 
 	.Boton-Llamar {
 		display: inline-block;
-		padding: 1.25em 1.563em;
+		padding: 2.25em 1.563em;
 		bottom: 14vh;
 		right: 2.5vh;
 		color: #ffffff;
@@ -26,13 +26,44 @@
 	}
 		
 	.BotonAbierto {
-		height: 70%;
+		height: 60%;
 		width: 70%;
+		padding: 1rem;
 		transition: width 0.4s, height 0.4s;
 	}
 
-	.Info-Oculta {
+	.Info-Mostrada > h3,
+	.BotonAbierto > span {
 		display: none;
+	}
+
+	.Boton-Llamar article {
+		display: flex;
+		flex-direction: column;
+		align-content: flex-end;
+		align-items: flex-start;
+		margin-left: 0.5vw;
+		margin-right: 0.5vw;
+	
+	}
+
+	.BotonAbierto a {
+		font-size: 28px;
+		color: #ffffff;
+		margin-top: 3rem;
+
+	}
+
+	.BotonAbierto article {
+		display: flex;
+		flex-direction: column;
+		align-content: flex-end;
+		align-items: flex-start;
+	}
+
+
+	.Info-Oculta {
+		display: none !important;
 	}
 
 	.Info-Mostrada {
@@ -74,5 +105,9 @@
 	.BotonCerrar::after {
 		transform: translateY(0) rotate(-45deg);
 	}
+
+	/*.BotonCerrar {
+		float: left;
+	}*/
 
 }

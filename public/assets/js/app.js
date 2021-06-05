@@ -4,7 +4,7 @@ class appClinica {
 		//Inicializa la funcionalidad Boton Llamar
         document.addEventListener("DOMContentLoaded", () => {
 			Clinica.cargarScript("BotonLlamar", "assets/js/components/botonLlamar.js", () => {	
-				let botonLlamar = new BotonLlamar("body > main > button");		
+				let botonLlamar = new BotonLlamar("#botonCall");		
 			});
 		});
 		

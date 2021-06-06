@@ -14,6 +14,15 @@ class appClinica {
 				let dragAndDrop = new DragAndDrop(".inputDrop");		
 			});
 		});
+
+		// Inicializa la funcionalidad del Drag And Drop
+		document.addEventListener("DOMContentLoaded", () => {
+			Clinica.cargarScript("Turnero", "assets/js/components/turnero.js", () => {	
+				let turnero = new Turnero(".turneroSalaEspera");		
+			});
+		});
+
+
 		
     }
 }

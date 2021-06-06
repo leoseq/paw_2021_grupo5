@@ -47,9 +47,6 @@ class BotonLlamar {
 					contenedor.classList.add("BotonCerrado");
 				}			
 			});
-
-		} else {
-			console.error("Elemento HTML para generar el MENU no encontrado");
 		}
 	}
 }

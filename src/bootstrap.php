@@ -71,3 +71,7 @@ $router->post('/login', 'UsuarioController@login');
 // Test
 $router->get('/especialidades/test', 'EspecialidadController@test');
 $router->post('/testArchivo', 'EspecialidadController@testArchivo');
+
+
+// Turnero
+$router->get('/turnero', 'PageController@turnero');

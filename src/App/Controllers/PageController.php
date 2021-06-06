@@ -86,10 +86,30 @@ class PageController extends Controller
         require $this->viewDir . "imprimirTurnoSolicitado.view.php";
     }
 
-    public function turnero()
+    public function turneros()
+    {
+        $titulo = "Turneros";
+        require $this->viewDir . "turneros.view.php";
+    }
+
+    public function salaEspera()
     {
         $titulo = "Turnos: Sala de Espera";
-        require $this->viewDir . "turnero.view.php";
+        require $this->viewDir . "turneros/salaEspera.view.php";
     }
+
+    public function profesional()
+    {
+        $titulo = "Turnos: Profesional";
+        require $this->viewDir . "turneros/profesional.view.php";
+    }
+
+    public function paciente()
+    {
+        $titulo = "Turnos: Paciente";
+        require $this->viewDir . "turneros/paciente.view.php";
+    }
+
+
 
 }

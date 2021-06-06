@@ -70,7 +70,7 @@ class Turnero {
 			// Inserto CSS
 			let css = Clinica.nuevoElemento("link", "", {
 				rel: "stylesheet",
-				href: "assets/js/components/styles/turnero.css",
+				href: "../assets/js/components/styles/turnero.css",
 			});
 			document.head.appendChild(css);
 

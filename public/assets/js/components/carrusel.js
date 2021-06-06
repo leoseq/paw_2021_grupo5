@@ -1,5 +1,15 @@
 class Carrusel {
-    constructor(pContenedor) {
+    constructor(Imagenes ,pContenedor) {
+
+
+
+        this.Imagenes = Imagenes;
+        this.loadedImages=0;
+
+
+        this.imageCount=Imagenes.length;
+        this.userInteracted = false;
+
 
         let contenedor = pContenedor.tagName ? pContenedor : document.querySelector(pContenedor);
 
@@ -18,6 +28,63 @@ class Carrusel {
             let contenedorGeneral = document.querySelector("#slide-container");
             contenedorGeneral.classList.add('slide');
             contenedorGeneral.classList.add('fade');
+            let index = 0;
+
+            let progressBar = Clinica.nuevoElemento("div", "", {"class": "progressBar"});
+            let actualProgress = Clinica.nuevoElemento("div", "", {"class": "progress"});
+
+
+            Imagenes.forEach(element =>
+            {
+
+                let containerImagen = Clinica.nuevoElemento("div","", {"id": "slide", "class": "box fade", "index": "img\""+index+"\"" } );
+                contenedorGeneral.appendChild(containerImagen);
+                let nuevaImagen = Clinica.nuevoElemento("img","",{"src": element, "alt": "img\""+index+"\""});
+
+                nuevaImagen.addEventListener("load", event=>{
+                    this.loadedImages++;
+                    let averageOfLoad = (this.loadedImages / this.imageCount) * 100;
+                    console.log(averageOfLoad);
+                    if(averageOfLoad == 100){
+                        //actualProgress.setAttribute("loaded", "100");
+                        contenedor.removeChild(progressBar);
+                        //this.handleEvent();
+                    }
+                    else
+                        console.log('asd',averageOfLoad);
+                        actualProgress.style.setProperty("--ancho", averageOfLoad+"vw");
+                });
+
+                nuevaImagen.addEventListener("transitionend", (event)=>{
+                    setTimeout(()=>{
+                        console.log(this.userInteracted);
+                        if(this.userInteracted == false)
+                            if(event.target.classList.contains("active"))
+                                console.log('JOACO')
+                               // this.handleEvent();
+
+                    }, 4500);
+                });
+                progressBar.appendChild(actualProgress);
+                containerImagen.appendChild(nuevaImagen);
+                index++;
+            });
+
+
+            contenedor.appendChild(progressBar);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             let slides = document.querySelectorAll('#slide');
@@ -33,6 +100,7 @@ class Carrusel {
 
             for (let i = 0; i < slides.length; i++) {
                 slides[i].classList.add('box');
+                slides[i].classList.add('fade');
             }
 
             //Agrego clases a los botones inferiores
@@ -60,12 +128,7 @@ class Carrusel {
                 ;
 
                 for (let i = 0; i < slides.length; i++) {
-                    console.log(swipe);
-                    if (swipe === true) {
-                        slides[i].style.display = 'block';
-                    } else {
-                        slides[i].style.display = 'none';
-                    }
+                    slides[i].style.display = 'none';
                     dots[i].classList.remove('active-dot');
                 }
 
@@ -75,7 +138,7 @@ class Carrusel {
 
 
             //Desplazamientos
-            show_slide(slider_index);
+            // show_slide(slider_index);
 
             //Flechas laterales
             document.querySelector('#arrow-prev').addEventListener('click', () => {
@@ -97,22 +160,22 @@ class Carrusel {
             });
 
             //Automatico, cada 4 seg
-            /*   setInterval(() => {
+              setInterval(() => {
                    show_slide(++slider_index)
-               }, 4000);
-   */
+               }, 5000);
 
+
+            let width = slides[0].offsetWidth + 30;
+            contenedorGeneral.style.minWidth = `${slides.length * width}px`;
             // Eventos de teclado
             document.addEventListener("keydown", function (e) {
                 switch (e.which) {
                     case 39:
                         // Flecha derecha
-                        // show_slide(slider_index_last);
                         show_slide(++slider_index, false);
                         break;
                     case 37:
                         // Flecha izquierda
-                        // show_slide(slider_index_last);
                         show_slide(--slider_index, false);
                         break;
                 }
@@ -120,14 +183,12 @@ class Carrusel {
 
 
             //Swipe
-            let width = slides[0].offsetWidth + 30;
-            contenedorGeneral.style.minWidth = `${slides.length * width}px`;
-
             let start;
             let change;
 
             container.addEventListener('dragstart', (e) => {
                 start = e.clientX;
+                console.log('start', start);
             })
 
             container.addEventListener('dragover', (e) => {
@@ -147,45 +208,35 @@ class Carrusel {
                 e.preventDefault();
                 let touch = e.touches[0];
                 change = start - touch.clientX;
+                console.log('touch', touch);
+                console.log('change', change);
             })
 
             container.addEventListener('touchend', slideShow);
 
             function slideShow() {
                 if (change > 0) {
-                    container.scrollLeft += width;
-                    console.log(container.scrollLeft);
+                    /* container.scrollLeft += width;
+                     console.log('if', container.scrollLeft);
 
 
-                    if (container.scrollLeft > (width * (slides.length - 2))) {
-                        console.log('aca');
-                        width = 0;
-                        container.scrollLeft = width;
-                        width = slides[0].offsetWidth + 30;
-                    }
-
-
-                    show_slide(slider_index, true)
+                     if (container.scrollLeft > (width * (slides.length - 2))) {
+                         console.log('aca');
+                         width = 0;
+                         container.scrollLeft = width;
+                         width = slides[0].offsetWidth + 30;
+                     }
+                     */
+                    show_slide(++slider_index)
 
                 } else {
-                    container.scrollLeft -= width;
-                    console.log(container.scrollLeft);
-                    if (container.scrollLeft === 0) {
-                        container.scrollLeft = width * (slides.length - 1);
-                    }
 
-
-                    show_slide(slider_index, true)
+                    show_slide(--slider_index)
+                    //show_slide(slider_index, true)
 
                 }
             }
 
-
-            function reset_show_slide(index) {
-                for (let i = 0; i < slides.length; i++) {
-                    slides[i].style.display = 'block';
-                }
-            }
 
         }
     }

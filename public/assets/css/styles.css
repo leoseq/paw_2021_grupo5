@@ -159,7 +159,7 @@ footer section article a {
   margin: 1.875em 3.75em;
 
   grid-template-areas:
-    "sidebar   main   main"
+    "carrusel   carrusel   carrusel"
     "sidebar     main     main"
     "footer   footer   footer";
 }

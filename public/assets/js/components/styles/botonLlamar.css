@@ -7,16 +7,17 @@
 
 	.Boton-Llamar {
 		display: inline-block;
-		padding: 1.25em 1.563em;
+		padding: 2.25em 1.563em;
 		bottom: 14vh;
 		right: 2.5vh;
 		color: #ffffff;
 		border-radius: 1.25em;
 		background-color: var(--secondary-color2);
 		position: fixed;
-		z-index: 99;
+		z-index: 199;
 		transition: height 0.4s;
   		transition-timing-function: linear;
+
 	}
 		
 	.BotonCerrado {
@@ -26,17 +27,51 @@
 	}
 		
 	.BotonAbierto {
-		height: 70%;
+		height: 60%;
 		width: 70%;
+		padding: 1rem;
 		transition: width 0.4s, height 0.4s;
 	}
 
-	.Info-Oculta {
+	.Info-Mostrada > h3,
+	.BotonAbierto > span {
 		display: none;
+	}
+
+	.Boton-Llamar article {
+		display: flex;
+		flex-direction: column;
+		align-content: flex-end;
+		align-items: flex-start;
+		margin-left: 0.5vw;
+		margin-right: 0.5vw;
+		background: transparent;
+	
+	}
+
+	.BotonAbierto a {
+		font-size: 28px;
+		color: #ffffff;
+		margin: 3rem 0rem 0rem 0rem;
+
+
+	}
+
+	.BotonAbierto article {
+		display: flex;
+		flex-direction: column;
+		align-content: flex-end;
+		align-items: flex-start;
+	}
+
+
+	.Info-Oculta {
+		display: none !important;
 	}
 
 	.Info-Mostrada {
 		display: block;
+		min-height: 250px;
 	}
 
 	/* Funcionalidad del Botón */
@@ -49,7 +84,6 @@
 		padding: 0;
 		cursor: pointer;
 		background-color: transparent;
-		position: relative;
 		overflow: hidden;
 	}
 

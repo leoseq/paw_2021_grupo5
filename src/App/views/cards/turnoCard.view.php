@@ -20,5 +20,5 @@
         <p>Autorizado</p>
     </article>
 
-    <button>Cancelar turno</button>
+    <button id="buttonCancelar">Cancelar turno</button>
 </section>

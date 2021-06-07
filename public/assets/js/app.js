@@ -32,6 +32,11 @@ class appClinica {
 			});
 		});
 
+		document.addEventListener("DOMContentLoaded", () => {
+			Clinica.cargarScript("Calendario", "../assets/js/components/calendario.js", () => {
+				let calendario = new Calendario("#sectionTurno");
+			});
+		});
 
 		
     }

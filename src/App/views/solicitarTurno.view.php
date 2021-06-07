@@ -14,42 +14,33 @@
 
 
 <main class="containerLogin">
-    <section class="sectionForm">
+    <section id="sectionTurno" class="sectionForm">
         <header>
             <h2>Nuevo Turno</h2>
         </header>
 
         <hr/>
 
-        <form action="/saveTurno" method="POST" class="form" enctype='multipart/form-data'>
+        <form id="formNuevoTurno" action="/saveTurno" method="POST" class="form" enctype='multipart/form-data'>
             <h3>Datos del Profesional</h3>
 
-            <label for="specialty_input">Especialidad:</label>
+       <!--     <label for="specialty_input">Especialidad:</label>
             <input list="especialidad-lista" id="specialty_input" name="specialty_input"
                    placeholder="Cardiologia"
                    autofocus tabindex="1"
                    class="datalist"
                    required/>
 
-            <datalist id="especialidad-lista">
-                <option value="Kinesiología">
-                <option value="Cardiología">
-                <option value="Odontología">
-            </datalist>
+            <datalist id="especialidad-lista"></datalist>-->
 
 
             <label for="profesional_input">Profesional:</label>
             <input list="profesional-lista" id="profesional_input" name="profesional_input"
                    placeholder="Juan Perez"
-                   autofocus tabindex="1"
                    class="datalist"
                    required/>
 
-            <datalist id="profesional-lista">
-                <option value="Jose Garcia">
-                <option value="Marcos Aguirre">
-                <option value="Norberto Fontana">
-            </datalist>
+            <datalist id="profesional-lista"></datalist>
 
             <hr/>
             <h3>Datos del Paciente</h3>
@@ -126,6 +117,13 @@
 
             <i class="escoba-icon-24"> <input type="reset" value=" "/></i>
         </form>
+
+        <section class="block">
+            <div class="calendar-wrapper">
+                <div id="calendar"></div>
+            </div>
+        </section>
+
     </section>
 
     <?php

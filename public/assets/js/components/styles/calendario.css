@@ -1,0 +1,46 @@
+/*PUEDE SER INNECESARIA*/
+
+section.block {
+    margin: 0;
+    padding: 1em;
+    font-size: 1.1em;
+    color: #607779;
+    letter-spacing: 1px;
+    height:auto;
+}
+
+
+.calendar {
+    position: relative;
+    min-width: 355px;
+    height: 178px;
+    background: var(--principal-color1);
+    top: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.TableCalendario , tr{
+    color: white;
+    text-align: center;
+    background-color: var(--principal-color2);
+}
+
+table, th, td {
+    border: 1px solid var(--secondary-color2);
+}
+
+.today {
+    color: red;
+    font-weight: bold;
+}
+
+.turno {
+    color: yellow;
+}
+
+
+
+

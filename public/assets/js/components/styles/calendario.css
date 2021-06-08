@@ -11,18 +11,23 @@ section.block {
 
 
 .calendar {
-    position: relative;
-    min-width: 355px;
+    position: absolute;
+    min-width: 375px;
     height: 178px;
-    background: var(--principal-color1);
-    top: 10px;
-    left: 10px;
+    top: 100px;
+    left: 31px;
     display: flex;
     justify-content: space-around;
+    z-index: 10000;
+}
+
+.not-today {
+    color: var(--secondary-color1);
 }
 
 
 .TableCalendario , tr{
+    min-width: 400px;
     color: white;
     text-align: center;
     background-color: var(--principal-color2);
@@ -39,8 +44,20 @@ table, th, td {
 
 .turno {
     color: yellow;
+    cursor: pointer;
 }
 
-
-
+/* CHEQUEAR */
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
 

@@ -2,53 +2,44 @@ body {
 	background: var(--principal-color1);
 }
 
-.turneroPaciente-screen,
-.turneroProfesional-screen {
+.turnero-screen {
 	color: white;
 	display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.turneroPaciente-screen h2,
-.turneroProfesional-screen h2{
+.turnero-screen h2{
 	font-size: 25vh;
 	margin: 0px;
 }
 
-.turneroPaciente-screen h3,
-.turneroProfesional-screen h3{
+.turnero-screen h3{
 	font-size: 5vh;
 }
 
 
 /*--------- Tabla de Pacientes ------------*/
-#turneroPaciente-tabla,
-#turneroProfesional-tablaPacientes {
+#turnero-tabla {
 	border-collapse: collapse;
 	width: 100%;
 }
 
-#turneroPaciente-tabla td,
-#turneroPaciente-tabla th,
-#turneroProfesional-tablaPacientes td,
-#turneroProfesional-tablaPacientes th {
+#turnero-tabla td,
+#turnero-tabla th {
 	border: 1px solid #ddd;
 	padding: 8px;
 }
   
-#turneroPaciente-tabla tr:nth-child(odd),
-#turneroProfesional-tablaPacientes tr:nth-child(odd){
+#turnero-tabla tr:nth-child(odd) {
 	background-color: var(--background-card);
 }
 
-#turneroPaciente-tabla tr:nth-child(even),
-#turneroProfesional-tablaPacientes tr:nth-child(even){
+#turnero-tabla tr:nth-child(even) {
 	background-color: rgb(185, 185, 185);
 }
   
-#turneroPaciente-tabla th,
-#turneroProfesional-tablaPacientes th {
+#turnero-tabla th {
 	padding-top: 12px;
 	padding-bottom: 12px;
 	text-align: left;

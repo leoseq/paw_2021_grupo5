@@ -21,7 +21,7 @@
             <a href="/turneros">Atrás</a>
             <button id="turneroProfesional-siguiente" class="turneroButton">Siguiente Turno</button>
 
-            <section class="turneroProfesional-screen">
+            <section class="turnero-screen">
                 <h3 id="turneroProfesional-nombreProfesional">-</h3>
                 <h2 id="turneroProfesional-nroTurno">-</h2>
                 <h3 id="turneroProfesional-nombrePaciente">-</h3>
@@ -30,7 +30,7 @@
 
             <section class="turneroProfesional-lista">
 
-                <table id="turneroProfesional-tablaPacientes">
+                <table id="turnero-tabla">
                     <thead>
                         <tr>
                             <th>Nro de Turno</th>
@@ -39,7 +39,7 @@
                             <th>Estado</th>
                         </tr>
                     </thead>
-                    <tbody id="turneroProfesional-listadoPacientes"></tbody>                    
+                    <tbody id="turnero-listadoPacientes"></tbody>                    
                 </table>
 
             </section>

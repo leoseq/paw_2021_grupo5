@@ -189,13 +189,13 @@ class TurneroPaciente {
 
 
 	limpiarTabla() {
-		let tabla = document.querySelector("#turneroPaciente-tabla");
-		let bodyTabla = document.querySelector("#turneroPaciente-info");
+		let tabla = document.querySelector("#turnero-tabla");
+		let bodyTabla = document.querySelector("#turnero-info");
 
 		bodyTabla.remove();
 
 		bodyTabla = Clinica.nuevoElemento("tbody", "", {
-			id: "turneroPaciente-info"
+			id: "turnero-info"
 		});
 
 		tabla.appendChild(bodyTabla);

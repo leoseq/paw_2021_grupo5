@@ -26,14 +26,14 @@
 
             <a href="/turneros">Atrás</a>
 
-            <section class="turneroPaciente-screen">
+            <section class="turnero-screen">
                 <h3>Su turno es:</h3>
                 <h2 id="turneroPaciente-nroTurno">-</h2>
             </section>
 
             <section>
 
-                <table id="turneroPaciente-tabla">
+                <table id="turnero-tabla">
                     <thead>
                         <tr>
                             <th>Profesional</th>
@@ -43,7 +43,7 @@
                             <th>Tiempo de Espera</th>
                         </tr>
                     </thead>
-                    <tbody id="turneroPaciente-info"></tbody>                    
+                    <tbody id="turnero-info"></tbody>                    
                 </table>
 
             </section>

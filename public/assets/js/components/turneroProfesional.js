@@ -239,13 +239,13 @@ class TurneroProfesional {
 	}
 
 	limpiarTabla() {
-		let tabla = document.querySelector("#turneroProfesional-tablaPacientes");
-		let bodyTabla = document.querySelector("#turneroProfesional-listadoPacientes");
+		let tabla = document.querySelector("#turnero-tabla");
+		let bodyTabla = document.querySelector("#turnero-listadoPacientes");
 
 		bodyTabla.remove();
 
 		bodyTabla = Clinica.nuevoElemento("tbody", "", {
-			id: "turneroProfesional-listadoPacientes"
+			id: "turnero-listadoPacientes"
 		});
 
 		tabla.appendChild(bodyTabla);

@@ -19,6 +19,8 @@
             <h2 id="turneroPaciente-paciente">-</h2>
 
             <button id="turneroPaciente-siguiente" class="turneroButton">Simular cambio de turno</button>
+
+            <audio id="xyz" src="../assets/sounds/alert.mp3" preload="auto"></audio>
             
         </header>
 

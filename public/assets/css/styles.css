@@ -159,7 +159,7 @@ footer section article a {
   margin: 1.875em 3.75em;
 
   grid-template-areas:
-    "sidebar   main   main"
+    "carrusel   carrusel   carrusel"
     "sidebar     main     main"
     "footer   footer   footer";
 }
@@ -345,7 +345,7 @@ footer section article a {
   display: flex;
   align-items: center;
   margin-bottom: 3vh;
-  font-size: 20x;
+  font-size: 20px;
 }
 
 .cardDatos a {
@@ -560,6 +560,10 @@ footer h2 {
   background-color: transparent;
   border-bottom: none;
   color: var(--principal-color2);
+}
+
+#specialty_input {
+  display: none;
 }
 
 .profesionales input[type="search"] {
@@ -923,9 +927,9 @@ footer h2 {
   min-height: 7%;
   height: auto;
   background-image: linear-gradient(
-    120deg,
-    var(--principal-color1),
-    var(--principal-color1)
+          120deg,
+          var(--principal-color1),
+          var(--principal-color1)
   );
   padding: 0px;
 }
@@ -1197,7 +1201,6 @@ footer h2 {
   outline: none;
 }
 
-.turneroButton,
 .sectionForm a {
   height: 2.5em;
   width: 27.726vw;
@@ -1334,6 +1337,10 @@ footer h2 {
 
   .cardNoticias article::before {
     display: none;
+  }
+
+  .cardNoticias a {
+    z-index: 1;
   }
 
   .cardNoticias h2 {
@@ -1756,7 +1763,6 @@ footer h2 {
   }
 
   footer a {
-    /* No lo pude solucionar sin el important */
     color: #ffffff;
     align-items: center;
     display: flex;

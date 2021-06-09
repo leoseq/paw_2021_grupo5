@@ -117,6 +117,11 @@ class TurneroPaciente {
 				// Completo la tabla
 				this.completeTabla(index);
 
+
+				let a = document.getElementById('xyz');
+
+				a.play();
+
 			});
 		} 
 	}

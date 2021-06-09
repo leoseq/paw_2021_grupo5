@@ -25,6 +25,13 @@ class appClinica {
 			});
 		});
 
+		document.addEventListener("DOMContentLoaded", () => {
+			Clinica.cargarScript("Calendario", "../assets/js/components/calendario.js", () => {
+				let calendario = new Calendario("#sectionTurno");
+			});
+		});
+
+
 		// Inicializa la funcionalidad del Turnero de Profesionales
 		document.addEventListener("DOMContentLoaded", () => {
 			Clinica.cargarScript("TurneroProfesional", "../assets/js/components/turneroProfesional.js", () => {

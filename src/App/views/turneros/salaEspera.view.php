@@ -4,7 +4,7 @@
             require __DIR__ . '/../parts/head.view.php';
         ?>
     </head>
-    <body class="turneroProfesional-contenedor">
+    <body class="turneroSalaEspera-contenedor">
         <header> 
 
             <select id="turneroProfesional-selectProfesional" class="turneroButton">
@@ -45,6 +45,7 @@
                 </table>
 
             </section-->
+            <audio id="xyz" src="../assets/sounds/alert.mp3" preload="auto"></audio>
         </main>   
 
         <footer>

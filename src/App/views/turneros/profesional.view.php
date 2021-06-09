@@ -42,6 +42,7 @@
                     <tbody id="turnero-listadoPacientes"></tbody>                    
                 </table>
 
+                <audio id="xyz" src="../assets/sounds/alert.mp3" preload="auto"></audio>
             </section>
         </main>   
 

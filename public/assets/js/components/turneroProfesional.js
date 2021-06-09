@@ -1,286 +1,288 @@
 class TurneroProfesional {
 
-	constructor(pContenedor) {
+    constructor(pContenedor) {
 
-		this.turnoPendiente = "PENDIENTE";
-		this.turnoFinalizado = "FINALIZADO";
+        this.turnoPendiente = "PENDIENTE";
+        this.turnoFinalizado = "FINALIZADO";
 
-		let strProfesional
-		this.listadoTurnos = [
-			{
-				"profesional": "Dr. Carlos Meza",
-				"especialidad": "Cardiología",
-				"duracionTurno": 30,
-				"consultorio": "7",
-				"turnos": [
-					{
-						"paciente": "Leonardo Sequeira",
-						"nroTurno": 1,
-						"estado": "PENDIENTE",
-						"horario": {
-							"horas": 9,
-							"minutos": 0
-						}
-					},
-					{
-						"paciente": "Joaquin Bert",
-						"nroTurno": 2,
-						"estado": "PENDIENTE",
-						"horario": {
-							"horas": 9,
-							"minutos": 30
-						}
-					},
-					{
-						"paciente": "Melina Casanova",
-						"nroTurno": 4,
-						"estado": "PENDIENTE",
-						"horario": {
-							"horas": 10,
-							"minutos": 0
-						}
-					}
-				]
-			},
-			{
-				"profesional": "Dra. Leticia Rojas",
-				"especialidad": "Dermatología",
-				"duracionTurno": 30,
-				"consultorio": "4",
-				"turnos": [
-					{
-						"paciente": "Clara Martinez",
-						"nroTurno": 3,
-						"estado": "PENDIENTE",
-						"horario": {
-							"horas": 9,
-							"minutos": 30
-						}
-					},
-					{
-						"paciente": "Diego Valenzuela",
-						"nroTurno": 5,
-						"estado": "PENDIENTE",
-						"horario": {
-							"horas": 10,
-							"minutos": 0
-						}
-					}
-				]
-			}
-		];
+        let strProfesional
+        this.listadoTurnos = [
+            {
+                "profesional": "Dr. Carlos Meza",
+                "especialidad": "Cardiología",
+                "duracionTurno": 30,
+                "consultorio": "7",
+                "turnos": [
+                    {
+                        "paciente": "Leonardo Sequeira",
+                        "nroTurno": 1,
+                        "estado": "PENDIENTE",
+                        "horario": {
+                            "horas": 9,
+                            "minutos": 0
+                        }
+                    },
+                    {
+                        "paciente": "Joaquin Bert",
+                        "nroTurno": 2,
+                        "estado": "PENDIENTE",
+                        "horario": {
+                            "horas": 9,
+                            "minutos": 30
+                        }
+                    },
+                    {
+                        "paciente": "Melina Casanova",
+                        "nroTurno": 4,
+                        "estado": "PENDIENTE",
+                        "horario": {
+                            "horas": 10,
+                            "minutos": 0
+                        }
+                    }
+                ]
+            },
+            {
+                "profesional": "Dra. Leticia Rojas",
+                "especialidad": "Dermatología",
+                "duracionTurno": 30,
+                "consultorio": "4",
+                "turnos": [
+                    {
+                        "paciente": "Clara Martinez",
+                        "nroTurno": 3,
+                        "estado": "PENDIENTE",
+                        "horario": {
+                            "horas": 9,
+                            "minutos": 30
+                        }
+                    },
+                    {
+                        "paciente": "Diego Valenzuela",
+                        "nroTurno": 5,
+                        "estado": "PENDIENTE",
+                        "horario": {
+                            "horas": 10,
+                            "minutos": 0
+                        }
+                    }
+                ]
+            }
+        ];
 
-		// Obtener el Nodo Contenedor
-		let contenedor = pContenedor.tagName
-			? pContenedor
-			: document.querySelector(pContenedor);
+        // Obtener el Nodo Contenedor
+        let contenedor = pContenedor.tagName
+            ? pContenedor
+            : document.querySelector(pContenedor);
 
-		if (contenedor) {
+        if (contenedor) {
 
-			// Inserto CSS
-			let css = Clinica.nuevoElemento("link", "", {
-				rel: "stylesheet",
-				href: "../assets/js/components/styles/turnero.css"
-			});
-			document.head.appendChild(css);
+            // Inserto CSS
+            let css = Clinica.nuevoElemento("link", "", {
+                rel: "stylesheet",
+                href: "../assets/js/components/styles/turnero.css"
+            });
+            document.head.appendChild(css);
 
-			// Cambio de Profesional
-			let profInput = document.querySelector("#turneroProfesional-selectProfesional");
-			profInput.addEventListener("change", event => {
-				strProfesional = this.getProfesional();
-				this.completeInfoProfesional(strProfesional);
+            // Cambio de Profesional
+            let profInput = document.querySelector("#turneroProfesional-selectProfesional");
+            profInput.addEventListener("change", event => {
+                strProfesional = this.getProfesional();
+                this.completeInfoProfesional(strProfesional);
 
-				this.siguienteTurno(strProfesional);
+                this.siguienteTurno(strProfesional);
 
-				this.completeTabla(strProfesional);
-			});
+                this.completeTabla(strProfesional);
+            });
 
-			
-			// Finaliza Turno y Comienza nuevo
-			let botonNext = document.querySelector("#turneroProfesional-siguiente");
-			botonNext.addEventListener("click", (event) => {
 
-				strProfesional = this.getProfesional();
-				this.finalizarTurno(strProfesional);
-				this.siguienteTurno(strProfesional);
+            // Finaliza Turno y Comienza nuevo
+            let botonNext = document.querySelector("#turneroProfesional-siguiente");
+            botonNext.addEventListener("click", (event) => {
 
-				this.completeTabla(strProfesional)
-			});
+                strProfesional = this.getProfesional();
+                this.finalizarTurno(strProfesional);
+                this.siguienteTurno(strProfesional);
+                this.completeTabla(strProfesional);
+            });
 
-		} 
-	}
+        }
+    }
 
-	siguienteTurno(strProfesional) {
-		
-		let turnos = this.getTurnosByProfesional(strProfesional);
-		let turno = this.proximoTurno(turnos);
+    siguienteTurno(strProfesional) {
 
-		if (!(Object.keys(turno).length === 0)) {
+        let turnos = this.getTurnosByProfesional(strProfesional);
+        let turno = this.proximoTurno(turnos);
 
-			document.getElementById("turneroProfesional-nombreProfesional").innerHTML = strProfesional;
-			document.getElementById("turneroProfesional-nroTurno").innerHTML = this.concatenarTurno(turno.nroTurno);
-			document.getElementById("turneroProfesional-nombrePaciente").innerHTML = turno.paciente;
-				
-		} else {
-			console.error("El "+ strProfesional +" no tiene mas pacientes.");
-		}
-	}
+        if (!(Object.keys(turno).length === 0)) {
 
-	concatenarTurno(nroTurno) {
+            document.getElementById("turneroProfesional-nombreProfesional").innerHTML = strProfesional;
+            document.getElementById("turneroProfesional-nroTurno").innerHTML = this.concatenarTurno(turno.nroTurno);
+            document.getElementById("turneroProfesional-nombrePaciente").innerHTML = turno.paciente;
 
-		let size = nroTurno.length;
-		let result = "";
-		
-		if(size = 1) {
-			result = "00" + nroTurno;
-		} else {
-			if(length = 2) {
-				result = "0" + nroTurno;
-			} else {
-				result = nroTurno;
-			}
-		}
+        } else {
+            console.error("El " + strProfesional + " no tiene mas pacientes.");
+        }
+    }
 
-		return result
-	}
+    concatenarTurno(nroTurno) {
 
-	completeInfoProfesional(strProfesional) {
+        let size = nroTurno.length;
+        let result = "";
 
-		let info = this.getInfoByProfesional(strProfesional);
+        if (size = 1) {
+            result = "00" + nroTurno;
+        } else {
+            if (length = 2) {
+                result = "0" + nroTurno;
+            } else {
+                result = nroTurno;
+            }
+        }
 
-		let varProfesional = info.profesional;
+        return result
+    }
 
-		document.getElementById("turneroProfesional-profesional").innerHTML = varProfesional;
-	}
+    completeInfoProfesional(strProfesional) {
 
-	proximoTurno(turnos) {
+        let info = this.getInfoByProfesional(strProfesional);
 
-		let result = {};
-		let index;
-		let size = turnos.length;
+        let varProfesional = info.profesional;
 
-		for (index = 0; index < size; index++) {
+        document.getElementById("turneroProfesional-profesional").innerHTML = varProfesional;
+    }
 
-			if (turnos[index].estado == this.turnoPendiente) {
-				result = turnos[index];
-				break;
-			}
-		}
+    proximoTurno(turnos) {
 
-		return result;
-	}
+        let result = {};
+        let index;
+        let size = turnos.length;
 
-	finalizarTurno(strProfesional) {
+        for (index = 0; index < size; index++) {
 
-		let turnos = this.getTurnosByProfesional(strProfesional);
-		let turno = this.proximoTurno(turnos);
+            if (turnos[index].estado == this.turnoPendiente) {
+                result = turnos[index];
+                break;
+            }
+        }
 
-		let index;
-		let indexTurno;
+        return result;
+    }
 
-		let listado = this.listadoTurnos;
-		let size = listado.length;
-		let sizeTurno;
+    finalizarTurno(strProfesional) {
 
-		for (index = 0; index < size; index++) {
+        let turnos = this.getTurnosByProfesional(strProfesional);
+        let turno = this.proximoTurno(turnos);
 
-			if (listado[index].profesional == strProfesional) {
+        let index;
+        let indexTurno;
 
-				sizeTurno = listado[index].turnos.length;
+        let listado = this.listadoTurnos;
+        let size = listado.length;
+        let sizeTurno;
 
-				for (indexTurno = 0; indexTurno < sizeTurno; indexTurno++) {
+        for (index = 0; index < size; index++) {
 
-					if (listado[index].turnos[indexTurno].estado == this.turnoPendiente) {
-						listado[index].turnos[indexTurno].estado = this.turnoFinalizado;
-						break;
-					}
-				}
-			}
-		}
-	}
+            if (listado[index].profesional == strProfesional) {
 
-	getTurnosByProfesional(strProfesional) {
+                sizeTurno = listado[index].turnos.length;
 
-		let index;
-		let listado = this.listadoTurnos;
-		let size = listado.length;
-		let turnos = [];
+                for (indexTurno = 0; indexTurno < sizeTurno; indexTurno++) {
 
-		for (index = 0; index < size; index++) {
-			if (listado[index].profesional == strProfesional) {
-				turnos = listado[index].turnos;		
-				break;
-			} 
-		}
+                    if (listado[index].turnos[indexTurno].estado == this.turnoPendiente) {
+                        listado[index].turnos[indexTurno].estado = this.turnoFinalizado;
+                        break;
+                    }
+                }
+            }
+        }
+    }
 
-		return turnos;
-	}
+    getTurnosByProfesional(strProfesional) {
 
-	getInfoByProfesional(strProfesional) {
+        let index;
+        let listado = this.listadoTurnos;
+        let size = listado.length;
+        let turnos = [];
 
-		let info = {};
-		let index;
-		let listado = this.listadoTurnos;
-		let size = listado.length;
+        for (index = 0; index < size; index++) {
+            if (listado[index].profesional == strProfesional) {
+                turnos = listado[index].turnos;
+                break;
+            }
+        }
 
-		for (index = 0; index < size; index++) {
-			if (listado[index].profesional == strProfesional) {
-				info = listado[index];		
-				break;
-			} 
-		}
+        return turnos;
+    }
 
-		return info;
-	}
+    getInfoByProfesional(strProfesional) {
 
-	getProfesional() {
-		let profInput = document.querySelector("#turneroProfesional-selectProfesional");
-		return profInput.value;
-	}
+        let info = {};
+        let index;
+        let listado = this.listadoTurnos;
+        let size = listado.length;
 
-	limpiarTabla() {
-		let tabla = document.querySelector("#turnero-tabla");
-		let bodyTabla = document.querySelector("#turnero-listadoPacientes");
+        for (index = 0; index < size; index++) {
+            if (listado[index].profesional == strProfesional) {
+                info = listado[index];
+                break;
+            }
+        }
 
-		bodyTabla.remove();
+        return info;
+    }
 
-		bodyTabla = Clinica.nuevoElemento("tbody", "", {
-			id: "turnero-listadoPacientes"
-		});
+    getProfesional() {
+        let profInput = document.querySelector("#turneroProfesional-selectProfesional");
+        return profInput.value;
+    }
 
-		tabla.appendChild(bodyTabla);
+    limpiarTabla() {
+        let tabla = document.querySelector("#turnero-tabla");
+        let bodyTabla = document.querySelector("#turnero-listadoPacientes");
 
-		return bodyTabla;
-	}
+        if (bodyTabla) {
+            bodyTabla.remove();
+        }
 
-	completeTabla(strProfesional) {
+        bodyTabla = Clinica.nuevoElemento("tbody", "", {
+            id: "turnero-listadoPacientes"
+        });
 
-		let bodyTabla = this.limpiarTabla();
+        if (tabla) {
+            tabla.appendChild(bodyTabla);
+        }
+        return bodyTabla;
+    }
 
-		let turnos = this.getTurnosByProfesional(strProfesional);
-		let size = turnos.length;
-		let index;
+    completeTabla(strProfesional) {
 
-		for (index = 0; index < size; index++) {
+        let bodyTabla = this.limpiarTabla();
 
-			let row = Clinica.nuevoElemento("tr", "", {});
-			bodyTabla.appendChild(row);
-			
-			let nroTurno = this.concatenarTurno(turnos[index].nroTurno);
-			let paciente = turnos[index].paciente;
-			let horario = turnos[index].horario.horas +":"+ turnos[index].horario.minutos;
-			let estado = turnos[index].estado;
+        let turnos = this.getTurnosByProfesional(strProfesional);
+        let size = turnos.length;
+        let index;
 
-			let data_1 = Clinica.nuevoElemento("td", nroTurno, {});
-			let data_2 = Clinica.nuevoElemento("td", paciente, {});
-			let data_3 = Clinica.nuevoElemento("td", horario, {});
-			let data_4 = Clinica.nuevoElemento("td", estado, {});
+        for (index = 0; index < size; index++) {
 
-			row.appendChild(data_1);
-			row.appendChild(data_2);
-			row.appendChild(data_3);
-			row.appendChild(data_4);
-		}
-	}		
+            let row = Clinica.nuevoElemento("tr", "", {});
+            bodyTabla.appendChild(row);
+
+            let nroTurno = this.concatenarTurno(turnos[index].nroTurno);
+            let paciente = turnos[index].paciente;
+            let horario = turnos[index].horario.horas + ":" + turnos[index].horario.minutos;
+            let estado = turnos[index].estado;
+
+            let data_1 = Clinica.nuevoElemento("td", nroTurno, {});
+            let data_2 = Clinica.nuevoElemento("td", paciente, {});
+            let data_3 = Clinica.nuevoElemento("td", horario, {});
+            let data_4 = Clinica.nuevoElemento("td", estado, {});
+
+            row.appendChild(data_1);
+            row.appendChild(data_2);
+            row.appendChild(data_3);
+            row.appendChild(data_4);
+        }
+    }
 
 }

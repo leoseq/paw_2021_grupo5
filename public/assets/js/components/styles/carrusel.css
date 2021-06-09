@@ -1,4 +1,4 @@
-.container{
+.container {
     width: 100%;
     height: 50vh;
     overflow: hidden;
@@ -13,41 +13,54 @@
     overflow: hidden;
 }
 
-.slide{
+.slide {
     min-width: 100%;
     height: 100%;
     display: flex;
-    /*justify-content: space-evenly;*/
-  /*  position: absolute;*/
 }
 
 
-
-.fade{
-    animation-name: slidein;
+.fade {
+    animation-name: fade;
     animation-duration: 1.8s;
 }
 
-.mymove{
-    animation-name: mymove;
+.foolishIn {
+    animation-name: foolishIn;
     animation-duration: 1.8s;
 }
 
 
-
-.slidein{
+.slidein {
     animation-name: slidein;
     animation-duration: .8s;
 }
 
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 1.8s;
+}
 
-.slide .box{
+.swashIn {
+    animation-name: swashIn;
+    animation-duration: 1.8s;
+}
+
+
+.moveRight {
+    animation-name: moveRight;
+    animation-duration: 1.8s;
+}
+
+
+.slide .box {
     min-width: 260px;
     height: 100%;
     overflow: hidden;
     position: relative;
 }
-.box img{
+
+.box img {
     width: 100vw;
     height: 100%;
     display: block;
@@ -62,62 +75,34 @@
     /*user-select: none;*/
 }
 
-.slider-arrow{
+.slider-arrow {
     color: var(--principal-color2);
     font-size: 55px;
     cursor: pointer;
     position: absolute;
 }
 
-.center_y{
+.center_y {
     position: relative;
-    top:50%;
+    top: 50%;
     transform: translateX(-50%);
 }
 
-.center_x{
+.center_x {
     position: relative;
-    left:50%;
+    left: 50%;
     transform: translateX(-50%);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*style slider*/
 
 
-body, html{
+body, html {
     width: 100%;
     height: 100%;
 }
 
-*{
+* {
 
 }
 
@@ -127,7 +112,7 @@ body, html{
     object-fit: cover;
 }
 
-.slider-arrow{
+.slider-arrow {
     color: var(--principal-color1);
     font-size: 55px;
     cursor: pointer;
@@ -135,23 +120,23 @@ body, html{
 }
 
 
-#arrow-prev{
+#arrow-prev {
     left: 40px;
     top: 23vh;
 }
 
-#arrow-next{
-    right: 10px;
+#arrow-next {
+    right: 0vw;
     top: 23vh;
 }
 
-#dots-wrapper{
+#dots-wrapper {
     display: flex;
     position: absolute;
     bottom: 30px;
 }
 
-.dot-nav{
+.dot-nav {
     width: 15px;
     height: 15px;
     border-radius: 100%;
@@ -160,16 +145,16 @@ body, html{
     border: 2px solid var(--principal-color2);
 }
 
-.dot-nav:hover{
+.dot-nav:hover {
     background-color: var(--secondary-color2);
 }
 
-.active-dot{
+.active-dot {
     background-color: var(--principal-color1);
 }
 
 
-.progressBar, .progress{
+.progressBar, .progress {
     position: absolute;
     left: 0;
     top: 0;
@@ -178,12 +163,12 @@ body, html{
 
 }
 
-.progressBar{
+.progressBar {
     background-color: #f1f1f1;
 }
 
 
-.progress{
+.progress {
     transition: width 1s;
     --ancho: 0;
     width: var(--ancho);
@@ -191,9 +176,13 @@ body, html{
 }
 
 
-@keyframes fade{
-    from {opacity: .6}
-    to { opacity: 1}
+@keyframes fade {
+    from {
+        opacity: .6
+    }
+    to {
+        opacity: 1
+    }
 }
 
 
@@ -210,7 +199,90 @@ body, html{
 }
 
 
-@keyframes mymove {
-    from {left: 220px;}
-    to {left: 0px;}
+@-webkit-keyframes swashIn {
+    0% {
+        opacity: 0;
+        -webkit-transform-origin: 50% 50%;
+        -webkit-transform: scale(0, 0);
+    }
+    90% {
+        opacity: 1;
+        -webkit-transform-origin: 50% 50%;
+        -webkit-transform: scale(0.9, 0.9);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform-origin: 50% 50%;
+        -webkit-transform: scale(1, 1);
+    }
+}
+
+@keyframes swashIn {
+    0% {
+        opacity: 0;
+        transform-origin: 50% 50%;
+        transform: scale(0, 0);
+    }
+    90% {
+        opacity: 1;
+        transform-origin: 50% 50%;
+        transform: scale(0.9, 0.9);
+    }
+    100% {
+        opacity: 1;
+        transform-origin: 50% 50%;
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100px);
+    }
+}
+
+
+@keyframes foolishIn {
+    0% {
+        opacity: 0;
+        transform-origin: 50% 50%;
+        transform: scale(0, 0) rotate(360deg);
+    }
+    20% {
+        opacity: 1;
+        transform-origin: 0% 100%;
+        transform: scale(0.5, 0.5) rotate(0deg);
+    }
+    40% {
+        opacity: 1;
+        transform-origin: 100% 100%;
+        transform: scale(0.5, 0.5) rotate(0deg);
+    }
+    60% {
+        opacity: 1;
+        transform-origin: 0%;
+        transform: scale(0.5, 0.5) rotate(0deg);
+    }
+    80% {
+        opacity: 1;
+        transform-origin: 0% 0%;
+        transform: scale(0.5, 0.5) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform-origin: 50% 50%;
+        transform: scale(1, 1) rotate(0deg);
+    }
 }

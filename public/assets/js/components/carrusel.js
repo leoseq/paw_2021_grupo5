@@ -1,16 +1,18 @@
 class Carrusel {
-    constructor(Imagenes ,pContenedor) {
-
-
-
+    constructor(Imagenes, pContenedor) {
         this.Imagenes = Imagenes;
-        this.loadedImages=0;
-
-
-        this.imageCount=Imagenes.length;
+        this.loadedImages = 0;
+        this.imageCount = Imagenes.length;
         this.userInteracted = false;
 
-
+        this.animaciones = [
+            'fade',
+            'fadeIn',
+            'swashIn',
+            'slidein',
+            'moveRight',
+            'foolishIn'
+        ]
         let contenedor = pContenedor.tagName ? pContenedor : document.querySelector(pContenedor);
 
         if (contenedor) {
@@ -27,64 +29,38 @@ class Carrusel {
 
             let contenedorGeneral = document.querySelector("#slide-container");
             contenedorGeneral.classList.add('slide');
-            contenedorGeneral.classList.add('fade');
             let index = 0;
 
             let progressBar = Clinica.nuevoElemento("div", "", {"class": "progressBar"});
             let actualProgress = Clinica.nuevoElemento("div", "", {"class": "progress"});
 
 
-            Imagenes.forEach(element =>
-            {
+            Imagenes.forEach(element => {
 
-                let containerImagen = Clinica.nuevoElemento("div","", {"id": "slide", "class": "box fade", "index": "img\""+index+"\"" } );
+                let containerImagen = Clinica.nuevoElemento("div", "", {
+                    "id": "slide",
+                    "class": "box",
+                    "index": "img\"" + index + "\""
+                });
                 contenedorGeneral.appendChild(containerImagen);
-                let nuevaImagen = Clinica.nuevoElemento("img","",{"src": element, "alt": "img\""+index+"\""});
+                let nuevaImagen = Clinica.nuevoElemento("img", "", {"src": element, "alt": "img\"" + index + "\""});
 
-                nuevaImagen.addEventListener("load", event=>{
+                nuevaImagen.addEventListener("load", event => {
                     this.loadedImages++;
                     let averageOfLoad = (this.loadedImages / this.imageCount) * 100;
-                    console.log(averageOfLoad);
-                    if(averageOfLoad == 100){
-                        //actualProgress.setAttribute("loaded", "100");
+                    if (averageOfLoad == 100) {
+                        actualProgress.setAttribute("loaded", "100");
                         contenedor.removeChild(progressBar);
-                        //this.handleEvent();
-                    }
-                    else
-                        console.log('asd',averageOfLoad);
-                        actualProgress.style.setProperty("--ancho", averageOfLoad+"vw");
+                    } else
+                        actualProgress.style.setProperty("--ancho", averageOfLoad + "vw");
                 });
 
-                nuevaImagen.addEventListener("transitionend", (event)=>{
-                    setTimeout(()=>{
-                        console.log(this.userInteracted);
-                        if(this.userInteracted == false)
-                            if(event.target.classList.contains("active"))
-                                console.log('JOACO')
-                               // this.handleEvent();
-
-                    }, 4500);
-                });
                 progressBar.appendChild(actualProgress);
                 containerImagen.appendChild(nuevaImagen);
                 index++;
             });
 
-
             contenedor.appendChild(progressBar);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             let slides = document.querySelectorAll('#slide');
@@ -99,8 +75,13 @@ class Carrusel {
             }
 
             for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.add('box');
-                slides[i].classList.add('fade');
+                let random = numeroAleatorio(0, this.animaciones.length -1 );
+
+                slides[i].classList.add(this.animaciones[random]);
+            }
+
+            function numeroAleatorio(min, max) {
+                return Math.round(Math.random() * (max - min) + min);
             }
 
             //Agrego clases a los botones inferiores
@@ -116,14 +97,10 @@ class Carrusel {
 
             let slider_index = 0;
 
-            function show_slide(index, swipe) {
-                console.log('index', index);
-
+            function show_slide(index) {
                 if (index >= slides.length) slider_index = 0;
                 if (index < 0) {
-                    console.log('slider_index < 0', slider_index)
                     slider_index = slides.length - 1
-
                 }
                 ;
 
@@ -138,7 +115,7 @@ class Carrusel {
 
 
             //Desplazamientos
-            // show_slide(slider_index);
+            show_slide(slider_index);
 
             //Flechas laterales
             document.querySelector('#arrow-prev').addEventListener('click', () => {
@@ -159,10 +136,10 @@ class Carrusel {
                 })
             });
 
-            //Automatico, cada 4 seg
-              setInterval(() => {
-                   show_slide(++slider_index)
-               }, 5000);
+            //Automatico, cada 10 seg
+            setInterval(() => {
+                show_slide(++slider_index)
+            }, 10000);
 
 
             let width = slides[0].offsetWidth + 30;
@@ -188,7 +165,6 @@ class Carrusel {
 
             container.addEventListener('dragstart', (e) => {
                 start = e.clientX;
-                console.log('start', start);
             })
 
             container.addEventListener('dragover', (e) => {
@@ -208,8 +184,6 @@ class Carrusel {
                 e.preventDefault();
                 let touch = e.touches[0];
                 change = start - touch.clientX;
-                console.log('touch', touch);
-                console.log('change', change);
             })
 
             container.addEventListener('touchend', slideShow);
@@ -217,11 +191,7 @@ class Carrusel {
             function slideShow() {
                 if (change > 0) {
                     /* container.scrollLeft += width;
-                     console.log('if', container.scrollLeft);
-
-
                      if (container.scrollLeft > (width * (slides.length - 2))) {
-                         console.log('aca');
                          width = 0;
                          container.scrollLeft = width;
                          width = slides[0].offsetWidth + 30;
@@ -230,10 +200,7 @@ class Carrusel {
                     show_slide(++slider_index)
 
                 } else {
-
                     show_slide(--slider_index)
-                    //show_slide(slider_index, true)
-
                 }
             }
 

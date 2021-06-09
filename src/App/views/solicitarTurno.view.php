@@ -24,14 +24,14 @@
         <form id="formNuevoTurno" action="/saveTurno" method="POST" class="form" enctype='multipart/form-data'>
             <h3>Datos del Profesional</h3>
 
-       <!--     <label for="specialty_input">Especialidad:</label>
+
             <input list="especialidad-lista" id="specialty_input" name="specialty_input"
                    placeholder="Cardiologia"
                    autofocus tabindex="1"
                    class="datalist"
                    required/>
-
-            <datalist id="especialidad-lista"></datalist>-->
+            <!--     <label for="specialty_input">Especialidad:</label>
+                  <datalist id="especialidad-lista"></datalist>-->
 
 
             <label for="profesional_input">Profesional:</label>

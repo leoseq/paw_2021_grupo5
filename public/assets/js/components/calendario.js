@@ -331,19 +331,19 @@ class Calendario {
 
             //Carga de profesionales y especialidades
             listadoTurnos.especialistas.forEach(element => {
-                //  let nuevaEspecialidad = Clinica.nuevoElemento("option", "", {"value": listadoTurnos.especialistas[index].especialidad})
                 let nuevoProfesional = Clinica.nuevoElemento("option", element.especialidad, {
                     "id": element.matricula,
                     "value": element.nombre + " " + element.apellido
                 })
-                //especialidadLista.appendChild(nuevaEspecialidad);
                 listaProfesionales.appendChild(nuevoProfesional);
             });
-            //let especialidadLista = contenedor.querySelector("#especialidad-lista");
+
 
 
             //
             let profesionalInput = document.querySelector('#profesional_input');
+            let especialidadInput = document.querySelector('#specialty_input');
+
             let fechaTurnoInput = document.querySelector('#turn_date_input');
 
             //CUANDO HAY UN CAMBIO DE PROFESIONAL
@@ -358,6 +358,8 @@ class Calendario {
 
                     //Selecciono el input de profesionales
                     let profesional = this.getProfesional(listaProfesionales, event.srcElement.value);
+
+                    especialidadInput.value = profesional.innerText;
 
                     //Se carga la tabla con los dias que atiende
                     this.cargarTabla(profesional, contenedor);

@@ -1,23 +1,11 @@
-/*PUEDE SER INNECESARIA*/
-
-section.block {
-    margin: 0;
-    padding: 1em;
-    font-size: 1.1em;
-    color: #607779;
-    letter-spacing: 1px;
-    height:auto;
-}
-
-
 .calendar {
     position: absolute;
     min-width: 375px;
     height: 178px;
-    top: 100px;
+    top: 32.813em;
     left: 31px;
-    display: flex;
-    justify-content: space-around;
+/*    display: flex;
+    justify-content: space-around;*/
     z-index: 10000;
 }
 
@@ -26,25 +14,87 @@ section.block {
 }
 
 
-.TableCalendario , tr{
+.TableCalendario {
     min-width: 400px;
-    color: white;
+    width: auto;
+    min-height: 255px;
+    color: var(--principal-color2);
     text-align: center;
-    background-color: var(--principal-color2);
+    background-color: #ffffff;
+    font-weight: bold;
+    box-shadow: 0px 13px 10px #888, 0px -5px 10px #888;
 }
 
-table, th, td {
-    border: 1px solid var(--secondary-color2);
+thead {
+    background: var(--principal-color2);
+    color: white;
+
+}
+
+thead > tr {
+    height: 35px;
+    font-size: 22px;
+}
+
+#horarioAtencion table > tr:nth-child(even){
+    background-color: var(--background-card);
+}
+
+
+
+#horarioAtencion tabele > tr:nth-child(odd){
+    background-color: rgb(185, 185, 185);
+}
+
+.horarios{
+    background: var(--principal-color1) !important;
+    color: #FFFFFF !important;
+}
+
+.horarios > td {
+    width: 50%;
+    border: 2px solid var(--principal-color2);
+
 }
 
 .today {
     color: red;
-    font-weight: bold;
+
 }
 
 .turno {
-    color: yellow;
+    color: var(--principal-color1);
     cursor: pointer;
+    background: var(--principal-color2);
+    border-radius: 5px;
+}
+
+.ocupado {
+   /* color: #444444;*/
+    color: #444444;
+}
+
+.libre {
+    cursor: pointer;
+}
+
+.libre:hover {
+    background: var(--secondary-color2) !important;
+    color: #FFFFFF;
+}
+
+.BotonCerrar {
+    min-width: 200%;
+    height: 20px;
+}
+
+.BotonCerrar::before {
+    transform: translateY(0) rotate(45deg);
+    box-shadow: 0 0.6rem 0 transparent;
+}
+
+.BotonCerrar::after {
+    transform: translateY(0) rotate(-45deg);
 }
 
 /* CHEQUEAR */

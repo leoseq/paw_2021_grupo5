@@ -407,7 +407,7 @@ class Calendario {
 
     cargarTabla(profesionalSeleccionado, contenedor) {
 
-        let calendario = Clinica.nuevoElemento("div", "", {"id": "diasQueAtiende", "class": "calendar"})
+        let calendario = Clinica.nuevoElemento("div", "", {"id": "diasQueAtiende", "class": "calendar boingInUp"})
         contenedor.appendChild(calendario);
 
 
@@ -526,12 +526,13 @@ class Calendario {
                                         break;
                                     case 6:
                                         day = "Sabado";
-                                        postSabado = contadorSemana + 3;
+                                        postSabado = contadorSemana + new Date().getDay() + 1;
                                         break;
                                 }
 
 
                                 if ((day === especialista.diasQueAtiende[h]) && (atiende)) {
+                                    console.log(especialista.diasQueAtiende);
                                     tdToday = Clinica.nuevoElemento("td", i, {"id": day, class: "turno"});
                                     tdToday.atiende = false;
                                 }
@@ -648,7 +649,7 @@ class Calendario {
             dIndex.setMinutes(dIndex.getMinutes() + especialista.duracionTurno);
         }
 
-        let horariosAtencion = Clinica.nuevoElemento("div", "", {"id": "horarioAtencion", "class": "calendar"})
+        let horariosAtencion = Clinica.nuevoElemento("div", "", {"id": "horarioAtencion", "class": "calendar perspectiveUpRetourn"})
         contenedor.appendChild(horariosAtencion);
 
         horariosAtencion.appendChild(tablaTurnos);
@@ -659,15 +660,14 @@ class Calendario {
                 let dia = obj['dia'];
                 let hora = obj['horas'];
                 let minutos = obj['minutos'];
-                let selector = "td[dia='" + dia + "'][hora='" + hora + "'][min='" + minutos + "']";
-                let selector2 = "tr[id='" + hora + ':' + minutos + "']";
-                //TODO: MODIFICAR TURNO 2
-                let turno = tablaTurnos.querySelector(selector);
-                let turno2 = tablaTurnos.querySelector(selector2);
-                turno.textContent = "Ocupado";
-                turno.setAttribute("estado", "Ocupado");
-                turno2.classList.add("ocupado")
-                turno2.classList.remove("libre")
+                let selectorTd = "td[dia='" + dia + "'][hora='" + hora + "'][min='" + minutos + "']";
+                let selectorTr = "tr[id='" + hora + ':' + minutos + "']";
+                let turnoTd = tablaTurnos.querySelector(selectorTd);
+                let turnoTr = tablaTurnos.querySelector(selectorTr);
+                turnoTd.textContent = "Ocupado";
+                turnoTd.setAttribute("estado", "Ocupado");
+                turnoTr.classList.add("ocupado")
+                turnoTr.classList.remove("libre")
             }
         });
 

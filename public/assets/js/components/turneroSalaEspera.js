@@ -1,22 +1,17 @@
-class TurneroProfesional {
-
+class TurneroSalaEspera {
+		
 	constructor(pContenedor) {
-
-		this.turnoPendiente = "PENDIENTE";
-		this.turnoFinalizado = "FINALIZADO";
-
+		
 		let strProfesional
 		this.listadoTurnos = [
 			{
 				"profesional": "Dr. Carlos Meza",
 				"especialidad": "Cardiología",
-				"duracionTurno": 30,
-				"consultorio": "7",
 				"turnos": [
 					{
 						"paciente": "Leonardo Sequeira",
 						"nroTurno": 1,
-						"estado": "PENDIENTE",
+						"estado": "pendiente",
 						"horario": {
 							"horas": 9,
 							"minutos": 0
@@ -25,19 +20,19 @@ class TurneroProfesional {
 					{
 						"paciente": "Joaquin Bert",
 						"nroTurno": 2,
-						"estado": "PENDIENTE",
+						"estado": "pendiente",
 						"horario": {
 							"horas": 9,
-							"minutos": 30
+							"minutos": 15
 						}
 					},
 					{
 						"paciente": "Melina Casanova",
 						"nroTurno": 4,
-						"estado": "PENDIENTE",
+						"estado": "pendiente",
 						"horario": {
-							"horas": 10,
-							"minutos": 0
+							"horas": 9,
+							"minutos": 30
 						}
 					}
 				]
@@ -45,13 +40,11 @@ class TurneroProfesional {
 			{
 				"profesional": "Dra. Leticia Rojas",
 				"especialidad": "Dermatología",
-				"duracionTurno": 30,
-				"consultorio": "4",
 				"turnos": [
 					{
 						"paciente": "Clara Martinez",
 						"nroTurno": 3,
-						"estado": "PENDIENTE",
+						"estado": "pendiente",
 						"horario": {
 							"horas": 9,
 							"minutos": 30
@@ -60,7 +53,7 @@ class TurneroProfesional {
 					{
 						"paciente": "Diego Valenzuela",
 						"nroTurno": 5,
-						"estado": "PENDIENTE",
+						"estado": "pendiente",
 						"horario": {
 							"horas": 10,
 							"minutos": 0
@@ -149,8 +142,10 @@ class TurneroProfesional {
 		let info = this.getInfoByProfesional(strProfesional);
 
 		let varProfesional = info.profesional;
+		let varEspecialidad = info.especialidad;
 
 		document.getElementById("turneroProfesional-profesional").innerHTML = varProfesional;
+		document.getElementById("turneroProfesional-especialidad").innerHTML = varEspecialidad;	
 	}
 
 	proximoTurno(turnos) {
@@ -161,7 +156,7 @@ class TurneroProfesional {
 
 		for (index = 0; index < size; index++) {
 
-			if (turnos[index].estado == this.turnoPendiente) {
+			if (turnos[index].estado == "pendiente") {
 				result = turnos[index];
 				break;
 			}
@@ -190,13 +185,14 @@ class TurneroProfesional {
 
 				for (indexTurno = 0; indexTurno < sizeTurno; indexTurno++) {
 
-					if (listado[index].turnos[indexTurno].estado == this.turnoPendiente) {
-						listado[index].turnos[indexTurno].estado = this.turnoFinalizado;
+					if (listado[index].turnos[indexTurno].estado == "pendiente") {
+						listado[index].turnos[indexTurno].estado = "finalizado";
 						break;
 					}
 				}
 			}
 		}
+		
 	}
 
 	getTurnosByProfesional(strProfesional) {

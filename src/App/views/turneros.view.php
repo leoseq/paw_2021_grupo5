@@ -13,10 +13,10 @@
         </header>      
         
         <main>
-            <ul>
-                <li><a href="/turneros/salaEspera">Sala de Espera</a></li>
-                <li><a href="/turneros/profesional">Profesional</a></li>
-                <li><a href="/turneros/paciente">Paciente</a></li>
+            <ul class="turneros">
+                <li><a class="turneroButton" href="/turneros/salaEspera">Sala de Espera</a></li>
+                <li><a class="turneroButton" href="/turneros/profesional">Profesional</a></li>
+                <li><a class="turneroButton" href="/turneros/paciente">Paciente</a></li>
             </ul>
         </main>   
 

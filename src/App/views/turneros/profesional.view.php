@@ -7,23 +7,23 @@
     <body class="turneroProfesional-contenedor">
         <header> 
 
-            <select id="turneroProfesional-selectProfesional">
-                <option value="-">Seleccione..</option>
+            <select id="turneroProfesional-selectProfesional" class="turneroButton">
+                <option selected="true" disabled="disabled">Seleccione...</option>
                 <option value="Dr. Carlos Meza">Dr. Carlos Meza</option>
                 <option value="Dra. Leticia Rojas">Dra. Leticia Rojas</option>
             </select>
 
             <h2 id="turneroProfesional-profesional">-</h2>
-            <h3 id="turneroProfesional-especialidad">-</h3> 
-
-            <button id="turneroProfesional-siguiente">Siguiente</button>
             
         </header>
         <main class="turneroProfesional">
 
+            <a href="/turneros">Atrás</a>
+            <button id="turneroProfesional-siguiente" class="turneroButton">Siguiente Turno</button>
+
             <section class="turneroProfesional-screen">
                 <h3 id="turneroProfesional-nombreProfesional">-</h3>
-                <h2 id="turneroProfesional-nroTurno">000</h2>
+                <h2 id="turneroProfesional-nroTurno">-</h2>
                 <h3 id="turneroProfesional-nombrePaciente">-</h3>
             </section>
 

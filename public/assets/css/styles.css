@@ -1197,6 +1197,7 @@ footer h2 {
   outline: none;
 }
 
+.turneroButton,
 .sectionForm a {
   height: 2.5em;
   width: 27.726vw;
@@ -1213,6 +1214,7 @@ footer h2 {
   position: relative;
 }
 
+.turneroButton:hover,
 .sectionForm a:hover {
   height: 2.5em;
   width: 27.726vw;
@@ -1233,7 +1235,16 @@ footer h2 {
   border-bottom: none;
 }
 
+.turneros {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.turneroButton {
+  margin: 1rem;
+  /*width: 20vw;*/
+} 
 
 
 /*--------------------------                     MOBILE                              ------------------------------ */

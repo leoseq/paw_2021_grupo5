@@ -15,15 +15,26 @@ class appClinica {
 			});
 		});
 
-		// Inicializa la funcionalidad del Turnero
+		// Inicializa la funcionalidad del Turnero de Profesionales
 		document.addEventListener("DOMContentLoaded", () => {
-			Clinica.cargarScript("Turnero", "../assets/js/components/turneroProfesional.js", () => {	
+			Clinica.cargarScript("TurneroProfesional", "../assets/js/components/turneroProfesional.js", () => {	
 				let turneroProfesional = new TurneroProfesional(".turneroProfesional-contenedor");		
 			});
 		});
 
+		// Inicializa la funcionalidad del Turnero de Pacientes
+		document.addEventListener("DOMContentLoaded", () => {
+			Clinica.cargarScript("TurneroPaciente", "../assets/js/components/turneroPaciente.js", () => {	
+				let turneroPaciente = new TurneroPaciente(".turneroPaciente-contenedor");		
+			});
+		});
 
-		
+		// Inicializa la funcionalidad del Turnero de Sala de Espera
+		document.addEventListener("DOMContentLoaded", () => {
+			Clinica.cargarScript("TurneroSalaEspera", "../assets/js/components/turneroSalaEspera.js", () => {	
+				let turneroSalaEspera = new TurneroSalaEspera(".turneroSalaEspera-contenedor");		
+			});
+		});
     }
 }
 

@@ -4,18 +4,49 @@
             require __DIR__ . '/../parts/head.view.php';
         ?>
     </head>
-    <body>
-        <header>  
-            <button id="buttonNext">Siguiente</button>
+    <body class="turneroPaciente-contenedor">
+        <header> 
+
+            <select id="turneroPaciente-selectPaciente" class="turneroButton">
+                <option selected="true" disabled="disabled">Seleccione...</option>
+                <option value="Leonardo Sequeira">Leonardo Sequeira</option>
+                <option value="Joaquin Bert">Joaquin Bert</option>
+                <option value="Melina Casanova">Melina Casanova</option>
+                <option value="Clara Martinez">Clara Martinez</option>
+                <option value="Diego Valenzuela">Diego Valenzuela</option>
+            </select>
+
+            <h2 id="turneroPaciente-paciente">-</h2>
+
+            <button id="turneroPaciente-siguiente" class="turneroButton">Simular cambio de turno</button>
             
         </header>
-        <main>
-            <section class="turneroSalaEspera">
-                <h3 id="profesional">-</h3>
-                <h2 id="nroTurno">000</h2>
-                <h3 id="nombrePaciente">-</h3>
+
+        <main class="turneroPaciente">
+
+            <a href="/turneros">Atrás</a>
+
+            <section class="turneroPaciente-screen">
+                <h3>Su turno es:</h3>
+                <h2 id="turneroPaciente-nroTurno">-</h2>
             </section>
 
+            <section>
+
+                <table id="turneroPaciente-tabla">
+                    <thead>
+                        <tr>
+                            <th>Profesional</th>
+                            <th>Especialidad</th>
+                            <th>Horario</th>
+                            <th>Estado</th>
+                            <th>Tiempo de Espera</th>
+                        </tr>
+                    </thead>
+                    <tbody id="turneroPaciente-info"></tbody>                    
+                </table>
+
+            </section>
         </main>   
 
         <footer>

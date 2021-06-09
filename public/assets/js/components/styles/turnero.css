@@ -2,46 +2,44 @@ body {
 	background: var(--principal-color1);
 }
 
-
-
-
-.turneroProfesional-screen {
+.turnero-screen {
 	color: white;
 	display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.turneroProfesional-screen h2{
+.turnero-screen h2{
 	font-size: 25vh;
 	margin: 0px;
 }
 
-.turneroProfesional-screen h3{
+.turnero-screen h3{
 	font-size: 5vh;
 }
 
 
 /*--------- Tabla de Pacientes ------------*/
-#turneroProfesional-tablaPacientes {
+#turnero-tabla {
 	border-collapse: collapse;
 	width: 100%;
 }
-  
-#turneroProfesional-tablaPacientes td, #customers th {
+
+#turnero-tabla td,
+#turnero-tabla th {
 	border: 1px solid #ddd;
 	padding: 8px;
 }
   
-#turneroProfesional-tablaPacientes tr:nth-child(even){
+#turnero-tabla tr:nth-child(odd) {
 	background-color: var(--background-card);
 }
 
-#turneroProfesional-tablaPacientes tr:nth-child(odd){
+#turnero-tabla tr:nth-child(even) {
 	background-color: rgb(185, 185, 185);
 }
   
-#turneroProfesional-tablaPacientes th {
+#turnero-tabla th {
 	padding-top: 12px;
 	padding-bottom: 12px;
 	text-align: left;

@@ -71,3 +71,12 @@ $router->post('/login', 'UsuarioController@login');
 // Test
 $router->get('/especialidades/test', 'EspecialidadController@test');
 $router->post('/testArchivo', 'EspecialidadController@testArchivo');
+
+
+// Turnero
+$router->get('/turneros', 'PageController@turneros');
+
+$router->get('/turneros/salaEspera', 'PageController@salaEspera');
+$router->get('/turneros/salaEsperaAutomatica', 'PageController@salaEsperaAutomatica');
+$router->get('/turneros/profesional', 'PageController@profesional');
+$router->get('/turneros/paciente', 'PageController@paciente');

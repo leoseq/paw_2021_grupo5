@@ -1,0 +1,105 @@
+body {
+	background: var(--principal-color1);
+}
+
+.turnero-screen {
+	color: white;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.turnero-screen h2{
+	font-size: 25vh;
+	margin: 0px;
+}
+
+.turnero-screen h3{
+	font-size: 5vh;
+}
+
+
+/*--------- Tabla de Pacientes ------------*/
+#turnero-tabla {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#turnero-tabla td,
+#turnero-tabla th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+  
+#turnero-tabla tr:nth-child(odd) {
+	background-color: var(--background-card);
+}
+
+#turnero-tabla tr:nth-child(even) {
+	background-color: rgb(185, 185, 185);
+}
+  
+#turnero-tabla th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: var(--principal-color2);
+	color: white;
+}
+
+
+
+footer {
+	bottom: 0px;
+}
+
+footer nav {
+	display: none;
+}
+
+.turnero-tablas {
+	color: white;
+	display: flex;
+	justify-content: space-around;
+}
+
+.turno-actual {
+	color: white;
+	display: flex;
+	justify-content: space-around;
+	font-size: 41px;
+	align-items: center;
+	margin-top: 40px;
+
+}
+
+.tablaSalaEspera {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+
+}
+
+thead td {
+	border: 2px solid var(--principal-color2);
+	width: 15vw;
+	background: var(--principal-color2);
+}
+
+.atendido {
+	background: #FFFFFF;
+	color: var(--principal-color2);
+}
+
+.turneroProfesional {
+	height: 80vh;
+}
+
+@media screen and (max-width: 768px) {
+	#turnero-tabla td,
+	#turnero-tabla th {
+		border: 1px solid #ddd;
+		padding: 1px;
+		font-size: 15px;
+	}
+}

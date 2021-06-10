@@ -1,6 +1,6 @@
 :root {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
   --principal-color1: #00b3de;
   --principal-color2: #003c70;
@@ -159,7 +159,7 @@ footer section article a {
   margin: 1.875em 3.75em;
 
   grid-template-areas:
-    "sidebar   main   main"
+    "carrusel   carrusel   carrusel"
     "sidebar     main     main"
     "footer   footer   footer";
 }
@@ -191,7 +191,7 @@ footer section article a {
 }
 
 .cardNoticias a {
-  z-index: 1000;
+  z-index: 100;
 }
 
 .cardNoticias article::before {
@@ -251,6 +251,10 @@ footer section article a {
   width: 13%;
   height: 102%;
   background: #06488f;
+}
+
+#specialty_input {
+  display: none;
 }
 
 .serviciosMedicos input[type="search"],
@@ -345,7 +349,7 @@ footer section article a {
   display: flex;
   align-items: center;
   margin-bottom: 3vh;
-  font-size: 20x;
+  font-size: 20px;
 }
 
 .cardDatos a {
@@ -528,6 +532,7 @@ footer h2 {
 .card-persona:hover {
   height: 30vh;
 }
+
 .card-persona:hover > a {
   display: block;
 }
@@ -641,7 +646,7 @@ footer h2 {
   margin-bottom: 0.3em;
 }
 
-.listadoTurnos button {
+.listadoTurnos #buttonCancelar {
   min-width: 27vw;
   width: auto;
   height: 5vh;
@@ -655,12 +660,12 @@ footer h2 {
   position: relative;
 }
 
-.listadoTurnos button:hover {
+.listadoTurnos #buttonCancelar:hover {
   color: #ffff;
   background: var(--principal-color1);
 }
 
-.listadoTurnos button:focus {
+.listadoTurnos #buttonCancelar:focus {
   outline: none;
 }
 
@@ -687,6 +692,7 @@ footer h2 {
 .noticias {
   padding: 2em;
 }
+
 .noticias header {
   background-color: transparent;
   border-bottom: none;
@@ -711,7 +717,7 @@ footer h2 {
   margin: 0.3em 0.4em;
 }
 
-.noticias a {
+.noticias .fichasNoticias a {
   margin: 2.3em 0.4em;
   color: var(--principal-color1);
 }
@@ -923,9 +929,9 @@ footer h2 {
   min-height: 7%;
   height: auto;
   background-image: linear-gradient(
-    120deg,
-    var(--principal-color1),
-    var(--principal-color1)
+          120deg,
+          var(--principal-color1),
+          var(--principal-color1)
   );
   padding: 0px;
 }
@@ -1054,24 +1060,9 @@ footer h2 {
   color: #ffff;
 }
 
-.sectionForm form input[type="file"] {
-  min-width: 28vw;
-  width: auto;
-  height: 7.5vh;
-  border-radius: 1px;
-  background: var(--secondary-color1);
-  color: #ffff;
-  border: 2px solid var(--secondary-color1);
-  font-weight: bold;
-  outline: none;
-  padding: 10px;
-  margin: 10px 0px;
-}
-
 .sectionForm form input[type="email"]::placeholder {
   color: #ffff;
 }
-
 
 
 .sectionForm form input[type="email"] {
@@ -1211,6 +1202,13 @@ footer h2 {
   outline: none;
 }
 
+.turneroButton {
+  margin: 10px;
+  width: auto;
+
+}
+
+.turneroButton,
 .sectionForm a {
   height: 2.5em;
   width: 27.726vw;
@@ -1227,10 +1225,11 @@ footer h2 {
   position: relative;
 }
 
+.turneroButton:hover,
 .sectionForm a:hover {
   height: 2.5em;
   width: 27.726vw;
-  margin-left: 0vw;
+  /*margin-left: 0vw;*/
   color: var(--background-card);
   background: var(--principal-color2);
   display: flex;
@@ -1242,12 +1241,15 @@ footer h2 {
   border: 2px solid var(--principal-color2);
 }
 
+.turneroButton {
+  margin: 10px;
+  width: auto;
+  min-width: 18rem;
+}
 .sectionForm header {
   background: transparent;
   border-bottom: none;
 }
-
-
 
 
 /*--------------------------                     MOBILE                              ------------------------------ */
@@ -1311,6 +1313,7 @@ footer h2 {
     display: flex;
     margin: 0;
     flex-direction: column;
+    width: 100vw;
   }
 
   footer {
@@ -1320,19 +1323,6 @@ footer h2 {
   footer section {
     min-height: 17vh;
     height: auto;
-  }
-
-  .btn-flotante {
-    display: inline-block;
-    padding: 1.25em 1.563em;
-    bottom: 14vh;
-    right: 2.5vh;
-    color: #ffffff;
-    border-radius: 1.25em;
-    background-color: var(--secondary-color2);
-    position: fixed;
-    transition: all 300ms ease 0ms;
-    z-index: 99;
   }
 
   .cardNoticias {
@@ -1360,6 +1350,10 @@ footer h2 {
 
   .cardNoticias article::before {
     display: none;
+  }
+
+  .cardNoticias a {
+    z-index: 1;
   }
 
   .cardNoticias h2 {
@@ -1443,7 +1437,8 @@ footer h2 {
   .cardInstitucional {
     display: flex;
     flex-direction: column;
-    width: 44vh;
+    width: auto;
+    m-width: 90vw;
     align-items: center;
     margin: 1vh 4vw;
     border: 2px solid var(--principal-color2);
@@ -1565,7 +1560,7 @@ footer h2 {
     margin-block-end: 0em;
   }
 
-  .listadoTurnos button {
+  .listadoTurnos #buttonCancelar {
     color: #ffff;
     background: var(--principal-color1);
   }
@@ -1588,8 +1583,8 @@ footer h2 {
   }
 
   .noticias .fichasNoticias {
-    width: 80vw;
-    padding: 0em 3.5em;
+    width: 72vw;
+    padding: 0em 3.2em;
   }
 
   .noticias {
@@ -1599,6 +1594,12 @@ footer h2 {
   .paginador ul li a {
     padding: 0.5em 0.8em;
   }
+
+  .paginador a {
+    margin: 1.3em 0.2em;
+    color: var(--principal-color1);
+  }
+
 
   .noticia {
     margin: 2em 0em;
@@ -1614,6 +1615,7 @@ footer h2 {
     margin-right: 0em;
     align-items: unset;
   }
+
   .turnoSolicitado hr {
     min-width: 70vw;
     width: auto;
@@ -1699,11 +1701,6 @@ footer h2 {
 
   .sectionForm form input[type="datetime-local"] {
     width: 57vw;
-  }
-
-  .sectionForm form input[type="file"] {
-    width: 57vw;
-    height: 6vh;
   }
 
   .sectionForm header {

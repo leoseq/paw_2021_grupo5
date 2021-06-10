@@ -1202,6 +1202,13 @@ footer h2 {
   outline: none;
 }
 
+.turneroButton {
+  margin: 10px;
+  width: auto;
+
+}
+
+.turneroButton,
 .sectionForm a {
   height: 2.5em;
   width: 27.726vw;
@@ -1218,10 +1225,11 @@ footer h2 {
   position: relative;
 }
 
+.turneroButton:hover,
 .sectionForm a:hover {
   height: 2.5em;
   width: 27.726vw;
-  margin-left: 0vw;
+  /*margin-left: 0vw;*/
   color: var(--background-card);
   background: var(--principal-color2);
   display: flex;
@@ -1233,6 +1241,11 @@ footer h2 {
   border: 2px solid var(--principal-color2);
 }
 
+.turneroButton {
+  margin: 10px;
+  width: auto;
+  min-width: 18rem;
+}
 .sectionForm header {
   background: transparent;
   border-bottom: none;

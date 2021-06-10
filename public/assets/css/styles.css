@@ -1,6 +1,6 @@
 :root {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
   --principal-color1: #00b3de;
   --principal-color2: #003c70;
@@ -251,6 +251,10 @@ footer section article a {
   width: 13%;
   height: 102%;
   background: #06488f;
+}
+
+#specialty_input {
+  display: none;
 }
 
 .serviciosMedicos input[type="search"],
@@ -528,6 +532,7 @@ footer h2 {
 .card-persona:hover {
   height: 30vh;
 }
+
 .card-persona:hover > a {
   display: block;
 }
@@ -560,10 +565,6 @@ footer h2 {
   background-color: transparent;
   border-bottom: none;
   color: var(--principal-color2);
-}
-
-#specialty_input {
-  display: none;
 }
 
 .profesionales input[type="search"] {
@@ -691,6 +692,7 @@ footer h2 {
 .noticias {
   padding: 2em;
 }
+
 .noticias header {
   background-color: transparent;
   border-bottom: none;
@@ -715,7 +717,7 @@ footer h2 {
   margin: 0.3em 0.4em;
 }
 
-.noticias a {
+.noticias .fichasNoticias a {
   margin: 2.3em 0.4em;
   color: var(--principal-color1);
 }
@@ -1063,7 +1065,6 @@ footer h2 {
 }
 
 
-
 .sectionForm form input[type="email"] {
   min-width: 28vw;
   width: auto;
@@ -1238,8 +1239,6 @@ footer h2 {
 }
 
 
-
-
 /*--------------------------                     MOBILE                              ------------------------------ */
 
 @media screen and (max-width: 768px) {
@@ -1301,6 +1300,7 @@ footer h2 {
     display: flex;
     margin: 0;
     flex-direction: column;
+    width: 100vw;
   }
 
   footer {
@@ -1424,7 +1424,8 @@ footer h2 {
   .cardInstitucional {
     display: flex;
     flex-direction: column;
-    width: 44vh;
+    width: auto;
+    m-width: 90vw;
     align-items: center;
     margin: 1vh 4vw;
     border: 2px solid var(--principal-color2);
@@ -1570,7 +1571,7 @@ footer h2 {
 
   .noticias .fichasNoticias {
     width: 72vw;
-    padding: 0em 3.5em;
+    padding: 0em 3.2em;
   }
 
   .noticias {
@@ -1580,6 +1581,12 @@ footer h2 {
   .paginador ul li a {
     padding: 0.5em 0.8em;
   }
+
+  .paginador a {
+    margin: 1.3em 0.2em;
+    color: var(--principal-color1);
+  }
+
 
   .noticia {
     margin: 2em 0em;
@@ -1595,6 +1602,7 @@ footer h2 {
     margin-right: 0em;
     align-items: unset;
   }
+
   .turnoSolicitado hr {
     min-width: 70vw;
     width: auto;
@@ -1763,6 +1771,7 @@ footer h2 {
   }
 
   footer a {
+    /* No lo pude solucionar sin el important */
     color: #ffffff;
     align-items: center;
     display: flex;

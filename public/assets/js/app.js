@@ -52,6 +52,13 @@ class appClinica {
 				let turneroSalaEspera = new TurneroSalaEspera(".turneroSalaEspera-contenedor");
 			});
 		});
+
+		// Inicializa la funcionalidad del Turnero de Sala de Espera
+		document.addEventListener("DOMContentLoaded", () => {
+			Clinica.cargarScript("TurneroSalaEspera2", "../assets/js/components/turneroSalaEsperaAutomatica.js", () => {
+				let turneroSalaEspera2 = new TurneroSalaEsperaAutomatica(".turneroSalaEspera2-contenedor");
+			});
+		});
     }
 }
 

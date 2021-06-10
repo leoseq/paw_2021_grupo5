@@ -3,6 +3,7 @@ class TurneroPaciente {
 	constructor(pContenedor) {
 			
 		this.turnoPendiente = "PENDIENTE";
+		this.turnoEnCurso = "EN CURSO";
 		this.turnoFinalizado = "FINALIZADO";
 
 		this.listadoTurnos = [
@@ -116,12 +117,6 @@ class TurneroPaciente {
 
 				// Completo la tabla
 				this.completeTabla(index);
-
-
-				let a = document.getElementById('xyz');
-
-				a.play();
-
 			});
 		} 
 	}
@@ -216,6 +211,7 @@ class TurneroPaciente {
 
 		if (hs == 0) {
 			if (min == 0) {
+				window.navigator.vibrate([1000]);
 				result = "Ahora.";
 			}
 			else {
@@ -283,7 +279,8 @@ class TurneroPaciente {
 		let varProfesional = arrayProfesional.profesional;
 		let varEspecialidad = arrayProfesional.especialidad;
 		let varHorario = arrayTurno.horario.horas +":"+ arrayTurno.horario.minutos;
-		let varEstado = arrayTurno.estado;
+		let varEstado;
+		tiempoEsperaFormat == "Ahora." ? varEstado = this.turnoEnCurso : varEstado = arrayTurno.estado;
 		let varTiempoEspera = tiempoEsperaFormat;
 
 		// Creo los tags para la tabla

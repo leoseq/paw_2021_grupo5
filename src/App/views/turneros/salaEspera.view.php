@@ -45,7 +45,7 @@
                 </table>
 
             </section-->
-            <audio id="xyz" src="../assets/sounds/alert.mp3" preload="auto"></audio>
+            <audio id="soundAlert" src="../assets/sounds/alert.mp3" preload="auto"></audio>
         </main>   
 
         <footer>

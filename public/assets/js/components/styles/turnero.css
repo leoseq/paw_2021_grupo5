@@ -57,6 +57,49 @@ footer nav {
 	display: none;
 }
 
+.turnero-tablas {
+	color: white;
+	display: flex;
+	justify-content: space-around;
+}
+
+.turno-actual {
+	color: white;
+	display: flex;
+	justify-content: space-around;
+	font-size: 41px;
+	align-items: center;
+	margin-top: 40px;
+
+}
+
+.tablaSalaEspera {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+
+}
+
+thead td {
+	border: 2px solid var(--principal-color2);
+	width: 15vw;
+	background: var(--principal-color2);
+}
+
+.atendido {
+	background: #FFFFFF;
+	color: var(--principal-color2);
+}
+
+.turneroProfesional {
+	height: 80vh;
+}
 
 @media screen and (max-width: 768px) {
+	#turnero-tabla td,
+	#turnero-tabla th {
+		border: 1px solid #ddd;
+		padding: 1px;
+		font-size: 15px;
+	}
 }

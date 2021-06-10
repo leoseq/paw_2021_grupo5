@@ -98,6 +98,12 @@ class PageController extends Controller
         require $this->viewDir . "turneros/salaEspera.view.php";
     }
 
+    public function salaEsperaAutomatica()
+    {
+        $titulo = "Turnos: Sala de Espera";
+        require $this->viewDir . "turneros/salaEsperaAutomatica.view.php";
+    }
+
     public function profesional()
     {
         $titulo = "Turnos: Profesional";

@@ -15,6 +15,7 @@
         <main>
             <ul class="turneros">
                 <li><a class="turneroButton" href="/turneros/salaEspera">Sala de Espera</a></li>
+                <li><a class="turneroButton" href="/turneros/salaEsperaAutomatica">Sala de Espera Automatica</a></li>
                 <li><a class="turneroButton" href="/turneros/profesional">Profesional</a></li>
                 <li><a class="turneroButton" href="/turneros/paciente">Paciente</a></li>
             </ul>

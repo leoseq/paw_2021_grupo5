@@ -1,15 +1,11 @@
 <html>
     <head>
-        <?php
-            require __DIR__ . '/parts/head.view.php';
-        ?>
+        {{ include('/parts/head.view.twig') }}
     </head>
     <body>
         <header>
-            <?php
-                require __DIR__ . '/parts/header.view.php';
-                require __DIR__ . '/parts/nav.view.php';
-            ?>
+            {{ include('/parts/header.view.twig') }}
+            {{ include('/parts/nav.view.twig') }}
         </header>
         
         <main class="listadoTurnos">
@@ -31,22 +27,16 @@
             <section class="fichas">
                 <h3>Turnos del usuario</h3>
 
-                <?php
-                    foreach ($turnos as $turno) {
-                        require __DIR__ . '/cards/turnoCard.view.php';
-                    }
-                ?>
+                    {% include('/cards/turnoCard.view.twig') %}
+                    {% include('/cards/turnoCard.view.twig') %}
+
+
             </section>
             
-            <?php
-                require __DIR__ . '/parts/navMobile.view.php';
-            ?>
+            {% include('/parts/navMobile.view.twig') %}
         </main>
- 
         <footer>
-            <?php
-                require __DIR__ . '/parts/footer.view.php';
-            ?>        
+            {% include('/parts/footer.view.twig') %}
         </footer>
     </body>
 </html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        {{ include('/parts/head.view.twig') }}
+    </head>
+    <body>
+        <header>
+            {{ include('/parts/header.view.twig') }}
+            {{ include('/parts/nav.view.twig') }}
+        </header>
+        <main>
+
+            <section class="profesionales">
+                <header>
+                    <h2>Profesionales</h2>
+                </header>
+
+                <input
+                    class="buscador"
+                    type="search"
+                    placeholder="Buscar por profesional o por especialidad"
+                />
+
+                <section class="resultado-busqueda">
+                    {% include('/cards/profesionalesCard.view.twig') %}
+                    {% include('/cards/profesionalesCard.view.twig') %}
+                    {% include('/cards/profesionalesCard.view.twig') %}
+                    {% include('/cards/profesionalesCard.view.twig') %}
+                    {% include('/cards/profesionalesCard.view.twig') %}
+                </section>
+            </section>
+
+           {% include('/parts/navMobile.view.twig') %}
+        </main>
+        <footer>
+            {% include('/parts/footer.view.twig') %}
+        </footer>
+    </body>
+</html>

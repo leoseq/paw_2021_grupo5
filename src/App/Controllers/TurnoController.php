@@ -21,7 +21,7 @@ class TurnoController extends Controller
         $email = $request->get('email');
         $turnos = $this->model->getAll($email);
 
-        require $this->viewDir . "listadoTurnos.view.php";
+        $this->twigLoader("listadoTurnos.view.twig", compact("titulo"));
     }
 
     public function saveTurno()
@@ -49,9 +49,7 @@ class TurnoController extends Controller
 
         $titulo = "Turno Solicitado";
 
-
-
-        require $this->viewDir . "turnoSolicitado.view.php";
+        $this->twigLoader("turnoSolicitado.view.twig", compact("titulo"));
     }
 
 }

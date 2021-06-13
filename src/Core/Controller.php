@@ -4,9 +4,12 @@ namespace Paw\Core;
 
 use Paw\Core\Model;
 use Paw\Core\Database\QueryBuilder;
+//use Paw\Core\Traits\View;
 
 class Controller
 {
+//    use View;
+
     public string $viewDir;
     public ?string $modelName = null; //String o Null
 
@@ -32,5 +35,10 @@ class Controller
     public function sanitizeValue($value)
     {
         return htmlspecialchars($value);
+    }
+
+    public function twigLoader($view, $array) {
+        global $twig;
+        echo $twig->render($view, $array);
     }
 }

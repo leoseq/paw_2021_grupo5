@@ -1,0 +1,29 @@
+<html>
+    <head>
+        {{ include('/parts/head.view.twig') }}
+    </head>
+    <body>
+        <header>
+            {{ include('/parts/header.view.twig') }}
+            {{ include('/parts/nav.view.twig') }}
+        </header>
+
+        <main class="homeContainer">
+
+            {{ include('/parts/turnero.view.twig') }}
+            {{ include('/parts/carrusel.view.twig') }}
+            {{ include('/sections/serviciosMedicos.view.twig') }}
+            {{ include('/sections/contactenos.view.twig') }}
+            {{ include('/sections/noticiaHome.view.twig') }}
+
+            <section class="cardInstitucional">
+                {{ include('/sections/institucionalHome.view.twig') }}
+            </section>
+
+            {% include('/parts/navMobile.view.twig') %}
+        </main>
+        <footer>
+            {% include('/parts/footer.view.twig') %}
+        </footer>
+    </body>
+</html>

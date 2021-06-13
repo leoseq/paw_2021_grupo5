@@ -1,16 +1,12 @@
 <html>
     <head>
-        <?php
-            require __DIR__ . '/parts/head.view.php';
-        ?>
+        {{ include('/parts/head.view.twig') }}
     </head>
     <body>
         <header>
-            <?php
-                require __DIR__ . '/parts/header.view.php';
-                require __DIR__ . '/parts/nav.view.php';
-            ?>
-        </header>      
+            {{ include('/parts/header.view.twig') }}
+            {{ include('/parts/nav.view.twig') }}
+        </header>    
         
         <main>
             <ul class="turneros">
@@ -21,10 +17,10 @@
             </ul>
         </main>   
 
+            {% include('/parts/navMobile.view.twig') %}
+        </main>
         <footer>
-            <?php
-                require __DIR__ . '/parts/footer.view.php';
-            ?>
+            {% include('/parts/footer.view.twig') %}
         </footer>
     </body>
 </html>

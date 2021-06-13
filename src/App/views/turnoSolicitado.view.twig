@@ -1,0 +1,29 @@
+<html>
+    <head>
+        {{ include('/parts/head.view.twig') }}
+    </head>
+    <body>
+        <header>
+            {{ include('/parts/header.view.twig') }}
+            {{ include('/parts/nav.view.twig') }}
+        </header>
+        
+        <main>
+            <section class="turnoSolicitado">
+               
+                {% include('/sections/turnoInfo.view.twig') %}
+                
+                <article style="justify-content: space-around">
+                    <h5>Botones</h5>
+                    <a href="/listadoTurnos?email=<?= $turno->getEmail(); ?>">Ver turnos</a>
+                    <button>Agregar al calendario</button>
+                </article>
+            </section>
+
+            {% include('/parts/navMobile.view.twig') %}
+        </main>
+        <footer>
+            {% include('/parts/footer.view.twig') %}
+        </footer>
+    </body>
+</html>

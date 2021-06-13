@@ -1,0 +1,20 @@
+<html>
+    <head>
+        {{ include('/parts/head.view.twig') }}
+    </head>
+    <body>
+        <header class="headerImpresion">
+            {{ include('/parts/header.view.twig') }}
+        </header>
+        
+        <main>
+            <section class="turnoSolicitado">
+                {{ include('/sections/turnoInfo.view.twig') }}
+            </section>
+        </main>
+
+        <footer>
+            {{ include('/parts/footerImpresion.view.twig') }}
+        </footer>
+    </body>
+</html>

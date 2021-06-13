@@ -1,20 +1,14 @@
 <html>
     <head>
-        <?php
-            require __DIR__ . '/parts/head.view.php';
-        ?>
+        {{ include('/parts/head.view.twig') }}
     </head>
     <body>
         <header>
-            <?php 
-                require __DIR__ . '/parts/header.view.php';
-                require __DIR__ . '/parts/nav.view.php';
-            ?>
+            {{ include('/parts/header.view.twig') }}
+            {{ include('/parts/nav.view.twig') }}
         </header>
         <main>            
-            <?php
-                require __DIR__ . '/parts/turnero.view.php';
-            ?>
+            {{ include('/parts/turnero.view.twig') }}
             
             <section class="institucional">
                 <img alt="Noticia" src="../assets/images/portadas/edificio.jpg" />
@@ -64,25 +58,22 @@
 
                 <section class="profesionales">
                     <section class="resultado-busqueda">
-                        <?php
-                            require __DIR__ . '/cards/institucionalCard.view.php';
-                            require __DIR__ . '/cards/institucionalCard.view.php';
-                            require __DIR__ . '/cards/institucionalCard.view.php';
-                            require __DIR__ . '/cards/institucionalCard.view.php';
-                        ?>
+
+                        {% include('/cards/institucionalCard.view.twig') %}
+                        {% include('/cards/institucionalCard.view.twig') %}
+                        {% include('/cards/institucionalCard.view.twig') %}
+                        {% include('/cards/institucionalCard.view.twig') %}
+                        {% include('/cards/institucionalCard.view.twig') %}
+
                     </section>
                 </section>
                 
             </section>
             
-            <?php
-                require __DIR__ . '/parts/navMobile.view.php';
-            ?> 
+            {% include('/parts/navMobile.view.twig') %}
         </main>
         <footer>
-            <?php
-                require __DIR__ . '/parts/footer.view.php';
-            ?>        
+            {% include('/parts/footer.view.twig') %}
         </footer>
     </body>
 </html>

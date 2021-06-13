@@ -2,118 +2,121 @@
 
 namespace Paw\App\Controllers;
 
+
 use Paw\Core\Controller;
 use Paw\App\Models\Turno;
+
 
 class PageController extends Controller
 {
 
+
     public function index()
     {
         $titulo = "Index";
-        require $this->viewDir . "index.view.php";
+        $this->twigLoader("index.view.twig", compact("titulo"));
     }
 
     public function obrasSociales()
     {
         $titulo = "Obras Sociales";
-        require $this->viewDir . "obrasSociales.view.php";
+        $this->twigLoader("obrasSociales.view.twig", compact("titulo"));
     }
 
     public function institucional()
     {
         $titulo = "Institucional";
-        require $this->viewDir . "institucional.view.php";
+        $this->twigLoader("institucional.view.twig", compact("titulo"));
     }
 
     public function profesionales()
     {
         $titulo = "Profesionales";
-        require $this->viewDir . "profesionales.view.php";
+        $this->twigLoader("profesionales.view.twig", compact("titulo"));
     }
 
     public function noticias()
     {
         $titulo = "Noticias";
-        require $this->viewDir . "noticias.view.php";
+        $this->twigLoader("noticias.view.twig", compact("titulo"));
     }
 
     public function login()
     {
         $titulo = "Login";
-        require $this->viewDir . "login.view.php";
+        $this->twigLoader("login.view.twig", compact("titulo"));
     }
 
     public function registro()
     {
         $titulo = "Registro";
-        require $this->viewDir . "registro.view.php";
+        $this->twigLoader("registro.view.twig", compact("titulo"));
     }
 
     public function noticia()
     {
         $titulo = "Noticia";
-        require $this->viewDir . "noticia.view.php";
+        $this->twigLoader("noticia.view.twig", compact("titulo"));
     }
 
     public function listadoTurnos()
     {
         $titulo = "Listado de Turnos";
-        require $this->viewDir . "listadoTurnos.view.php";
+        $this->twigLoader("listadoTurnos.view.twig", compact("titulo"));
     }
     
     public function solicitarTurno()
     {
         $titulo = "Solicitar Turno";
-        require $this->viewDir . "solicitarTurno.view.php";
+        $this->twigLoader("solicitarTurno.view.twig", compact("titulo"));
     }
     
     public function turnoSolicitado($turno = null)
     {
         $titulo = "Turno Solicitado";
-        require $this->viewDir . "turnoSolicitado.view.php";
+        $this->twigLoader("turnoSolicitado.view.twig", compact("titulo"));
     }
 
     public function imprimirListadoTurnos()
     {
         $titulo = "Imprimir Listado de Turnos";
-        require $this->viewDir . "imprimirListadoTurnos.view.php";
+        $this->twigLoader("imprimirListadoTurnos.view.twig", compact("titulo"));
     }
 
     public function imprimirTurnoSolicitado()
     {
         $titulo = "Imprimir Turno Solicitado";
-        require $this->viewDir . "imprimirTurnoSolicitado.view.php";
+        $this->twigLoader("imprimirTurnoSolicitado.view.twig", compact("titulo"));
     }
 
     public function turneros()
     {
         $titulo = "Turneros";
-        require $this->viewDir . "turneros.view.php";
+        $this->twigLoader("turneros.view.twig", compact("titulo"));
     }
 
     public function salaEspera()
     {
         $titulo = "Turnos: Sala de Espera";
-        require $this->viewDir . "turneros/salaEspera.view.php";
+        $this->twigLoader("turneros/salaEspera.view.twig", compact("titulo"));
     }
 
     public function salaEsperaAutomatica()
     {
         $titulo = "Turnos: Sala de Espera";
-        require $this->viewDir . "turneros/salaEsperaAutomatica.view.php";
+        $this->twigLoader("turneros/salaEsperaAutomatica.view.twig", compact("titulo"));
     }
 
     public function profesional()
     {
         $titulo = "Turnos: Profesional";
-        require $this->viewDir . "turneros/profesional.view.php";
+        $this->twigLoader("turneros/profesional.view.twig", compact("titulo"));
     }
 
     public function paciente()
     {
         $titulo = "Turnos: Paciente";
-        require $this->viewDir . "turneros/paciente.view.php";
+        $this->twigLoader("turneros/paciente.view.twig", compact("titulo"));
     }
 
 

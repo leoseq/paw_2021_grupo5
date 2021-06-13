@@ -1,10 +1,8 @@
 <html>
     <head>
-        <?php
-            require __DIR__ . '/../parts/head.view.php';
-        ?>
+        {{ include('/parts/head.view.twig') }}
     </head>
-    <body class="turneroProfesional-contenedor">
+    <body class="turneroSalaEspera-contenedor">
         <header> 
 
             <select id="turneroProfesional-selectProfesional" class="turneroButton">
@@ -14,12 +12,14 @@
             </select>
 
             <h2 id="turneroProfesional-profesional">-</h2>
-            
+
+            <button id="turneroProfesional-siguiente" class="turneroButton">Siguiente Turno</button>
+             
         </header>
+
         <main class="turneroProfesional">
 
             <a href="/turneros">Atrás</a>
-            <button id="turneroProfesional-siguiente" class="turneroButton">Siguiente Turno</button>
 
             <section class="turnero-screen">
                 <h3 id="turneroProfesional-nombreProfesional">-</h3>
@@ -28,9 +28,9 @@
             </section>
 
 
-            <section class="turneroProfesional-lista">
+            <!--section class="turneroProfesional-lista">
 
-                <table id="turnero-tabla">
+                <table id="turneroProfesional-tablaPacientes">
                     <thead>
                         <tr>
                             <th>Nro de Turno</th>
@@ -39,17 +39,15 @@
                             <th>Estado</th>
                         </tr>
                     </thead>
-                    <tbody id="turnero-listadoPacientes"></tbody>                    
+                    <tbody id="turneroProfesional-listadoPacientes"></tbody>                    
                 </table>
 
-                <audio id="soundAlert" src="../assets/sounds/alert.mp3" preload="auto"></audio>
-            </section>
+            </section-->
+            <audio id="soundAlert" src="../assets/sounds/alert.mp3" preload="auto"></audio>
         </main>   
 
         <footer>
-            <?php
-                require __DIR__ . '/../parts/footer.view.php';
-            ?>
+            {% include('/parts/footer.view.twig') %}
         </footer>
     </body>
 </html>

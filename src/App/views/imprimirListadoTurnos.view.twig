@@ -1,0 +1,23 @@
+<html>
+    <head>
+        {{ include('/parts/head.view.twig') }}
+    </head>
+    <body>
+        <header >
+            {{ include('/parts/header.view.twig') }}
+        </header>
+        
+        <main class="listadoTurnos">
+            <section class="fichas">
+                <h3>Turnos del usuario</h3>
+
+                    {{ include('/cards/turnoCard.view.twig') }}
+
+            </section>
+        </main>
+
+        <footer>
+            {{ include('/parts/footerImpresion.view.twig') }}
+        </footer>
+    </body>
+</html>

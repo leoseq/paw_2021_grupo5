@@ -1,8 +1,6 @@
 <html>
     <head>
-        <?php
-            require __DIR__ . '/../parts/head.view.php';
-        ?>
+        {{ include('/parts/head.view.twig') }}
     </head>
     <body class="turneroPaciente-contenedor">
         <header> 
@@ -52,9 +50,7 @@
         </main>   
 
         <footer>
-            <?php
-                require __DIR__ . '/../parts/footer.view.php';
-            ?>
+            {% include('/parts/footer.view.twig') %}
         </footer>
     </body>
 </html>

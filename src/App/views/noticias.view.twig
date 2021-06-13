@@ -1,0 +1,46 @@
+<html>
+    <head>
+        {{ include('/parts/head.view.twig') }}
+    </head>
+    <body>
+        <header>
+            {{ include('/parts/header.view.twig') }}
+            {{ include('/parts/nav.view.twig') }}
+        </header>
+        <main class="noticias">
+            {{ include('/parts/turnero.view.twig') }}
+            
+            <header>
+                <h2>Noticias</h2>
+            </header>
+      
+            <section class="fichasNoticias">
+                <h4>Últimas Noticias</h4>
+                    {% include('/cards/noticiaCard.view.twig') %}
+                    {% include('/cards/noticiaCard.view.twig') %}
+                    {% include('/cards/noticiaCard.view.twig') %}
+                    {% include('/cards/noticiaCard.view.twig') %}
+                    {% include('/cards/noticiaCard.view.twig') %}
+                    {% include('/cards/noticiaCard.view.twig') %}
+            </section>
+
+            <section class="paginador">
+                <h4>Paginador</h4>
+                <ul>
+                    <li><a href="#">«</a></li>
+                    <li><a class="active" href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">»</a></li>
+                </ul>
+            </section>
+
+            {% include('/parts/navMobile.view.twig') %}
+        </main>
+        <footer>
+            {% include('/parts/footer.view.twig') %}
+        </footer>
+    </body>
+</html>

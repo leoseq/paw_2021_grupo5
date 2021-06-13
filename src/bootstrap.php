@@ -6,6 +6,9 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Dotenv\Dotenv;
 
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
+
 use Paw\Core\Router;
 use Paw\Core\Config;
 use Paw\Core\Request;
@@ -30,6 +33,17 @@ $connection = $connectionBuilder->make($config);
 $whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
+
+
+// Load Templates
+$loader = new FilesystemLoader(__DIR__ . $config->get("TEMPLATES_DIR"));
+$twig = new Environment ($loader, array(
+    'cache' => $config->get("TEMPLATES_CACHE_DIR"),
+    'debug' => true
+));
+
+
+
 
 
 $request = new Request();
@@ -80,3 +94,4 @@ $router->get('/turneros/salaEspera', 'PageController@salaEspera');
 $router->get('/turneros/salaEsperaAutomatica', 'PageController@salaEsperaAutomatica');
 $router->get('/turneros/profesional', 'PageController@profesional');
 $router->get('/turneros/paciente', 'PageController@paciente');
+

@@ -14,31 +14,137 @@ class PageController extends Controller
     public function index()
     {
         $titulo = "Index";
-        $this->twigLoader("index.view.twig", compact("titulo"));
+
+        // Obtener info de la DB
+        $directivos = array(
+            [
+                "nombreDirectivo" => "Dr. Daniel Villaroel",
+                "cargoDirectivo" => "Director General"
+            ],
+            [
+                "nombreDirectivo" => "Dra. Delia Silva",
+                "cargoDirectivo" => "Directora de Cirugia"
+            ]
+        ); 
+        
+        $noticia = [
+                "tituloNoticia" => "Titulo de Noticia",
+                "cuerpoNoticia" => "Cuerpo de noticis..."
+        ];
+        
+        $serviciosMasBuscados = array(
+            [
+                "puesto" => "1",
+                "especialidad" => "Cardiología"
+            ],
+            [
+                "puesto" => "2",
+                "especialidad" => "Clinica Medica"
+            ]
+        );
+            
+        $profesionalesMasBuscados = array(
+            [
+                "puesto" => "1",
+                "profesional" => "Dr. Cristian Mendez"
+            ],
+            [
+                "puesto" => "2",
+                "profesional" => "Dra. Maria Dominguez"
+            ]
+        );
+        
+
+        $this->twigLoader("index.view.twig", compact("titulo", "directivos", "noticia", "serviciosMasBuscados", "profesionalesMasBuscados"));
     }
 
     public function obrasSociales()
     {
         $titulo = "Obras Sociales";
-        $this->twigLoader("obrasSociales.view.twig", compact("titulo"));
+
+        $obrasSociales = array(
+            [
+                "nombre" => "OMINT",
+                "cantidadProfesionalesAdheridos" => "50",
+                "cantidadProfesionalesDisponibles" => "15"
+            ],
+            [
+                "nombre" => "OSDE",
+                "cantidadProfesionalesAdheridos" => "20",
+                "cantidadProfesionalesDisponibles" => "6"
+            ]
+        );
+
+        $this->twigLoader("obrasSociales.view.twig", compact("titulo", "obrasSociales"));
     }
 
     public function institucional()
     {
         $titulo = "Institucional";
-        $this->twigLoader("institucional.view.twig", compact("titulo"));
+
+        $directivos = array(
+            [
+                "nombreDirectivo" => "Dr. Daniel Villaroel",
+                "cargoDirectivo" => "Director General",
+                "emailDirectivo" => "email_director@mail.com"
+
+            ],
+            [
+                "nombreDirectivo" => "Dra. Delia Silva",
+                "cargoDirectivo" => "Directora de Cirugia",
+                "emailDirectivo" => "email_director@mail.com"
+            ]
+        ); 
+
+        $this->twigLoader("institucional.view.twig", compact("titulo", "directivos"));
     }
 
     public function profesionales()
     {
         $titulo = "Profesionales";
-        $this->twigLoader("profesionales.view.twig", compact("titulo"));
+        $profesionales = array(
+            [
+                "nombreProfesional" => "Dr. Ernesto Fernandez",
+                "especialidadProfesional" => "Cardiología",
+                "diasAtencion" => "Lunes - Miercoles",
+                "horarioAtencion" => "16 a 20 hs",
+                "obrasSociales" => "OSDE",
+            ],
+            [
+                "nombreProfesional" => "Dra. Cristina Torres",
+                "especialidadProfesional" => "Pediatría",
+                "diasAtencion" => "Martes - Jueves",
+                "horarioAtencion" => "9 a 15 hs",
+                "obrasSociales" => "OSDE - OMINT - SWISS MEDICAL",
+            ]
+        );
+
+        $this->twigLoader("profesionales.view.twig", compact("titulo", "profesionales"));
     }
 
     public function noticias()
     {
         $titulo = "Noticias";
-        $this->twigLoader("noticias.view.twig", compact("titulo"));
+
+        $noticias = array(
+            [
+                "tituloNoticia" => "Titulo de Noticia A",
+                "fechaNoticia" => "20 de Junio 2021",
+                "previewCuerpoNoticia" => "Preview del contenido..."
+            ],
+            [
+                "tituloNoticia" => "Titulo de Noticia B",
+                "fechaNoticia" => "15 de Junio 2021",
+                "previewCuerpoNoticia" => "Preview del contenido..."
+            ],
+            [
+                "tituloNoticia" => "Titulo de Noticia C",
+                "fechaNoticia" => "15 de Junio 2021",
+                "previewCuerpoNoticia" => "Preview del contenido..."
+            ]
+        );
+
+        $this->twigLoader("noticias.view.twig", compact("titulo", "noticias"));
     }
 
     public function login()
@@ -56,13 +162,35 @@ class PageController extends Controller
     public function noticia()
     {
         $titulo = "Noticia";
-        $this->twigLoader("noticia.view.twig", compact("titulo"));
+
+        $noticia = [
+                "tituloNoticia" => "Titulo de Noticia A",
+                "fechaNoticia" => "20 de Junio 2021",
+                "cuerpoNoticia" => "Cuerpo de la Noticia..."
+        ];
+
+        $this->twigLoader("noticia.view.twig", compact("titulo", "noticia"));
     }
 
     public function listadoTurnos()
     {
         $titulo = "Listado de Turnos";
-        $this->twigLoader("listadoTurnos.view.twig", compact("titulo"));
+
+        $turnos = array(
+            [
+                "profesional" => "A",
+                "especialidad" => "A",
+                "nombrePaciente" => "Nombre",
+                "apellidoPaciente" => "Apellido",
+                "fechaNacimiento" => "12/12/2000",
+                "edad" => "12",
+                "telefono" => "1111111111",
+                "email" => "leo@mail.com",
+                "fechaTurno" => "12/12/2021 12:00",
+            ]
+        );
+
+        $this->twigLoader("listadoTurnos.view.twig", compact("titulo", "turnos"));
     }
     
     public function solicitarTurno()
@@ -80,7 +208,22 @@ class PageController extends Controller
     public function imprimirListadoTurnos()
     {
         $titulo = "Imprimir Listado de Turnos";
-        $this->twigLoader("imprimirListadoTurnos.view.twig", compact("titulo"));
+
+        $turnos = array(
+            [
+                "profesional" => "A",
+                "especialidad" => "A",
+                "nombrePaciente" => "Nombre",
+                "apellidoPaciente" => "Apellido",
+                "fechaNacimiento" => "12/12/2000",
+                "edad" => "12",
+                "telefono" => "1111111111",
+                "email" => "leo@mail.com",
+                "fechaTurno" => "12/12/2021 12:00",
+            ]
+        );
+
+        $this->twigLoader("imprimirListadoTurnos.view.twig", compact("titulo", "turnos"));
     }
 
     public function imprimirTurnoSolicitado()

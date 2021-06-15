@@ -59,11 +59,9 @@
                 <section class="profesionales">
                     <section class="resultado-busqueda">
 
-                        {% include('/cards/institucionalCard.view.twig') %}
-                        {% include('/cards/institucionalCard.view.twig') %}
-                        {% include('/cards/institucionalCard.view.twig') %}
-                        {% include('/cards/institucionalCard.view.twig') %}
-                        {% include('/cards/institucionalCard.view.twig') %}
+                        {%  for directivo in directivos %}
+                            {% include('/cards/institucionalCard.view.twig') %}
+                        {% endfor %}
 
                     </section>
                 </section>

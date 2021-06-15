@@ -21,11 +21,10 @@
                 />
 
                 <section class="resultado-busqueda">
-                    {% include('/cards/profesionalesCard.view.twig') %}
-                    {% include('/cards/profesionalesCard.view.twig') %}
-                    {% include('/cards/profesionalesCard.view.twig') %}
-                    {% include('/cards/profesionalesCard.view.twig') %}
-                    {% include('/cards/profesionalesCard.view.twig') %}
+
+                    {% for profesional in profesionales %}
+                        {% include('/cards/profesionalesCard.view.twig') %}
+                    {% endfor %}
                 </section>
             </section>
 

@@ -16,12 +16,11 @@
       
             <section class="fichasNoticias">
                 <h4>Últimas Noticias</h4>
-                    {% include('/cards/noticiaCard.view.twig') %}
-                    {% include('/cards/noticiaCard.view.twig') %}
-                    {% include('/cards/noticiaCard.view.twig') %}
-                    {% include('/cards/noticiaCard.view.twig') %}
-                    {% include('/cards/noticiaCard.view.twig') %}
-                    {% include('/cards/noticiaCard.view.twig') %}
+
+                    {% for noticia in noticias %}
+                        {% include('/cards/noticiaCard.view.twig') %}
+                    {% endfor %}
+
             </section>
 
             <section class="paginador">

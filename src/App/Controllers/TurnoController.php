@@ -17,11 +17,25 @@ class TurnoController extends Controller
         $titulo = "Listado de Turnos";
 
         //TODO refactorizar a otro patron
-        global $request;
-        $email = $request->get('email');
-        $turnos = $this->model->getAll($email);
+//        global $request;
+//        $email = $request->get('email');
+//        $turnos = $this->model->getAll($email);
 
-        $this->twigLoader("listadoTurnos.view.twig", compact("titulo"));
+        $turnos = array(
+            [
+                "profesional" => "A",
+                "especialidad" => "A",
+                "nombrePaciente" => "Nombre",
+                "apellidoPaciente" => "Apellido",
+                "fechaNacimiento" => "12/12/2000",
+                "edad" => "12",
+                "telefono" => "1111111111",
+                "email" => "leo@mail.com",
+                "fechaTurno" => "12/12/2021 12:00",
+            ]
+        );
+
+        $this->twigLoader("listadoTurnos.view.twig", compact("titulo", "turnos"));
     }
 
     public function saveTurno()
@@ -49,7 +63,20 @@ class TurnoController extends Controller
 
         $titulo = "Turno Solicitado";
 
-        $this->twigLoader("turnoSolicitado.view.twig", compact("titulo"));
+
+        $turnoArray = array(
+            "profesional" => $turno->getProfesional(),
+            "especialidad" => $turno->getEspecialidad(),
+            "nombrePaciente" => $turno->getNombre(),
+            "apellidoPaciente" => $turno->getApellido(),
+            "fechaNacimiento" => $turno->getFechaNacimiento(),
+            "edad" => $turno->getEdad(),
+            "telefono" => $turno->getTel(),
+            "email" => $turno->getEmail(),
+            "fechaTurno" => $turno->getFechaTurno()
+        );
+
+        $this->twigLoader("turnoSolicitado.view.twig", compact("titulo", "turnoArray"));
     }
 
 }

@@ -3,7 +3,7 @@
         {{ include('/parts/head.view.twig') }}
     </head>
     <body>
-        <header >
+        <header class="headerImpresion">
             {{ include('/parts/header.view.twig') }}
         </header>
         
@@ -11,7 +11,9 @@
             <section class="fichas">
                 <h3>Turnos del usuario</h3>
 
-                    {{ include('/cards/turnoCard.view.twig') }}
+                    {% for turno in turnos %}
+                        {{ include('/cards/turnoCard.view.twig') }}
+                    {% endfor %}
 
             </section>
         </main>

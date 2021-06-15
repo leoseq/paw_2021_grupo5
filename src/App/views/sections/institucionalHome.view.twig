@@ -6,11 +6,8 @@
     <header>
         <h3>Autoridades</h3>
     </header>
-
-    {% include('/cards/institucionalCardHome.view.twig') %}
-    {% include('/cards/institucionalCardHome.view.twig') %}
-    {% include('/cards/institucionalCardHome.view.twig') %}
-    {% include('/cards/institucionalCardHome.view.twig') %}
-    {% include('/cards/institucionalCardHome.view.twig') %}
+        {% for directivo in directivos %}
+            {% include('/cards/institucionalCardHome.view.twig') %}
+        {% endfor %}
 
 </section>

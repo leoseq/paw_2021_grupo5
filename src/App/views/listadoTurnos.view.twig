@@ -27,8 +27,9 @@
             <section class="fichas">
                 <h3>Turnos del usuario</h3>
 
-                    {% include('/cards/turnoCard.view.twig') %}
-                    {% include('/cards/turnoCard.view.twig') %}
+                    {% for turno in turnos %}
+                        {% include('/cards/turnoCard.view.twig') %}
+                    {% endfor %}
 
 
             </section>

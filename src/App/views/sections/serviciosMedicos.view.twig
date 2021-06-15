@@ -23,12 +23,9 @@
             <header>
                 <h4>Especialidades</h4>
             </header>
-            <p>1 - Cardiología</p>
-            <p>2 - Ortopedia y Traumatología</p>
-            <p>3 - Cirugía Cardiovascular</p>
-            <p>4 - Ginecología</p>
-            <p>5 - Cirugía General</p>
-            <p>6 - Oncología</p>
+                {% for servicio in serviciosMasBuscados %}
+                    <p> {{ servicio.puesto}} - {{ servicio.especialidad}}</p>
+                {% endfor %}
         </article>
     </section>
 
@@ -40,12 +37,9 @@
             <header>
                 <h4>Profesionales</h4>
             </header>
-            <p>1 - Juan Pérez</p>
-            <p>2 - José Gómez</p>
-            <p>3 - Julio Rodríguez</p>
-            <p>4 - Marcos González</p>
-            <p>5 - Martin Peña</p>
-            <p>6 - Franco Martínez</p>
+                {% for profesional in profesionalesMasBuscados %}
+                    <p> {{ profesional.puesto}} - {{ profesional.profesional}}</p>
+                {% endfor %}
         </article>
     </section>
 </section>

@@ -20,12 +20,9 @@
                 />
 
                 <section class="resultado-busqueda">
-                    {% include('/cards/obrasSocialesCard.view.twig') %}
-                    {% include('/cards/obrasSocialesCard.view.twig') %}
-                    {% include('/cards/obrasSocialesCard.view.twig') %}
-                    {% include('/cards/obrasSocialesCard.view.twig') %}
-                    {% include('/cards/obrasSocialesCard.view.twig') %}
-                    {% include('/cards/obrasSocialesCard.view.twig') %}
+                    {% for obraSocial in obrasSociales %}
+                        {% include('/cards/obrasSocialesCard.view.twig') %}
+                    {% endfor %}
                 </section>
             </section>
 

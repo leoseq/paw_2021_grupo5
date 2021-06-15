@@ -1,0 +1,19 @@
+{% extends "parts/base.view.twig" %}
+
+{% block main %}
+
+    {{ include('/parts/turnero.view.twig') }}
+
+    <section class="noticia">
+        <img src="../assets/images/noticias/noticia_1.jpg" alt="imagen-noticia" />
+
+        <h2> {{ noticia.tituloNoticia }}</h2>
+
+        <p> {{ noticia.fechaNoticia }} </p>
+
+        <p>
+        {{ noticia.cuerpoNoticia }}
+        </p>
+    </section>
+
+{% endblock %}

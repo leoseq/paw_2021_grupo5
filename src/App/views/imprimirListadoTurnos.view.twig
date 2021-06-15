@@ -1,0 +1,16 @@
+{% extends "parts/baseImpresion.view.twig" %}
+
+{% block main %}
+    
+    <main class="listadoTurnos">
+        <section class="fichas">
+            <h3>Turnos del usuario</h3>
+
+            {% for turno in turnos %}
+                {{ include('/cards/turnoCard.view.twig') }}
+            {% endfor %}
+
+        </section>
+    </main>
+
+{% endblock %}

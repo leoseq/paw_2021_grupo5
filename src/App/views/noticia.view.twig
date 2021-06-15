@@ -1,31 +1,19 @@
-<html>
-    <head>
-        {{ include('/parts/head.view.twig') }}
-    </head>
-    <body>
-        <header>
-            {{ include('/parts/header.view.twig') }}
-            {{ include('/parts/nav.view.twig') }}
-        </header>
-        <main>
-            {{ include('/parts/turnero.view.twig') }}
+{% extends "parts/base.view.twig" %}
 
-            <section class="noticia">
-                <img src="../assets/images/noticias/noticia_1.jpg" alt="imagen-noticia" />
+{% block main %}
 
-                <h2> {{ noticia.tituloNoticia }}</h2>
+    {{ include('/parts/turnero.view.twig') }}
 
-                <p> {{ noticia.fechaNoticia }} </p>
+    <section class="noticia">
+        <img src="../assets/images/noticias/noticia_1.jpg" alt="imagen-noticia" />
 
-                <p>
-                {{ noticia.cuerpoNoticia }}
-                </p>
-            </section>
+        <h2> {{ noticia.tituloNoticia }}</h2>
 
-            {% include('/parts/navMobile.view.twig') %}
-        </main>
-        <footer>
-            {% include('/parts/footer.view.twig') %}
-        </footer>
-    </body>
-</html>
+        <p> {{ noticia.fechaNoticia }} </p>
+
+        <p>
+        {{ noticia.cuerpoNoticia }}
+        </p>
+    </section>
+
+{% endblock %}

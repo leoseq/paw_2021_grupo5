@@ -1,22 +1,17 @@
-<html>
-    <head>
-        {{ include('/parts/head.view.twig') }}
-    </head>
-    <body>
-        <header>
-            {{ include('/parts/header.view.twig') }}
-            {{ include('/parts/nav.view.twig') }}
-        </header>
+{% extends "parts/base.view.twig" %}
+
+{% block main %} 
+
+    <main class="containerLogin">
+
+        {% include('/sections/loginForm.view.twig') %}
+        {% include('/sections/numerosTurno.view.twig') %}
+
+        {{ parent() }}
+    </main>
+
+{% endblock %}
+
+
         
-        <main class="containerLogin">
-
-            {% include('/sections/loginForm.view.twig') %}
-            {% include('/sections/numerosTurno.view.twig') %}
-
-            {% include('/parts/navMobile.view.twig') %}
-        </main>
-        <footer>
-            {% include('/parts/footer.view.twig') %}
-        </footer>
-    </body>
-</html>
+        

@@ -1,43 +1,34 @@
-<html>
-    <head>
-        {{ include('/parts/head.view.twig') }}
-    </head>
-    <body>
+{% extends "parts/base.view.twig" %}
+
+{% block main %}
+
+    <main class="listadoTurnos">
+            
         <header>
-            {{ include('/parts/header.view.twig') }}
-            {{ include('/parts/nav.view.twig') }}
+            <h2>Listado de turnos</h2>
+            <a href="/imprimirListadoTurnos">
+                <span class="impresora-icon-36"></span>
+            </a>
         </header>
+
+        <select name="select">
+            <option value="value1" selected>Todos los turnos</option>
+            <option value="value2">Cancelados</option>
+            <option value="value3">Aprobados</option>
+            <option value="value4">Finalizados</option>
+        </select>             
+
+        <section class="fichas">
+            <h3>Turnos del usuario</h3>
+
+                {% for turno in turnos %}
+                    {% include('/cards/turnoCard.view.twig') %}
+                {% endfor %}
+
+        </section>
         
-        <main class="listadoTurnos">
-            
-            <header>
-                <h2>Listado de turnos</h2>
-                <a href="/imprimirListadoTurnos">
-                    <span class="impresora-icon-36"></span>
-                </a>
-            </header>
+        {{ parent() }}
 
-            <select name="select">
-                <option value="value1" selected>Todos los turnos</option>
-                <option value="value2">Cancelados</option>
-                <option value="value3">Aprobados</option>
-                <option value="value4">Finalizados</option>
-            </select>             
+    </main>
 
-            <section class="fichas">
-                <h3>Turnos del usuario</h3>
-
-                    {% for turno in turnos %}
-                        {% include('/cards/turnoCard.view.twig') %}
-                    {% endfor %}
-
-
-            </section>
-            
-            {% include('/parts/navMobile.view.twig') %}
-        </main>
-        <footer>
-            {% include('/parts/footer.view.twig') %}
-        </footer>
-    </body>
-</html>
+{% endblock %}

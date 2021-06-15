@@ -1,19 +1,9 @@
-<html>
-    <head>
-        {{ include('/parts/head.view.twig') }}
-    </head>
-    <body>
-        <header>
-            {{ include('/parts/header.view.twig') }}
-            {{ include('/parts/nav.view.twig') }}
-        </header>
-        <main>
-            <img src="../assets/images/404.png">
-            
-            {% include('/parts/navMobile.view.twig') %}
-        </main>
-        <footer>
-            {% include('/parts/footer.view.twig') %}
-        </footer>
-    </body>
-</html>
+{% extends "parts/base.view.twig" %}
+
+{% block main %} 
+
+    <img src="../assets/images/404.png">
+
+    {{ parent() }}
+
+{% endblock %}

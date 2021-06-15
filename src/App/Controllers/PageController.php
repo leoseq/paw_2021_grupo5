@@ -229,6 +229,21 @@ class PageController extends Controller
     public function imprimirTurnoSolicitado()
     {
         $titulo = "Imprimir Turno Solicitado";
+        
+        $turnos = array(
+            [
+                "profesional" => "A",
+                "especialidad" => "A",
+                "nombrePaciente" => "Nombre",
+                "apellidoPaciente" => "Apellido",
+                "fechaNacimiento" => "12/12/2000",
+                "edad" => "12",
+                "telefono" => "1111111111",
+                "email" => "leo@mail.com",
+                "fechaTurno" => "12/12/2021 12:00",
+            ]
+        );
+
         $this->twigLoader("imprimirTurnoSolicitado.view.twig", compact("titulo"));
     }
 

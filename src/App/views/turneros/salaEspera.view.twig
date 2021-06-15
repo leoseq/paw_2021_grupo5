@@ -1,7 +1,7 @@
-<html>
-    <head>
-        {{ include('/parts/head.view.twig') }}
-    </head>
+{% extends "parts/baseTurnero.view.twig" %}
+
+{% block body %}
+
     <body class="turneroSalaEspera-contenedor">
         <header> 
 
@@ -27,27 +27,11 @@
                 <h3 id="turneroProfesional-nombrePaciente">-</h3>
             </section>
 
-
-            <!--section class="turneroProfesional-lista">
-
-                <table id="turneroProfesional-tablaPacientes">
-                    <thead>
-                        <tr>
-                            <th>Nro de Turno</th>
-                            <th>Paciente</th>
-                            <th>Horario</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody id="turneroProfesional-listadoPacientes"></tbody>                    
-                </table>
-
-            </section-->
             <audio id="soundAlert" src="../assets/sounds/alert.mp3" preload="auto"></audio>
         </main>   
 
-        <footer>
-            {% include('/parts/footer.view.twig') %}
-        </footer>
+        {{ parent() }}
+
     </body>
-</html>
+
+{% endblock %}

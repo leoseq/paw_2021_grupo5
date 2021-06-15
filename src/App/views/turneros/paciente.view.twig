@@ -1,8 +1,9 @@
-<html>
-    <head>
-        {{ include('/parts/head.view.twig') }}
-    </head>
+{% extends "parts/baseTurnero.view.twig" %}
+
+{% block body %}
+
     <body class="turneroPaciente-contenedor">
+            
         <header> 
 
             <select id="turneroPaciente-selectPaciente" class="turneroButton">
@@ -49,8 +50,8 @@
             </section>
         </main>   
 
-        <footer>
-            {% include('/parts/footer.view.twig') %}
-        </footer>
+        {{ parent() }}
+
     </body>
-</html>
+
+{% endblock %}

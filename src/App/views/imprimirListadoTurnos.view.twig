@@ -1,25 +1,16 @@
-<html>
-    <head>
-        {{ include('/parts/head.view.twig') }}
-    </head>
-    <body>
-        <header class="headerImpresion">
-            {{ include('/parts/header.view.twig') }}
-        </header>
-        
-        <main class="listadoTurnos">
-            <section class="fichas">
-                <h3>Turnos del usuario</h3>
+{% extends "parts/baseImpresion.view.twig" %}
 
-                    {% for turno in turnos %}
-                        {{ include('/cards/turnoCard.view.twig') }}
-                    {% endfor %}
+{% block main %}
+    
+    <main class="listadoTurnos">
+        <section class="fichas">
+            <h3>Turnos del usuario</h3>
 
-            </section>
-        </main>
+            {% for turno in turnos %}
+                {{ include('/cards/turnoCard.view.twig') }}
+            {% endfor %}
 
-        <footer>
-            {{ include('/parts/footerImpresion.view.twig') }}
-        </footer>
-    </body>
-</html>
+        </section>
+    </main>
+
+{% endblock %}

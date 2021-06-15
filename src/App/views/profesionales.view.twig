@@ -1,37 +1,28 @@
-<html>
-    <head>
-        {{ include('/parts/head.view.twig') }}
-    </head>
-    <body>
-        <header>
-            {{ include('/parts/header.view.twig') }}
-            {{ include('/parts/nav.view.twig') }}
-        </header>
-        <main>
+{% extends "parts/base.view.twig" %}
 
-            <section class="profesionales">
-                <header>
-                    <h2>Profesionales</h2>
-                </header>
+{% block main %}
+    
+    <main>
+        <section class="profesionales">
+            <header>
+                <h2>Profesionales</h2>
+            </header>
 
-                <input
-                    class="buscador"
-                    type="search"
-                    placeholder="Buscar por profesional o por especialidad"
-                />
+            <input
+                class="buscador"
+                type="search"
+                placeholder="Buscar por profesional o por especialidad"
+            />
 
-                <section class="resultado-busqueda">
-
-                    {% for profesional in profesionales %}
-                        {% include('/cards/profesionalesCard.view.twig') %}
-                    {% endfor %}
-                </section>
+            <section class="resultado-busqueda">
+                {% for profesional in profesionales %}
+                    {% include('/cards/profesionalesCard.view.twig') %}
+                {% endfor %}
             </section>
+        </section>
 
-           {% include('/parts/navMobile.view.twig') %}
-        </main>
-        <footer>
-            {% include('/parts/footer.view.twig') %}
-        </footer>
-    </body>
-</html>
+        {{ parent() }}
+
+    </main>
+    
+{% endblock %}

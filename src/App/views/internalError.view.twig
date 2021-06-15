@@ -1,19 +1,9 @@
-<html>
-    <head>
-        {{ include('/parts/head.view.twig') }}
-    </head>
-    <body>
-        <header>
-            {{ include('/parts/header.view.twig') }}
-            {{ include('/parts/nav.view.twig') }}
-        </header>
-        <main>
-            <h1>{{ titulo }}</h1>
-            
-            {% include('/parts/navMobile.view.twig') %}
-        </main>
-        <footer>
-            {% include('/parts/footer.view.twig') %}
-        </footer>
-    </body>
-</html>
+{% extends "parts/base.view.twig" %}
+
+{% block main %} 
+
+    <h1>{{ titulo }}</h1>
+
+    {{ parent() }}
+
+{% endblock %}

@@ -1,7 +1,6 @@
-<html>
-    <head>
-        {{ include('/parts/head.view.twig') }}
-    </head>
+{% extends "parts/baseTurnero.view.twig" %}
+
+{% block body %}
 
     <body class="turneroSalaEspera2-contenedor">
         <header>
@@ -20,8 +19,8 @@
             <audio id="soundAlert" src="../assets/sounds/alert.mp3" preload="auto"></audio>
         </main>
 
-        <footer>
-            {% include('/parts/footer.view.twig') %}
-        </footer>
+         {{ parent() }}
+
     </body>
-</html>
+
+{% endblock %}

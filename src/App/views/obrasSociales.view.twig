@@ -1,35 +1,25 @@
-<html>
-    <head>
-        {{ include('/parts/head.view.twig') }}
-    </head>
-    <body>
+{% extends "parts/base.view.twig" %}
+
+{% block main %} 
+
+    <section class="profesionales">
         <header>
-            {{ include('/parts/header.view.twig') }}
-            {{ include('/parts/nav.view.twig') }}
+            <h2>Obras Sociales</h2>
         </header>
-        <main>
-            <section class="profesionales">
-                <header>
-                    <h2>Obras Sociales</h2>
-                </header>
 
-                <input
-                    class="buscador"
-                    type="search"
-                    placeholder="Buscar obra social"
-                />
+        <input
+            class="buscador"
+            type="search"
+            placeholder="Buscar obra social"
+        />
 
-                <section class="resultado-busqueda">
-                    {% for obraSocial in obrasSociales %}
-                        {% include('/cards/obrasSocialesCard.view.twig') %}
-                    {% endfor %}
-                </section>
-            </section>
+        <section class="resultado-busqueda">
+            {% for obraSocial in obrasSociales %}
+                {% include('/cards/obrasSocialesCard.view.twig') %}
+            {% endfor %}
+        </section>
+    </section>
 
-            {% include('/parts/navMobile.view.twig') %}
-        </main>
-        <footer>
-            {% include('/parts/footer.view.twig') %}
-        </footer>
-    </body>
-</html>
+    {{ parent() }}
+    
+{% endblock %}

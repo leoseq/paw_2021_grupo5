@@ -1,20 +1,9 @@
-<html>
-    <head>
-        {{ include('/parts/head.view.twig') }}
-    </head>
-    <body>
-        <header class="headerImpresion">
-            {{ include('/parts/header.view.twig') }}
-        </header>
-        
-        <main>
-            <section class="turnoSolicitado">
-                {{ include('/sections/turnoInfo.view.twig') }}
-            </section>
-        </main>
+{% extends "parts/baseImpresion.view.twig" %}
 
-        <footer>
-            {{ include('/parts/footerImpresion.view.twig') }}
-        </footer>
-    </body>
-</html>
+{% block main %}
+    
+    <section class="turnoSolicitado">
+        {{ include('/sections/turnoInfo.view.twig') }}
+    </section>
+
+{% endblock %}

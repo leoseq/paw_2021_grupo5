@@ -21,9 +21,6 @@ final class CreacionDeTablasMigrations extends AbstractMigration
         $tableProfesionales->addColumn('nombre', 'string')
             ->addColumn('apellido', 'string')
             ->addColumn('id_especialidad', 'integer')
-            ->addColumn('id_obra_social', 'integer')
-            ->addColumn('horario_atencion', 'time')
-            ->addColumn('dias_atencion', 'string')
             ->addColumn('estado', 'boolean')
             ->create();
 
@@ -32,6 +29,14 @@ final class CreacionDeTablasMigrations extends AbstractMigration
         ->addForeignKey('id_especialidad', 'especialidades', 'id')
         ->addForeignKey('id_obra_social', 'obras_sociales', 'id')
         */
+
+
+        //TODO: Agregar estas columnas en una tabla intermedia que asocie profesionales y dias
+        /*->addColumn('horario_atencion', 'time')
+        ->addColumn('dias_atencion', 'string')*/
+
+        //TODO: Tabla intermedia con profesionales y obras sociales
+        /*->addColumn('id_obra_social', 'integer')*/
 
 
         $tableTurno = $this->table('turnos');

@@ -24,18 +24,6 @@
                 required
         />
 
-
-        <label for="name_input">Estado:</label>
-        <input
-                type="number"
-                name="estado_input"
-                id="estado_input"
-                placeholder="Juan"
-                required
-        />
-
-        <input type="file" name="archivo" id="archivo" accept="image/png, image/gif, image/jpeg , image/jpg">
-
         <input type="submit" value="Enviar"/>
     </form>
 

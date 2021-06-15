@@ -49,7 +49,7 @@ class EspecialidadController extends Controller
 
         $datos = [];
         $datos["nombre"] = $_POST["name_input"];
-        $datos["estado"] = $_POST["estado_input"];
+        $datos["estado"] = 1;
 
         $especialidades_id = $this->model->insertEspecialidad($this->table, $datos);
 

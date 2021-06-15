@@ -73,6 +73,11 @@ $router->get('/especialidades/test', 'EspecialidadController@test');
 $router->post('/testArchivo', 'EspecialidadController@testArchivo');
 
 
+$router->get('/profesionales/add', 'ProfesionalController@add');
+$router->post('/addProfesional', 'ProfesionalController@addProfesional');
+
+
+
 // Turnero
 $router->get('/turneros', 'PageController@turneros');
 

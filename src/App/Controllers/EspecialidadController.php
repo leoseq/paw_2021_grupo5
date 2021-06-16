@@ -38,7 +38,7 @@ class EspecialidadController extends Controller
     public function test()
     {
         $titulo = "Institucional";
-        require $this->viewDir . "a-test.view.php";
+        require $this->viewDir . "a-test.view.twig";
     }
 
 
@@ -49,7 +49,7 @@ class EspecialidadController extends Controller
 
         $datos = [];
         $datos["nombre"] = $_POST["name_input"];
-        $datos["estado"] = 1;
+        $datos["estado"] = "activo";
 
         $especialidades_id = $this->model->insertEspecialidad($this->table, $datos);
 

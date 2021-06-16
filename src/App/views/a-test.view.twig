@@ -1,16 +1,7 @@
-<html>
-<head>
-    <?php
-    require __DIR__ . '/parts/head.view.php';
-    ?>
-</head>
-<body>
-<header>
-    <?php
-    require __DIR__ . '/parts/header.view.php';
-    require __DIR__ . '/parts/nav.view.php';
-    ?>
-</header>
+{% extends "parts/base.view.twig" %}
+
+{% block main %}
+
 
 <main>
     <form action="/testArchivo" method="POST" enctype='multipart/form-data'>
@@ -27,16 +18,8 @@
         <input type="submit" value="Enviar"/>
     </form>
 
-    
+{{ parent() }}
 
 </main>
 
-
-
-<footer>
-    <?php
-    require __DIR__ . '/parts/footer.view.php';
-    ?>
-</footer>
-</body>
-</html>
+{% endblock %}

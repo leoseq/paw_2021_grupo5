@@ -1,0 +1,46 @@
+{% extends "parts/base.view.twig" %}
+
+{% block main %}
+
+
+    <table class="tableAdmin">
+        <tr>
+            <th>Sección</th>
+            <th colspan="2">Acción</th>
+        </tr>
+        <tr>
+            <td>Usuarios</td>
+            <td><a href="/registro">Agregar</a></td>
+            <td><a href="/admin/usuarios">Listar</a></td>
+        </tr>
+        <tr>
+            <td>Especialidades</td>
+            <td><a href="/especialidades/add">Agregar</a></td>
+            <td><a href="/admin/especialidades">Listar</a></td>
+        </tr>
+        <tr>
+            <td>Profesionales</td>
+            <td><a href="/profesionales/add">Agregar</a></td>
+            <td><a href="/admin/profesionales">Listar</a></td>
+        </tr>
+        <tr>
+            <td>Noticias</td>
+            <td><a href="/noticias/add">Agregar</a></td>
+            <td><a href="/admin/noticias">Listar</a></td>
+        </tr>
+        <tr>
+            <td>Turnos</td>
+            <td><a href="/solicitarTurno">Agregar</a></td>
+            <td><a href="/admin/turnos">Listar</a></td>
+        </tr>
+        <tr>
+            <td>Obras Sociales</td>
+            <td><a href="/obrasSociales/add">Agregar</a></td>
+            <td><a href="/admin/obrasSociales">Listar</a></td>
+        </tr>
+    </table>
+
+
+    {{ parent() }}
+
+{% endblock %}

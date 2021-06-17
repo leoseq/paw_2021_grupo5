@@ -1257,17 +1257,41 @@ footer h2 {
     display: none;
 }
 
-.tableListados {
-}
-
-.tableListados td {
-    border: 2px solid var(--principal-color1);
+.tableAdmin {
+    border-collapse: collapse;
+    width: 100%;
     text-align: center;
+    margin: 10vh 0vw;
 }
 
-.tableListados thead th {
-    border: 2px solid var(--principal-color2);
+.tableAdmin td,
+.tableAdmin th {
+    border: 1px solid var(--principal-color2);
+    padding: 8px;
+    text-align: center;
 
+
+}
+
+.tableAdmin tr:nth-child(odd) {
+    background-color: var(--background-card);
+}
+
+.tableAdmin tr:nth-child(even) {
+    background-color: rgb(185, 185, 185);
+}
+
+.tableAdmin th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: var(--principal-color1);
+    color: var(--principal-color2);
+}
+
+.tableAdmin a {
+    color: var(--principal-color2);
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 

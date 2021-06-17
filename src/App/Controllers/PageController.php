@@ -25,13 +25,13 @@ class PageController extends Controller
                 "nombreDirectivo" => "Dra. Delia Silva",
                 "cargoDirectivo" => "Directora de Cirugia"
             ]
-        ); 
-        
+        );
+
         $noticia = [
-                "tituloNoticia" => "Titulo de Noticia",
-                "cuerpoNoticia" => "Cuerpo de noticis..."
+            "tituloNoticia" => "Titulo de Noticia",
+            "cuerpoNoticia" => "Cuerpo de noticis..."
         ];
-        
+
         $serviciosMasBuscados = array(
             [
                 "puesto" => "1",
@@ -42,7 +42,7 @@ class PageController extends Controller
                 "especialidad" => "Clinica Medica"
             ]
         );
-            
+
         $profesionalesMasBuscados = array(
             [
                 "puesto" => "1",
@@ -53,11 +53,10 @@ class PageController extends Controller
                 "profesional" => "Dra. Maria Dominguez"
             ]
         );
-        
+
 
         $this->twigLoader("index.view.twig", compact("titulo", "directivos", "noticia", "serviciosMasBuscados", "profesionalesMasBuscados"));
     }
-
 
 
     public function institucional()
@@ -76,7 +75,7 @@ class PageController extends Controller
                 "cargoDirectivo" => "Directora de Cirugia",
                 "emailDirectivo" => "email_director@mail.com"
             ]
-        ); 
+        );
 
         $this->twigLoader("institucional.view.twig", compact("titulo", "directivos"));
     }
@@ -124,9 +123,9 @@ class PageController extends Controller
         $titulo = "Noticia";
 
         $noticia = [
-                "tituloNoticia" => "Titulo de Noticia A",
-                "fechaNoticia" => "20 de Junio 2021",
-                "cuerpoNoticia" => "Cuerpo de la Noticia..."
+            "tituloNoticia" => "Titulo de Noticia A",
+            "fechaNoticia" => "20 de Junio 2021",
+            "cuerpoNoticia" => "Cuerpo de la Noticia..."
         ];
 
         $this->twigLoader("noticia.view.twig", compact("titulo", "noticia"));
@@ -152,13 +151,13 @@ class PageController extends Controller
 
         $this->twigLoader("listadoTurnos.view.twig", compact("titulo", "turnos"));
     }
-    
+
     public function solicitarTurno()
     {
         $titulo = "Solicitar Turno";
         $this->twigLoader("solicitarTurno.view.twig", compact("titulo"));
     }
-    
+
     public function turnoSolicitado($turno = null)
     {
         $titulo = "Turno Solicitado";
@@ -189,7 +188,7 @@ class PageController extends Controller
     public function imprimirTurnoSolicitado()
     {
         $titulo = "Imprimir Turno Solicitado";
-        
+
         $turnos = array(
             [
                 "profesional" => "A",
@@ -237,6 +236,12 @@ class PageController extends Controller
         $this->twigLoader("turneros/paciente.view.twig", compact("titulo"));
     }
 
+
+    public function admin()
+    {
+        $titulo = "Admin";
+        $this->twigLoader("admin.view.twig", compact("titulo"));
+    }
 
 
 }

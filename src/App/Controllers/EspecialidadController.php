@@ -37,17 +37,15 @@ class EspecialidadController extends Controller
 
     }
 
-    public function test()
+    public function add()
     {
-        $titulo = "Institucional";
-        $this->twigLoader("a-test.view.twig", compact("titulo"));
+        $titulo = "Especialidad";
+        $this->twigLoader("addEspecialidad.view.twig", compact("titulo"));
     }
 
 
-    public function testArchivo()
+    public function addEspecialidad()
     {
-
-        $turno = new Especialidad();
 
         $datos = [];
         $datos["nombre"] = $_POST["name_input"];

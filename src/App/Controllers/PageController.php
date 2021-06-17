@@ -58,25 +58,7 @@ class PageController extends Controller
         $this->twigLoader("index.view.twig", compact("titulo", "directivos", "noticia", "serviciosMasBuscados", "profesionalesMasBuscados"));
     }
 
-    public function obrasSociales()
-    {
-        $titulo = "Obras Sociales";
 
-        $obrasSociales = array(
-            [
-                "nombre" => "OMINT",
-                "cantidadProfesionalesAdheridos" => "50",
-                "cantidadProfesionalesDisponibles" => "15"
-            ],
-            [
-                "nombre" => "OSDE",
-                "cantidadProfesionalesAdheridos" => "20",
-                "cantidadProfesionalesDisponibles" => "6"
-            ]
-        );
-
-        $this->twigLoader("obrasSociales.view.twig", compact("titulo", "obrasSociales"));
-    }
 
     public function institucional()
     {
@@ -99,28 +81,6 @@ class PageController extends Controller
         $this->twigLoader("institucional.view.twig", compact("titulo", "directivos"));
     }
 
-    public function profesionales()
-    {
-        $titulo = "Profesionales";
-        $profesionales = array(
-            [
-                "nombreProfesional" => "Dr. Ernesto Fernandez",
-                "especialidadProfesional" => "Cardiología",
-                "diasAtencion" => "Lunes - Miercoles",
-                "horarioAtencion" => "16 a 20 hs",
-                "obrasSociales" => "OSDE",
-            ],
-            [
-                "nombreProfesional" => "Dra. Cristina Torres",
-                "especialidadProfesional" => "Pediatría",
-                "diasAtencion" => "Martes - Jueves",
-                "horarioAtencion" => "9 a 15 hs",
-                "obrasSociales" => "OSDE - OMINT - SWISS MEDICAL",
-            ]
-        );
-
-        $this->twigLoader("profesionales.view.twig", compact("titulo", "profesionales"));
-    }
 
     public function noticias()
     {

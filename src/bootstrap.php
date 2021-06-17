@@ -55,10 +55,10 @@ $router->setLogger($log);
 // Pages
 $router->get('/', 'PageController@index');
 $router->get('/institucional', 'PageController@institucional');
-$router->get('/obrasSociales', 'PageController@obrasSociales');
+$router->get('/obrasSociales', 'ObraSocialController@index');
 $router->get('/noticia', 'PageController@noticia');
 $router->get('/noticias', 'PageController@noticias');
-$router->get('/profesionales', 'PageController@profesionales');
+$router->get('/profesionales', 'ProfesionalController@index');
 $router->get('/registro', 'PageController@registro');
 $router->get('/solicitarTurno', 'PageController@solicitarTurno');
 $router->get('/listadoTurnos', 'PageController@listadoTurnos');
@@ -80,17 +80,20 @@ $router->post('/especialidad/edit', 'EspecialidadController@set');
 // Usuarios
 $router->post('/guardarUsuario', 'UsuarioController@register');
 $router->post('/login', 'UsuarioController@login');
+$router->get('/admin/usuarios','UsuarioController@index');
 
 
-// Test
+// Especialidades
 $router->get('/especialidades/test', 'EspecialidadController@test');
 $router->post('/testArchivo', 'EspecialidadController@testArchivo');
 
-
+// Profesionales
 $router->get('/profesionales/add', 'ProfesionalController@add');
 $router->post('/addProfesional', 'ProfesionalController@addProfesional');
 
-
+//Obras Sociales
+$router->get('/obrasSociales/add', 'ObraSocialController@add');
+$router->post('/addObraSocial', 'ObraSocialController@addObraSocial');
 
 // Turnero
 $router->get('/turneros', 'PageController@turneros');

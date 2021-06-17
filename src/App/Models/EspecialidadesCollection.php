@@ -30,8 +30,8 @@ class EspecialidadesCollection extends Model
     public function insertEspecialidad($table, array $values)
     {
 
-        $turnos = $this->queryBuilder->insert($this->table, $values);
-        return  $turnos;
+        $especialidad = $this->queryBuilder->insert($this->table, $values);
+        return  $especialidad;
     }
 
 }

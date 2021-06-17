@@ -17,7 +17,9 @@ class EspecialidadController extends Controller
     {
         $titulo = "Especialidades";
         $especialidades = $this->model->getAll();
-        require $this->viewDir . "listadoEspecialidades.view.php";
+
+
+        $this->twigLoader("listadoEspecialidades.view.twig", compact("titulo", "especialidades"));
     }
 
     public function get()
@@ -38,7 +40,7 @@ class EspecialidadController extends Controller
     public function test()
     {
         $titulo = "Institucional";
-        require $this->viewDir . "a-test.view.twig";
+        $this->twigLoader("a-test.view.twig", compact("titulo"));
     }
 
 

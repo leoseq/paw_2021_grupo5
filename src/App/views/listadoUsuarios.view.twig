@@ -1,0 +1,36 @@
+{% extends "parts/base.view.twig" %}
+
+{% block main %}
+
+    <section class="profesionales">
+        <header>
+            <h2>Usuarios</h2>
+        </header>
+
+        <table class="tableListados">
+            <thead>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Rol</th>
+            <th>Opciones</th>
+            </thead>
+            <tbody>
+            {% for especialidad in usuarios %}
+                <tr>
+                    <td> {{ especialidad.fields.nombre }}</td>
+                    <td> {{ especialidad.fields.apellido }}</td>
+                    <td> {{ especialidad.fields.email }}</td>
+                    <td> {{ especialidad.fields.rol }}</td>
+                    <td> Editar - Eliminar</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+    </section>
+
+    {{ parent() }}
+
+{% endblock %}

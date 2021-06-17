@@ -43,6 +43,7 @@ class QueryBuilder
 
     public function insert($table, $datos)
     {
+
         $query = sprintf(
             'INSERT INTO %s (%s) VALUES (%s)',
             $table,

@@ -18,7 +18,7 @@ class ProfesionalesCollection extends Model
 
 
         foreach ($profesionales as $profesional) {
-            $newProfesional = new Especialidad;
+            $newProfesional = new Profesional;
             $newProfesional->set($profesional);
             $profesionalesCollection[] = $newProfesional;
         }

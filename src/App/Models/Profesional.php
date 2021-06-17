@@ -16,6 +16,9 @@ class Profesional extends Model
         "apellido" => null,
         "id_especialidad" => null,
         "estado" => null,
+        "cargo_directivo" => null,
+        "email" => null,
+        "path_archivo" => null,
     ];
 
     public function setNombre(string $nombre)
@@ -26,16 +29,16 @@ class Profesional extends Model
         $this->fields["nombre"] = $nombre;
     }
 
-    public function setApellido(int $apellido)
+    public function setApellido(string $apellido)
     {
-        if ($apellido > 60) {
+        if (strlen($apellido) > 60) {
             throw new InvalidValueFormatException("El apellido del profesional no debe ser mayor a 60 caracteres");
         }
 
         $this->fields["apellido"] = $apellido;
     }
 
-    public function setIdEspecialidad(int $id_especialidad)
+    public function setId_Especialidad(int $id_especialidad)
     {
         if ($id_especialidad > 60) {
             throw new InvalidValueFormatException("El nombre de la especialidad no debe ser mayor a 60 caracteres");
@@ -52,6 +55,34 @@ class Profesional extends Model
 
         $this->fields["estado"] = $estado;
     }
+
+    public function setCargo_directivo(string $cargo_directivo)
+    {
+        if (strlen($cargo_directivo) > 60) {
+            throw new InvalidValueFormatException("El nombre de la especialidad no debe ser mayor a 60 caracteres");
+        }
+
+        $this->fields["cargo_directivo"] = $cargo_directivo;
+    }
+
+    public function setEmail(string $email)
+    {
+        if (strlen($email) > 60) {
+            throw new InvalidValueFormatException("El nombre de la especialidad no debe ser mayor a 60 caracteres");
+        }
+
+        $this->fields["email"] = $email;
+    }
+
+    public function setPath_archivo(string $path_archivo)
+    {
+        if (strlen($path_archivo) > 60) {
+            throw new InvalidValueFormatException("El nombre de la especialidad no debe ser mayor a 60 caracteres");
+        }
+
+        $this->fields["path_archivo"] = $path_archivo;
+    }
+
 
 
     public function set(array $values)

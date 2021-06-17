@@ -16,26 +16,29 @@ class ProfesionalController extends Controller
     {
         $titulo = "Profesionales";
         $profesionales = $this->model->getAll();
-        require $this->viewDir . "listadoProfesionales.view.php";
+
+        $this->twigLoader("profesionales.view.twig", compact("titulo", "profesionales"));
     }
 
     public function add()
     {
         $titulo = "Profesionales";
-        require $this->viewDir . "addProfesional.view.php";
+        $this->twigLoader("addProfesional.view.twig", compact("titulo"));
+
     }
 
 
     public function addProfesional()
     {
 
-        $profesional = new Profesional();
-
         $datos = [];
         $datos["nombre"] = $_POST["name_input"];
         $datos["apellido"] = $_POST["surname_input"];
         $datos["id_especialidad"] = $_POST["speciality_input"];
         $datos["estado"] = 1;
+        $datos["cargo_directivo"] = $_POST["management_position_input"];
+        $datos["email"] = $_POST["email_input"];
+        $datos["path_archivo"] = "/../.../imagen.png";
 
         $profesional_id = $this->model->insertProfesional($this->table, $datos);
 

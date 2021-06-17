@@ -15,7 +15,7 @@ final class CreacionDeTablasMigrations extends AbstractMigration
         $tableObrasSociales = $this->table('obras_sociales');
         $tableObrasSociales->addColumn('nombre', 'string')
             ->addColumn('estado', 'string')
-            ->addColumn('path_archivo', 'string')
+            ->addColumn('path_archivo', 'string', ['null' => true])
             ->create();
 
         $tableProfesionales = $this->table('profesionales');
@@ -23,9 +23,9 @@ final class CreacionDeTablasMigrations extends AbstractMigration
             ->addColumn('apellido', 'string')
             ->addColumn('id_especialidad', 'integer')
             ->addColumn('estado', 'string')
-            ->addColumn('cargo_directivo', 'string')
-            ->addColumn('email', 'string')
-            ->addColumn('path_archivo', 'string')
+            ->addColumn('cargo_directivo', 'string', ['null' => true])
+            ->addColumn('email', 'string',['null' => true])
+            ->addColumn('path_archivo', 'string',  ['null' => true])
             ->addForeignKey('id_especialidad', 'especialidades', 'id')
             ->create();
 
@@ -68,7 +68,7 @@ final class CreacionDeTablasMigrations extends AbstractMigration
             ->addColumn('edad_paciente', 'integer')
             ->addColumn('fecha_turno', 'timestamp')
             ->addColumn('estado_turno', 'integer')
-            ->addColumn('path_archivo', 'string')
+            ->addColumn('path_archivo', 'string',  ['null' => true])
             ->addForeignKey('id_especialidad', 'profesionales', 'id_especialidad')
             ->addForeignKey('id_profesional', 'profesionales', 'id')
             ->addForeignKey('id_usuario', 'usuarios', 'id')
@@ -78,11 +78,8 @@ final class CreacionDeTablasMigrations extends AbstractMigration
         $tableNoticias->addColumn('titulo', 'string', ['limit' => 40])
             ->addColumn('fecha', 'timestamp')
             ->addColumn('cuerpo', 'string')
-            ->addColumn('path_archivo', 'string')
+            ->addColumn('path_archivo', 'string',  ['null' => true])
             ->create();
 
     }
-
-    //TODO: HACER OPCIONALES (NULL) PATH ARCHIVO DE TODAS LAS TABLAS
-    //TODO: CORRER MIGRACION
 }

@@ -18,8 +18,26 @@ class EspecialidadController extends Controller
         $titulo = "Especialidades";
         $especialidades = $this->model->getAll();
 
-
         $this->twigLoader("listadoEspecialidades.view.twig", compact("titulo", "especialidades"));
+    }
+
+    public function getEspecialidades()
+    {
+        $titulo = "Especialidades";
+        $especialidades = $this->model->getAll();
+
+        $to_encode = [];
+
+        foreach ($especialidades as $especialidad) {
+            $to_encode[] = [
+                'nombre' => $especialidad->fields["nombre"],
+                'estado' => $especialidad->fields["estado"]
+            ];
+        }
+
+        $myJSON = json_encode($to_encode);
+
+        return $myJSON;
     }
 
     public function get()
@@ -56,4 +74,4 @@ class EspecialidadController extends Controller
     }
 
 
-    }
+}

@@ -80,6 +80,7 @@ $router->get('/especialidad', 'EspecialidadController@get');
 $router->get('/especialidad/edit', 'EspecialidadController@edit');
 $router->post('/especialidad/edit', 'EspecialidadController@set');
 
+$router->get('/listarEspecialidades', 'EspecialidadController@getEspecialidades');
 
 
 // Usuarios

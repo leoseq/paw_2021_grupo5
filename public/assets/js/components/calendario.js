@@ -416,7 +416,9 @@ class Calendario {
                 var date = new Date();
                 let mes = date.getMonth();
                 let anio = date.getFullYear();
+                //TODO
                 let dia = date.getDate();
+                //let dia = 19;
 
                 var date = new Date();
                 var firstdom = new Date(anio, mes, 1).getDay()
@@ -459,6 +461,8 @@ class Calendario {
                 let semana = 1;
                 let contadorSemana;
                 let postSabado;
+                let iDiasAtencion;
+                let flagSabado = true;
 
                 var i = 1;
                 do {
@@ -490,16 +494,27 @@ class Calendario {
                         trSemanaN.appendChild(tdToday);
                         contadorSemana = 0;
                         postSabado = 0;
+                        iDiasAtencion = 0
+
 
                     } else {
                         let tdToday = Clinica.nuevoElemento("td", i, {class: "normal"});
                         //Control para colocar turnos dentro de la semana, a partir del dia actual
+                        //TODO
+                       let diaSemana = new Date().getDay();
+                       //let diaSemana = 6
+
                         if ((contadorSemana < 7) && (contadorSemana >= 0)) {
+
+                            if (diaSemana == 6 && flagSabado) {
+                                diaSemana = 5;
+                                flagSabado = false;
+                            }
                             contadorSemana++;
                             for (var h = 0; h <= especialista.diasQueAtiende.length; h++) {
                                 var day;
                                 var atiende = true;
-                                switch (new Date().getDay() + contadorSemana - postSabado) {
+                                switch ( diaSemana + contadorSemana - postSabado) {
                                     case 0:
                                         day = "Domingo";
                                         postSabado = 0 ? 0 : postSabado++;
@@ -526,13 +541,13 @@ class Calendario {
                                         break;
                                     case 6:
                                         day = "Sabado";
-                                        postSabado = contadorSemana + new Date().getDay() + 1;
+                                        diaSemana == 6 ? (postSabado = contadorSemana + diaSemana) : (postSabado = contadorSemana + diaSemana + 1);
                                         break;
                                 }
 
 
-                                if ((day === especialista.diasQueAtiende[h]) && (atiende)) {
-                                    console.log(especialista.diasQueAtiende);
+                                if ((day === especialista.diasQueAtiende[iDiasAtencion]) && (atiende)) {
+                                    iDiasAtencion ++;
                                     tdToday = Clinica.nuevoElemento("td", i, {"id": day, class: "turno"});
                                     tdToday.atiende = false;
                                 }

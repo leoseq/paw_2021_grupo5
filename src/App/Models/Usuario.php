@@ -44,6 +44,14 @@ class Usuario extends Model
         $this->fields["apellido"] = $apellido; 
     }
 
+    public function setRol(string $rol)
+    {
+        if (strlen($rol) > 60) {
+            throw InvalidValueFormatException("El apellido del paciente no debe ser mayor a 60 caracteres");
+        }
+        $this->fields["rol"] = $rol;
+    }
+
     public function setEmail(string $email)
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -103,20 +111,17 @@ class Usuario extends Model
 
     public function passwordHash()
     {
-        $hash = password_hash($this->fields['password'], PASSWORD_BCRYPT);
+        $hash = password_hash($password, PASSWORD_BCRYPT);
 
         if (!password_needs_rehash($hash, PASSWORD_BCRYPT)) {
-            $hash = password_hash($this->fields['password'], PASSWORD_BCRYPT);
+            $hash = password_hash($password, PASSWORD_BCRYPT);
         }
 
         return $hash;
     }
 
-    public function insert()
-    {
-        $this->queryBuilder->insert($this->table, $this->fields);
-    }
 
+    //TODO: CONTROLAR SI ESTO ES CORRECTO. NO PUEDO ACCEDER AL QUERY BUILDER
     public function existsUser()
     {        
         $params = ["email" => $this->fields['email'] ];
@@ -129,15 +134,22 @@ class Usuario extends Model
     public function verifyPassword()
     {
         $params = ["email" => $this->fields['email'] ];
-        $record = current($this->queryBuilder->select($this->table, $params)); 
-        
+        $record = current($this->queryBuilder->select($this->table, $params));
+
         return password_verify($this->fields['password'], $record["password"]);
     }
 
+    public function set(array $values)
+    {
+        foreach (array_keys($this->fields) as $field) {
+            if (!isset($values[$field])) {
+                continue;
+            }
 
-    
+            $method = "set" . ucfirst($field);
+            $this->$method($values[$field]);
 
-
-    
+        }
+    }
 
 }

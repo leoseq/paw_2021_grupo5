@@ -7,14 +7,16 @@ use Paw\Core\Exceptions\InvalidValueFormatException;
 use Paw\Core\Exceptions\MandatoryValueException;
 use Exception;
 
-class Especialidad extends Model
-{
-    public $table = 'especialidades';
+class ObraSocial extends Model {
+
+    public $table = 'obras_sociales';
 
     public $fields = [
         "nombre" => null,
         "estado" => null,
+        "path_archivo" => null,
     ];
+
 
     public function setNombre(string $nombre)
     {
@@ -33,6 +35,15 @@ class Especialidad extends Model
         $this->fields["estado"] = $estado;
     }
 
+    public function setPath_Archivo(string $path_archivo)
+    {
+        if (strlen($path_archivo) > 60) {
+            throw new InvalidValueFormatException("El path archivo de la especialidad no debe ser mayor a 60 caracteres");
+        }
+
+        $this->fields["path_archivo"] = $path_archivo;
+    }
+
     public function set(array $values)
     {
         foreach (array_keys($this->fields) as $field) {
@@ -44,5 +55,4 @@ class Especialidad extends Model
 
         }
     }
-
 }

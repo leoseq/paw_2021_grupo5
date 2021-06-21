@@ -1,6 +1,6 @@
 <article class="card-persona" id="obras-sociales">
-    <h3> {{ obraSocial.nombre}} </h3>
-    <img src="../assets/images/obras-sociales/omint.png" alt="Omint" />
+    <h3> {{ obraSocial.fields.nombre}} </h3>
+    <img src="{{ obraSocial.fields.path_archivo }}" alt="{{ obraSocial.fields.nombre}}" />
 
     <ul class="datos-persona">
         <li> {{ obraSocial.cantidadProfesionalesAdheridos }} profesionales adheridos</li>

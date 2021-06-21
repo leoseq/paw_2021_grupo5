@@ -17,7 +17,27 @@ class EspecialidadController extends Controller
     {
         $titulo = "Especialidades";
         $especialidades = $this->model->getAll();
-        require $this->viewDir . "listadoEspecialidades.view.php";
+
+        $this->twigLoader("listadoEspecialidades.view.twig", compact("titulo", "especialidades"));
+    }
+
+    public function getEspecialidades()
+    {
+        $titulo = "Especialidades";
+        $especialidades = $this->model->getAll();
+
+        $to_encode = [];
+
+        foreach ($especialidades as $especialidad) {
+            $to_encode[] = [
+                'nombre' => $especialidad->fields["nombre"],
+                'estado' => $especialidad->fields["estado"]
+            ];
+        }
+
+        $myJSON = json_encode($to_encode);
+
+        return $myJSON;
     }
 
     public function get()
@@ -35,25 +55,23 @@ class EspecialidadController extends Controller
 
     }
 
-    public function test()
+    public function add()
     {
-        $titulo = "Institucional";
-        require $this->viewDir . "a-test.view.php";
+        $titulo = "Especialidad";
+        $this->twigLoader("addEspecialidad.view.twig", compact("titulo"));
     }
 
 
-    public function testArchivo()
+    public function addEspecialidad()
     {
-
-        $turno = new Especialidad();
 
         $datos = [];
         $datos["nombre"] = $_POST["name_input"];
-        $datos["estado"] = $_POST["estado_input"];
+        $datos["estado"] = "activo";
 
         $especialidades_id = $this->model->insertEspecialidad($this->table, $datos);
 
     }
 
 
-    }
+}

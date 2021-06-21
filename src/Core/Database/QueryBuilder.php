@@ -43,6 +43,7 @@ class QueryBuilder
 
     public function insert($table, $datos)
     {
+
         $query = sprintf(
             'INSERT INTO %s (%s) VALUES (%s)',
             $table,
@@ -72,4 +73,48 @@ class QueryBuilder
 
     }
 
+    public function profesionalesTurno($table, $datos = [])
+    {
+
+        $query = "SELECT p.nombre, p.apellido , p.matricula, p.duracionTurno, (e.nombre) AS especialidad,  ha.dia, ha.hora_inicio, ha.hora_fin, t.fecha_turno FROM {$table} p
+                  INNER JOIN especialidades e ON (e.id = p.id_especialidad)
+                  INNER JOIN horario_atencion ha ON (ha.id_profesional = p.id)
+                  LEFT JOIN turnos t ON (t.id_profesional = p.id)";
+
+        $this->logger->debug($query);
+
+        $sentencia = $this->pdo->prepare($query);
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $sentencia->execute($datos);
+
+
+        /*  echo "<pre>";
+         var_dump($sentencia->fetchAll());
+         die;*/
+
+        return $sentencia->fetchAll();
+
+    }
+
+    //TODO: FIltar por fecha. 1 semana despues de la fecha
+    public function turnosPorProfesional($table, $datos = [])
+    {
+
+        $query = "select DISTINCT * from profesionales p
+                  left JOIN turnos t on (t.id_profesional = p.id)";
+
+        $this->logger->debug($query);
+
+        $sentencia = $this->pdo->prepare($query);
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $sentencia->execute($datos);
+
+
+        /*  echo "<pre>";
+         var_dump($sentencia->fetchAll());
+         die;*/
+
+        return $sentencia->fetchAll();
+
+    }
 }

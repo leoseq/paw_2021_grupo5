@@ -21,7 +21,9 @@ final class CreacionDeTablasMigrations extends AbstractMigration
         $tableProfesionales = $this->table('profesionales');
         $tableProfesionales->addColumn('nombre', 'string')
             ->addColumn('apellido', 'string')
+            ->addColumn('matricula', 'integer')
             ->addColumn('id_especialidad', 'integer')
+            ->addColumn('duracionTurno', 'integer')
             ->addColumn('estado', 'string')
             ->addColumn('cargo_directivo', 'string', ['null' => true])
             ->addColumn('email', 'string',['null' => true])

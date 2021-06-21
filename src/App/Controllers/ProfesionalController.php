@@ -45,4 +45,13 @@ class ProfesionalController extends Controller
     }
 
 
+
+    public function getProfesionales()
+    {
+        $titulo = "Profesionales";
+        $profesionales = $this->model->getProfesionales();
+        header('Content-Type: application/json');
+        return $profesionales;
+    }
+
 }

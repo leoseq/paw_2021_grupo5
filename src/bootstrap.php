@@ -97,6 +97,8 @@ $router->post('/testArchivo', 'EspecialidadController@addEspecialidad');
 $router->get('/profesionales/add', 'ProfesionalController@add');
 $router->post('/addProfesional', 'ProfesionalController@addProfesional');
 
+$router->get('/admin/profesionales', 'ProfesionalController@getProfesionales');
+
 //Obras Sociales
 $router->get('/obrasSociales/add', 'ObraSocialController@add');
 $router->post('/addObraSocial', 'ObraSocialController@addObraSocial');

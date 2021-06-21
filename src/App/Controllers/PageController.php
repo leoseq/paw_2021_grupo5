@@ -10,10 +10,10 @@ use Paw\App\Models\Turno;
 class PageController extends Controller
 {
 
-
     public function index()
     {
         $titulo = "Index";
+        $session = $this->session->getSession();
 
         // Obtener info de la DB
         $directivos = array(
@@ -54,13 +54,13 @@ class PageController extends Controller
             ]
         );
         
-
-        $this->twigLoader("index.view.twig", compact("titulo", "directivos", "noticia", "serviciosMasBuscados", "profesionalesMasBuscados"));
+        $this->twigLoader("index.view.twig", compact("titulo", "session", "directivos", "noticia", "serviciosMasBuscados", "profesionalesMasBuscados"));
     }
 
     public function obrasSociales()
     {
         $titulo = "Obras Sociales";
+        $session = $this->session->getSession();
 
         $obrasSociales = array(
             [
@@ -75,12 +75,13 @@ class PageController extends Controller
             ]
         );
 
-        $this->twigLoader("obrasSociales.view.twig", compact("titulo", "obrasSociales"));
+        $this->twigLoader("obrasSociales.view.twig", compact("titulo", "session", "obrasSociales"));
     }
 
     public function institucional()
     {
         $titulo = "Institucional";
+        $session = $this->session->getSession();
 
         $directivos = array(
             [
@@ -96,12 +97,14 @@ class PageController extends Controller
             ]
         ); 
 
-        $this->twigLoader("institucional.view.twig", compact("titulo", "directivos"));
+        $this->twigLoader("institucional.view.twig", compact("titulo", "session", "directivos"));
     }
 
     public function profesionales()
     {
         $titulo = "Profesionales";
+        $session = $this->session->getSession();
+
         $profesionales = array(
             [
                 "nombreProfesional" => "Dr. Ernesto Fernandez",
@@ -119,12 +122,13 @@ class PageController extends Controller
             ]
         );
 
-        $this->twigLoader("profesionales.view.twig", compact("titulo", "profesionales"));
+        $this->twigLoader("profesionales.view.twig", compact("titulo", "session", "profesionales"));
     }
 
     public function noticias()
     {
         $titulo = "Noticias";
+        $session = $this->session->getSession();
 
         $noticias = array(
             [
@@ -144,24 +148,29 @@ class PageController extends Controller
             ]
         );
 
-        $this->twigLoader("noticias.view.twig", compact("titulo", "noticias"));
+        $this->twigLoader("noticias.view.twig", compact("titulo", "session", "noticias"));
     }
 
     public function login()
     {
         $titulo = "Login";
-        $this->twigLoader("login.view.twig", compact("titulo"));
+        $session = $this->session->getSession();
+
+        $this->twigLoader("login.view.twig", compact("titulo", "session"));
     }
 
     public function registro()
     {
         $titulo = "Registro";
-        $this->twigLoader("registro.view.twig", compact("titulo"));
+        $session = $this->session->getSession();
+
+        $this->twigLoader("registro.view.twig", compact("titulo", "session"));
     }
 
     public function noticia()
     {
         $titulo = "Noticia";
+        $session = $this->session->getSession();
 
         $noticia = [
                 "tituloNoticia" => "Titulo de Noticia A",
@@ -169,12 +178,13 @@ class PageController extends Controller
                 "cuerpoNoticia" => "Cuerpo de la Noticia..."
         ];
 
-        $this->twigLoader("noticia.view.twig", compact("titulo", "noticia"));
+        $this->twigLoader("noticia.view.twig", compact("titulo", "session", "noticia"));
     }
 
     public function listadoTurnos()
     {
         $titulo = "Listado de Turnos";
+        $session = $this->session->getSession();
 
         $turnos = array(
             [
@@ -190,24 +200,29 @@ class PageController extends Controller
             ]
         );
 
-        $this->twigLoader("listadoTurnos.view.twig", compact("titulo", "turnos"));
+        $this->twigLoader("listadoTurnos.view.twig", compact("titulo", "session", "turnos"));
     }
     
     public function solicitarTurno()
     {
         $titulo = "Solicitar Turno";
-        $this->twigLoader("solicitarTurno.view.twig", compact("titulo"));
+        $session = $this->session->getSession();
+
+        $this->twigLoader("solicitarTurno.view.twig", compact("titulo", "session"));
     }
     
     public function turnoSolicitado($turno = null)
     {
         $titulo = "Turno Solicitado";
-        $this->twigLoader("turnoSolicitado.view.twig", compact("titulo"));
+        $session = $this->session->getSession();
+
+        $this->twigLoader("turnoSolicitado.view.twig", compact("titulo", "session"));
     }
 
     public function imprimirListadoTurnos()
     {
         $titulo = "Imprimir Listado de Turnos";
+        $session = $this->session->getSession();
 
         $turnos = array(
             [
@@ -223,12 +238,13 @@ class PageController extends Controller
             ]
         );
 
-        $this->twigLoader("imprimirListadoTurnos.view.twig", compact("titulo", "turnos"));
+        $this->twigLoader("imprimirListadoTurnos.view.twig", compact("titulo", "session", "turnos"));
     }
 
     public function imprimirTurnoSolicitado()
     {
         $titulo = "Imprimir Turno Solicitado";
+        $session = $this->session->getSession();
         
         $turnos = array(
             [
@@ -244,37 +260,47 @@ class PageController extends Controller
             ]
         );
 
-        $this->twigLoader("imprimirTurnoSolicitado.view.twig", compact("titulo"));
+        $this->twigLoader("imprimirTurnoSolicitado.view.twig", compact("titulo", "session"));
     }
 
     public function turneros()
     {
         $titulo = "Turneros";
-        $this->twigLoader("turneros.view.twig", compact("titulo"));
+        $session = $this->session->getSession();
+
+        $this->twigLoader("turneros.view.twig", compact("titulo", "session"));
     }
 
     public function salaEspera()
     {
         $titulo = "Turnos: Sala de Espera";
-        $this->twigLoader("turneros/salaEspera.view.twig", compact("titulo"));
+        $session = $this->session->getSession();
+
+        $this->twigLoader("turneros/salaEspera.view.twig", compact("titulo", "session"));
     }
 
     public function salaEsperaAutomatica()
     {
         $titulo = "Turnos: Sala de Espera";
-        $this->twigLoader("turneros/salaEsperaAutomatica.view.twig", compact("titulo"));
+        $session = $this->session->getSession();
+
+        $this->twigLoader("turneros/salaEsperaAutomatica.view.twig", compact("titulo", "session"));
     }
 
     public function profesional()
     {
         $titulo = "Turnos: Profesional";
-        $this->twigLoader("turneros/profesional.view.twig", compact("titulo"));
+        $session = $this->session->getSession();
+
+        $this->twigLoader("turneros/profesional.view.twig", compact("titulo", "session"));
     }
 
     public function paciente()
     {
         $titulo = "Turnos: Paciente";
-        $this->twigLoader("turneros/paciente.view.twig", compact("titulo"));
+        $session = $this->session->getSession();
+
+        $this->twigLoader("turneros/paciente.view.twig", compact("titulo", "session"));
     }
 
 

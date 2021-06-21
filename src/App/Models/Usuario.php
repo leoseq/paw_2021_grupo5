@@ -12,10 +12,12 @@ class Usuario extends Model
 {
     public $table = 'usuarios';
     public $fields = [
+        "id" => null,
         "nombre" => null,
         "apellido" => null,
         "email" => null,
-        "password" => null
+        "password" => null,
+        "rol" => null
     ];
       
     public function setNombre(string $nombre)
@@ -64,6 +66,16 @@ class Usuario extends Model
         $this->fields["password"] = $password;
     }
 
+    public function setRol(string $rol)
+    {
+        $this->fields["rol"] = $rol;
+    }
+
+    public function getId()
+    {
+        return $this->fields["id"];
+    }
+
     public function getNombre()
     {
         return $this->fields["nombre"];
@@ -82,6 +94,11 @@ class Usuario extends Model
     public function getPassword()
     {
         return $this->fields["password"];
+    }
+
+    public function getRol()
+    {
+        return $this->fields["rol"];
     }
 
     public function passwordHash()
@@ -105,11 +122,7 @@ class Usuario extends Model
         $params = ["email" => $this->fields['email'] ];
         $record = current($this->queryBuilder->select($this->table, $params)); 
         
-        if (!empty($record)){
-            return true;
-        }
-
-        return false;
+        return $record;
     }
     
 

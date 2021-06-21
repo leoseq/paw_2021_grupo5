@@ -43,6 +43,7 @@ header {
   align-items: center;
   border-bottom: 2px solid var(--principal-color2);
   grid-area: header;
+  bottom: 0px;
 }
 
 header picture {
@@ -67,6 +68,12 @@ nav li a {
   padding: 0.625em 0.75em;
   display: block;
   position: relative;
+}
+
+nav .userName {
+  border-radius: 5px;
+  color: white;
+  background: var(--principal-color2);
 }
 
 nav li a:after {

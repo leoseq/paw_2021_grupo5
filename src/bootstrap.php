@@ -43,9 +43,6 @@ $twig = new Environment ($loader, array(
 ));
 
 
-
-
-
 $request = new Request();
 
 // Rutas
@@ -80,6 +77,8 @@ $router->post('/especialidad/edit', 'EspecialidadController@set');
 // Usuarios
 $router->post('/guardarUsuario', 'UsuarioController@register');
 $router->post('/login', 'UsuarioController@login');
+$router->get('/cerrarSession', 'UsuarioController@cerrarSession');
+
 
 
 // Test

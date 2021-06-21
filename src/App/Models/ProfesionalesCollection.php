@@ -55,13 +55,13 @@ class ProfesionalesCollection extends Model
                 $matricula = $turnosProfesional["matricula"];
 
                 $horaInicio[] = [
-                    'horas' => substr($turnosProfesional["hora_inicio"], 0, 2),
-                    'minutos' => substr($turnosProfesional["hora_inicio"], 3, 2),
+                    'horas' => (int)substr($turnosProfesional["hora_inicio"], 0, 2),
+                    'minutos' => (int)substr($turnosProfesional["hora_inicio"], 3, 2),
                 ];
 
                 $horaFinalizacion[] = [
-                    'horas' => substr($turnosProfesional["hora_fin"], 0, 2),
-                    'minutos' => substr($turnosProfesional["hora_fin"], 3, 2),
+                    'horas' => (int)substr($turnosProfesional["hora_fin"], 0, 2),
+                    'minutos' => (int)substr($turnosProfesional["hora_fin"], 3, 2),
                 ];
 
 
@@ -90,31 +90,24 @@ class ProfesionalesCollection extends Model
                         $days_dias = array(
                             'Monday'=>'Lunes',
                             'Tuesday'=>'Martes',
-                            'Wednesday'=>'Miércoles',
+                            'Wednesday'=>'Miercoles',
                             'Thursday'=>'Jueves',
                             'Friday'=>'Viernes',
                             'Saturday'=>'Sábado',
                             'Sunday'=>'Domingo'
                         );
 
-
-
-
                         $diaTurno = $days_dias[date('l', strtotime($date))];
 
-                        $horaTurno = substr($turnosPorProfesional[$i]["fecha_turno"], 11, 2);
-                        $minutosTurno = substr($turnosPorProfesional[$i]["fecha_turno"], 14, 2);
+                        $horaTurno = (int)substr($turnosPorProfesional[$i]["fecha_turno"], 11, 2);
+                        $minutosTurno = (int)substr($turnosPorProfesional[$i]["fecha_turno"], 14, 2);
 
                         if ($diaTurno != null && $horaTurno != null && $horaTurno != null) {
-                            $json = array('dia' => $diaTurno, 'hora' => $horaTurno, 'minutos' => $minutosTurno);
+                            $json = array('dia' => $diaTurno, 'horas' => $horaTurno, 'minutos' => $minutosTurno);
                             array_push($turnosTomados, $json);
                         }
                     }
                 }
-
-
-
-
 
                 //Se mete en un JSON los datos por profesional
                 $to_encode[] = [
@@ -123,7 +116,7 @@ class ProfesionalesCollection extends Model
                     'apellido' => $turnosProfesional["apellido"],
                     'especialidad' => $turnosProfesional["especialidad"],
                     'diasQueAtiende' => $turnosProfesional["dia"],
-                    'duracionTurno' => $turnosProfesional["duracionTurno"],
+                    'duracionTurno' => (int)$turnosProfesional["duracionTurno"],
                     'horarioInicio' => $horaInicio,
                     'horarioFinalizacion' => $horaFinalizacion,
                     'diasQueAtiende' => $diasQueAtiende,

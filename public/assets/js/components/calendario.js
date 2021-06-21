@@ -279,8 +279,6 @@ class Calendario {
 
 
                                 if ((day === especialista.diasQueAtiende[iDiasAtencion]) && (atiende)) {
-                                    console.log(especialista.diasQueAtiende);
-
                                     tdToday = Clinica.nuevoElemento("td", i, {"id": day, class: "turno"});
                                     tdToday.atiende = false;
                                 }
@@ -358,13 +356,12 @@ class Calendario {
 
         //Se transforma a Date, la fecha de inicio y finalizacion de atencion
         let dIndex = new Date();
-        dIndex.setHours(especialista.horarioInicio["horas"]);
-        dIndex.setMinutes(especialista.horarioInicio["minutos"]);
+        dIndex.setHours(especialista.horarioInicio[0]["horas"]);
+        dIndex.setMinutes(especialista.horarioInicio[0]["minutos"]);
 
         let dFin = new Date();
-        dFin.setHours(especialista.horarioFinalizacion["horas"]);
-        dFin.setMinutes(especialista.horarioFinalizacion["minutos"]);
-
+        dFin.setHours(especialista.horarioFinalizacion[0]["horas"]);
+        dFin.setMinutes(especialista.horarioFinalizacion[0]["minutos"]);
 
         //Se completa la tabla con los horarios
         while (dIndex <= dFin) {
@@ -397,6 +394,7 @@ class Calendario {
 
             //Sumo la duracion del turno para el siguiente
             dIndex.setMinutes(dIndex.getMinutes() + especialista.duracionTurno);
+
         }
 
         let horariosAtencion = Clinica.nuevoElemento("div", "", {

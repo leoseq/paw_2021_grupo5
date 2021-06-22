@@ -13,7 +13,7 @@ use Paw\Core\Exceptions\UserSessionErrorException;
 
 class UsuarioController extends Controller
 {
-    public ?string $modelName = UsuarioCollection::class;
+    public ?string $modelName = Usuario::class;//Collection::class;
 
     public $table = 'usuarios';
 
@@ -77,7 +77,7 @@ class UsuarioController extends Controller
             throw new UserNotExistsException("No existe el usuario");
         } else {
 
-            if (!$this->model->verifyPassword($datos['email'],$datos['password'])) {
+            if ($this->model->verifyPassword()) {
                 $mensaje = "Login Exitoso..!";
                 $this->session->startSession($row);
             } else {
@@ -92,7 +92,6 @@ class UsuarioController extends Controller
 
     public function cerrarSession()
     {
-        
         $idSession = $_GET['idSession'];
 
         if ($this->session->getIdSession() == $idSession) {

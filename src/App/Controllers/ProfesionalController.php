@@ -17,6 +17,10 @@ class ProfesionalController extends Controller
         $titulo = "Profesionales";
         $profesionales = $this->model->getAll();
 
+/*        echo "<pre>";
+        var_dump($profesionales);
+        die;*/
+
         $this->twigLoader("profesionales.view.twig", compact("titulo", "profesionales"));
     }
 

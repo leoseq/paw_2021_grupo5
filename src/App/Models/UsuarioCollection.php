@@ -38,7 +38,7 @@ class UsuarioCollection extends Model
         $usuario = new Usuario;
         $usuario->set($values);
     }
-
+/*
     public function existsUser($email)
     {
 
@@ -74,5 +74,5 @@ class UsuarioCollection extends Model
         $record = current($this->queryBuilder->select($this->table, $params));
 
         return password_verify($password, $record["password"]);
-    }
+    }*/
 }

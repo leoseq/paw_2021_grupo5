@@ -47,9 +47,9 @@ class Profesional extends Model
         $this->fields["id_especialidad"] = $id_especialidad;
     }
 
-    public function setEstado(int $estado)
+    public function setEstado(string $estado)
     {
-        if ($estado > 60) {
+        if (strlen($estado) > 60) {
             throw new InvalidValueFormatException("El nombre de la especialidad no debe ser mayor a 60 caracteres");
         }
 

@@ -44,14 +44,6 @@ class Usuario extends Model
         $this->fields["apellido"] = $apellido; 
     }
 
-    public function setRol(string $rol)
-    {
-        if (strlen($rol) > 60) {
-            throw InvalidValueFormatException("El apellido del paciente no debe ser mayor a 60 caracteres");
-        }
-        $this->fields["rol"] = $rol;
-    }
-
     public function setEmail(string $email)
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {

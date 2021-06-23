@@ -127,55 +127,55 @@ final class CreacionDeTablasMigrations extends AbstractMigration
         $dataHorariosAtencion = array(
                 [
                     'id_profesional' => '1',
-                    'dia' => 'lunes',
+                    'dia' => 'Lunes',
                     'hora_inicio' => '09:00:00',
                     'hora_fin' => '15:00:00'
                 ],
                 [
                     'id_profesional' => '1',
-                    'dia' => 'miercoles',
+                    'dia' => 'Miercoles',
                     'hora_inicio' => '09:00:00',
                     'hora_fin' => '15:00:00'
                 ],
                 [
                     'id_profesional' => '1',
-                    'dia' => 'viernes',
+                    'dia' => 'Viernes',
                     'hora_inicio' => '09:00:00',
                     'hora_fin' => '15:00:00'
                 ],
                 [
                     'id_profesional' => '2',
-                    'dia' => 'martes',
+                    'dia' => 'Martes',
                     'hora_inicio' => '12:00:00',
                     'hora_fin' => '18:00:00'
                 ],
                 [
                     'id_profesional' => '2',
-                    'dia' => 'jueves',
+                    'dia' => 'Jueves',
                     'hora_inicio' => '12:00:00',
                     'hora_fin' => '18:00:00'
                 ],
                 [
                     'id_profesional' => '3',
-                    'dia' => 'lunes',
+                    'dia' => 'Lunes',
                     'hora_inicio' => '14:00:00',
                     'hora_fin' => '19:00:00'
                 ],
                 [
                     'id_profesional' => '3',
-                    'dia' => 'jueves',
+                    'dia' => 'Jueves',
                     'hora_inicio' => '14:00:00',
                     'hora_fin' => '19:00:00'
                 ],
                 [
                     'id_profesional' => '4',
-                    'dia' => 'martes',
+                    'dia' => 'Martes',
                     'hora_inicio' => '14:00:00',
                     'hora_fin' => '19:00:00'
                 ],
                 [
                     'id_profesional' => '4',
-                    'dia' => 'viernes',
+                    'dia' => 'Viernes',
                     'hora_inicio' => '14:00:00',
                     'hora_fin' => '19:00:00'
                 ]

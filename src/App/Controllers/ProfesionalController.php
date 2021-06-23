@@ -17,10 +17,6 @@ class ProfesionalController extends Controller
         $titulo = "Profesionales";
         $profesionales = $this->model->getAll();
 
-/*        echo "<pre>";
-        var_dump($profesionales);
-        die;*/
-
         $this->twigLoader("profesionales.view.twig", compact("titulo", "profesionales"));
     }
 
@@ -28,13 +24,10 @@ class ProfesionalController extends Controller
     {
         $titulo = "Profesionales";
         $this->twigLoader("addProfesional.view.twig", compact("titulo"));
-
     }
-
 
     public function addProfesional()
     {
-
         $datos = [];
         $datos["nombre"] = $_POST["name_input"];
         $datos["apellido"] = $_POST["surname_input"];
@@ -45,10 +38,7 @@ class ProfesionalController extends Controller
         $datos["path_archivo"] = "/../.../imagen.png";
 
         $profesional_id = $this->model->insertProfesional($this->table, $datos);
-
     }
-
-
 
     public function getProfesionales()
     {
@@ -57,5 +47,4 @@ class ProfesionalController extends Controller
         header('Content-Type: application/json');
         return $profesionales;
     }
-
 }

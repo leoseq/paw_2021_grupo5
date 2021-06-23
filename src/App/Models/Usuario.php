@@ -103,10 +103,10 @@ class Usuario extends Model
 
     public function passwordHash()
     {
-        $hash = password_hash($password, PASSWORD_BCRYPT);
+        $hash = password_hash($this->fields['password'], PASSWORD_BCRYPT);
 
         if (!password_needs_rehash($hash, PASSWORD_BCRYPT)) {
-            $hash = password_hash($password, PASSWORD_BCRYPT);
+            $hash = password_hash($this->fields['password'], PASSWORD_BCRYPT);
         }
 
         return $hash;
@@ -142,6 +142,11 @@ class Usuario extends Model
             $this->$method($values[$field]);
 
         }
+    }
+
+    public function insert()
+    {
+        $this->queryBuilder->insert($this->table, $this->fields);
     }
 
 }

@@ -42,17 +42,17 @@ class UsuarioController extends Controller
         // Instancio y seteo los valores
         $this->model->set($datos);
 
+        $row = $this->model->existsUser();
+
         // Valido si el usuario ya existe?
-        if (!$this->model->existsUser($datos['email'])) {
+        if (empty($row)) {
 
             // Hasheo la password
-            $hash = $this->model->passwordHash($datos['password']);
-
-
+            $hash = $this->model->passwordHash();
             $this->model->setPassword($hash);
 
             // Inserto en DB
-            $obraSocial_id = $this->model->insertUsuario($this->table, $datos);
+            $this->model->insert();
 
         } else {
             throw new UserExistsException("El usuario ya existe");

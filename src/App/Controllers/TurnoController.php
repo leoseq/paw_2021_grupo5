@@ -42,6 +42,8 @@ class TurnoController extends Controller
     {
         $turno = new Turno();
 
+
+
         $datos = [];
         $datos["id_especialidad"] = $_POST["specialty_input"];
         $datos["id_profesional"] = $_POST["profesional_input"];

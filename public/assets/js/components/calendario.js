@@ -79,7 +79,8 @@ class Calendario {
                     if (profesional == null) {
                         alert("El profesional seleccionado no existe, por favor seleccione otro")
                     } else {
-                        especialidadInput.value = profesional.innerText;
+                        especialidadInput.value = profesional.getAttribute("id_especialidad");
+
                     }
 
 
@@ -135,6 +136,7 @@ class Calendario {
         this.listadoTurnos.especialistas.forEach(element => {
             let nuevoProfesional = Clinica.nuevoElemento("option", element.especialidad, {
                 "id": element.matricula,
+                "id_especialidad": element.id_especialidad,
                 "value": element.nombre + " " + element.apellido
             })
             listaProfesionales.appendChild(nuevoProfesional);

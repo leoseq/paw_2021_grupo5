@@ -117,6 +117,7 @@ class ProfesionalesCollection extends Model
                     'matricula' => $turnosProfesional["matricula"],
                     'nombre' => $turnosProfesional["nombre"],
                     'apellido' => $turnosProfesional["apellido"],
+                    'id_especialidad' => (int)$turnosProfesional["id_especialidad"],
                     'especialidad' => $turnosProfesional["especialidad"],
                     'diasQueAtiende' => $turnosProfesional["dia"],
                     'duracionTurno' => (int)$turnosProfesional["duracionTurno"],
@@ -141,12 +142,7 @@ class ProfesionalesCollection extends Model
 
         }
 
-
-
         header('Content-type: application/json');
-
-
-
         echo ($especialistas);
         return $especialistas;
 

@@ -76,7 +76,7 @@ class QueryBuilder
     public function profesionalesTurno($table, $datos = [])
     {
 
-        $query = "SELECT p.id, p.nombre, p.apellido , p.matricula, p.duracionTurno, (e.nombre) AS especialidad,  ha.dia, ha.hora_inicio, ha.hora_fin, t.fecha_turno FROM {$table} p
+        $query = "SELECT p.id, p.nombre, p.apellido , p.matricula, p.duracionTurno, p.id_especialidad, (e.nombre) AS especialidad,ha.dia, ha.hora_inicio, ha.hora_fin, t.fecha_turno FROM {$table} p
                   INNER JOIN especialidades e ON (e.id = p.id_especialidad)
                   INNER JOIN horario_atencion ha ON (ha.id_profesional = p.id)
                   LEFT JOIN turnos t ON (t.id_profesional = p.id)";
@@ -86,8 +86,6 @@ class QueryBuilder
         $sentencia = $this->pdo->prepare($query);
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
         $sentencia->execute($datos);
-
-
         /*  echo "<pre>";
          var_dump($sentencia->fetchAll());
          die;*/
@@ -108,11 +106,6 @@ class QueryBuilder
         $sentencia = $this->pdo->prepare($query);
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
         $sentencia->execute($datos);
-
-
-        /*  echo "<pre>";
-         var_dump($sentencia->fetchAll());
-         die;*/
 
         return $sentencia->fetchAll();
 

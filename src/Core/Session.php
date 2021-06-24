@@ -13,7 +13,8 @@ class Session
 
     public function startSession($user)
     {
-        $_SESSION['idSession'] = session_create_id($this->prefijo);
+
+        $_SESSION['idSession'] = session_regenerate_id($this->prefijo);
         $_SESSION['idUsuario'] = $user["id"];
         $_SESSION['nombre'] = $user["nombre"];
         $_SESSION['apellido'] = $user["apellido"];

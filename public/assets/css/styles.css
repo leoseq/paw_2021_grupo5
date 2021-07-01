@@ -1194,6 +1194,7 @@ footer h2 {
     margin: 20px 0px;
     transition: all 1s ease;
     position: relative;
+    cursor: pointer;
 }
 
 .sectionForm form input[type="submit"]:hover {
@@ -1210,6 +1211,7 @@ footer h2 {
     background: #ffff;
     background-color: transparent;
     outline: none;
+    cursor: pointer;
 }
 
 .turneroButton {

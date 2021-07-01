@@ -25,7 +25,7 @@ class Session
     public function finishSession()
     {
         $_SESSION = [];
-        setcookie(session_name(), '', time() - 10000);
+        setcookie(session_name(), '', time() - 100000000000);
         session_destroy();
     }
 

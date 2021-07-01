@@ -50,26 +50,32 @@ class Calendario {
                     }
                 })
                 .then(async data => {
-                    this.cargarListado(data,listaProfesionales);
+                    this.cargarListado(data, listaProfesionales);
                 })
                 .catch((err) => {
                     console.error(err);
                 });
 
 
-            //
             let profesionalInput = document.querySelector('#profesional_input');
-            let profesionalInput2 = document.querySelector('#profesional_input2');
+            // let profesionalInput2 = document.querySelector('#profesional_input2');
+
+            let buttonSubmit = document.querySelector("input[type=submit]");
 
             let especialidadInput = document.querySelector('#specialty_input');
-
             let fechaTurnoInput = document.querySelector('#turn_date_input');
+
 
             //CUANDO HAY UN CAMBIO DE PROFESIONAL
             profesionalInput.addEventListener('change', event => {
 
                 //Selecciono el input de profesionales
                 let profesional = this.getProfesional(listaProfesionales, event.srcElement.value);
+
+                buttonSubmit.addEventListener('click', evento => {
+                    console.log("JOACO");
+                    profesionalInput.value = profesional.getAttribute("id_profesional");
+                });
 
                 fechaTurnoInput.addEventListener("click", evento => {
                     let eCalendario = contenedor.querySelector("#diasQueAtiende");
@@ -82,8 +88,6 @@ class Calendario {
                         alert("El profesional seleccionado no existe, por favor seleccione otro")
                     } else {
                         especialidadInput.value = profesional.getAttribute("id_especialidad");
-                        //TODO: Eliminar input2 y colocar valor en profesional_input
-                        profesionalInput2.value = profesional.getAttribute("id_profesional");
                     }
 
 
@@ -127,7 +131,7 @@ class Calendario {
         return profesionalSeleccionado
     }
 
-    cargarListado(especialistas,listaProfesionales){
+    cargarListado(especialistas, listaProfesionales) {
         this.listadoTurnos =
             {
                 especialistas

@@ -82,6 +82,7 @@ class Calendario {
                         alert("El profesional seleccionado no existe, por favor seleccione otro")
                     } else {
                         especialidadInput.value = profesional.getAttribute("id_especialidad");
+                        //TODO: Eliminar input2 y colocar valor en profesional_input
                         profesionalInput2.value = profesional.getAttribute("id_profesional");
                     }
 

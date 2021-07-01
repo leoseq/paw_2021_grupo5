@@ -1,0 +1,38 @@
+{% extends "parts/base.view.twig" %}
+
+{% block main %} 
+
+    <main class="noticias">
+        {{ include('/parts/turnero.view.twig') }}
+        
+        <header>
+            <h2>Noticias</h2>
+        </header>
+    
+        <section class="fichasNoticias">
+            <h4>Últimas Noticias</h4>
+
+                {% for noticia in noticias %}
+                    {% include('/cards/noticiaCard.view.twig') %}
+                {% endfor %}
+
+        </section>
+
+        <section class="paginador">
+            <h4>Paginador</h4>
+            <ul>
+                <li><a href="#">«</a></li>
+                <li><a class="active" href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">»</a></li>
+            </ul>
+        </section>
+
+        {{ parent() }}
+
+    </main>
+
+{% endblock %}

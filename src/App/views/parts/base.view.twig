@@ -1,0 +1,27 @@
+<html>
+    <head>
+        {% block head %}
+            {{ include('/parts/head.view.twig') }}
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            {% block header %}
+                {{ include('/parts/header.view.twig') }}
+                {{ include('/parts/nav.view.twig') }}
+            {% endblock %}
+        </header>
+
+        <main>
+            {% block main %}
+                {% include('/parts/navMobile.view.twig') %}
+            {% endblock %}
+        </main>
+        
+        <footer>
+            {% block footer %}
+                {% include('/parts/footer.view.twig') %}
+            {% endblock %}
+        </footer>
+    </body>
+</html>

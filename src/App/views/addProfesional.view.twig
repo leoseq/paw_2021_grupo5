@@ -1,0 +1,61 @@
+{% extends "parts/base.view.twig" %}
+
+{% block main %}
+
+
+    <main>
+        <section class="sectionForm">
+            <form id="addProfesional" action="/addProfesional" method="POST" enctype='multipart/form-data'>
+
+                <h1>Nuevo Profesional</h1>
+
+                <label for="name_input">Nombre:</label>
+                <input
+                        type="text"
+                        name="name_input"
+                        id="name_input"
+                        placeholder="Juan"
+                        required
+                />
+
+                <label for="surname_input">Apellido:</label>
+                <input
+                        type="text"
+                        name="surname_input"
+                        id="surname_input"
+                        placeholder="Bert"
+                        required
+                />
+
+                <label for="speciality_input">Especialidad:</label>
+                <input
+                        type="number"
+                        name="speciality_input"
+                        id="speciality_input"
+                        required
+                />
+
+                <label for="management_position_input">Cargo Directivo:</label>
+                <input
+                        type="text"
+                        name="management_position_input"
+                        id="management_position_input"
+                />
+
+                <label for="email_input">Email:</label>
+                <input
+                        type="text"
+                        name="email_input"
+                        id="email_input"
+                />
+
+
+                <input type="submit" value="Enviar"/>
+            </form>
+        </section>
+
+        {{ parent() }}
+
+    </main>
+
+{% endblock %}

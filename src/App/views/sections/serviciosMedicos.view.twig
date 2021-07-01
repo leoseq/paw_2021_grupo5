@@ -1,0 +1,45 @@
+<section class="serviciosMedicos">
+    <h2>
+        <span class="ambulancia-icon-36"></span>
+        <span class="stethoscope-icon-36"></span>
+        Servicios Médicos
+    </h2>
+
+    <hr />
+
+    <input
+        type="search"
+        placeholder="Buscar un profesional o una especialidad"
+    />
+
+    <h3>Servicios médicos mas buscados</h3>
+
+    <section>
+        <header>
+            <h4>Especialidades</h4>
+        </header>
+
+        <article>
+            <header>
+                <h4>Especialidades</h4>
+            </header>
+                {% for servicio in serviciosMasBuscados %}
+                    <p> {{ servicio.puesto}} - {{ servicio.especialidad}}</p>
+                {% endfor %}
+        </article>
+    </section>
+
+    <section>
+        <header>
+            <h4>Profesionales</h4>
+        </header>
+        <article>
+            <header>
+                <h4>Profesionales</h4>
+            </header>
+                {% for profesional in profesionalesMasBuscados %}
+                    <p> {{ profesional.puesto}} - {{ profesional.profesional}}</p>
+                {% endfor %}
+        </article>
+    </section>
+</section>

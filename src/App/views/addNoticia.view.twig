@@ -1,0 +1,45 @@
+{% extends "parts/base.view.twig" %}
+
+{% block main %}
+
+
+    <main>
+        <section class="sectionForm">
+            <form action="/addNoticia" method="POST" enctype='multipart/form-data'>
+
+                <h1>Nueva Noticia</h1>
+
+                <label for="name_input">Titulo:</label>
+                <input
+                        type="text"
+                        name="title_input"
+                        id="title_input"
+                        required
+                />
+
+                <label for="surname_input">Cuerpo:</label>
+                <input
+                        type="text"
+                        name="body_input"
+                        id="body_input"
+                        required
+                />
+
+                <label for="speciality_input">Fecha:</label>
+                <input
+                        type="date"
+                        name="date_input"
+                        id="date_input"
+                        required
+                />
+
+
+                <input type="submit" value="Enviar"/>
+            </form>
+        </section>
+
+        {{ parent() }}
+
+    </main>
+
+{% endblock %}

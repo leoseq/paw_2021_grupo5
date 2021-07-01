@@ -11,14 +11,14 @@ class ErrorController extends Controller
     {
         $titulo = "Pagina NO Encontrada";
         http_response_code(404);
-        require $this->viewDir . "notFound.view.php";
+        $this->twigLoader("notFound.view.twig", compact("titulo"));
     }
 
     public function internalError()
     {
         $titulo = "Error Interno del Servidor";
         http_response_code(500);
-        require $this->viewDir . "internalError.view.php";
+        $this->twigLoader("internalError.view.twig", compact("titulo"));
     }
 
 }

@@ -12,10 +12,12 @@ class Usuario extends Model
 {
     public $table = 'usuarios';
     public $fields = [
+        "id" => null,
         "nombre" => null,
         "apellido" => null,
         "email" => null,
-        "password" => null
+        "password" => null,
+        "rol" => null
     ];
       
     public function setNombre(string $nombre)
@@ -64,6 +66,16 @@ class Usuario extends Model
         $this->fields["password"] = $password;
     }
 
+    public function setRol(string $rol)
+    {
+        $this->fields["rol"] = $rol;
+    }
+
+    public function getId()
+    {
+        return $this->fields["id"];
+    }
+
     public function getNombre()
     {
         return $this->fields["nombre"];
@@ -84,6 +96,11 @@ class Usuario extends Model
         return $this->fields["password"];
     }
 
+    public function getRol()
+    {
+        return $this->fields["rol"];
+    }
+
     public function passwordHash()
     {
         $hash = password_hash($this->fields['password'], PASSWORD_BCRYPT);
@@ -95,36 +112,41 @@ class Usuario extends Model
         return $hash;
     }
 
-    public function insert()
-    {
-        $this->queryBuilder->insert($this->table, $this->fields);
-    }
 
+    //TODO: CONTROLAR SI ESTO ES CORRECTO. NO PUEDO ACCEDER AL QUERY BUILDER
     public function existsUser()
     {        
         $params = ["email" => $this->fields['email'] ];
         $record = current($this->queryBuilder->select($this->table, $params)); 
         
-        if (!empty($record)){
-            return true;
-        }
-
-        return false;
+        return $record;
     }
     
 
     public function verifyPassword()
     {
         $params = ["email" => $this->fields['email'] ];
-        $record = current($this->queryBuilder->select($this->table, $params)); 
-        
+        $record = current($this->queryBuilder->select($this->table, $params));
+
         return password_verify($this->fields['password'], $record["password"]);
     }
 
+    public function set(array $values)
+    {
+        foreach (array_keys($this->fields) as $field) {
+            if (!isset($values[$field])) {
+                continue;
+            }
 
-    
+            $method = "set" . ucfirst($field);
+            $this->$method($values[$field]);
 
+        }
+    }
 
-    
+    public function insert()
+    {
+        $this->queryBuilder->insert($this->table, $this->fields);
+    }
 
 }

@@ -1,0 +1,29 @@
+{% extends "parts/base.view.twig" %}
+
+{% block main %}
+
+
+    <main>
+        <section class="sectionForm">
+            <form action="/addObraSocial" method="POST" enctype='multipart/form-data'>
+
+                <h1>Nueva Obra Social</h1>
+
+                <label for="name_input">Nombre:</label>
+                <input
+                        type="text"
+                        name="name_input"
+                        id="name_input"
+                        placeholder="Juan"
+                        required
+                />
+
+                <input type="submit" value="Enviar"/>
+            </form>
+        </section>
+
+        {{ parent() }}
+
+    </main>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "parts/base.view.twig" %}
+
+{% block main %} 
+
+    <main class="containerLogin">
+
+        {% include('/sections/loginForm.view.twig') %}
+        {% include('/sections/numerosTurno.view.twig') %}
+
+        {{ parent() }}
+    </main>
+
+{% endblock %}
+
+
+        
+        

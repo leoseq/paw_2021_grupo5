@@ -52,8 +52,6 @@ class ProfesionalesCollection extends Model
             //Se verifica que la matricula no sea la misma
             if ($matricula != $turnosProfesional["matricula"]) {
 
-                $id = $turnosProfesional["id"];
-
                 $matricula = $turnosProfesional["matricula"];
 
                 $horaInicio[] = [
@@ -113,7 +111,7 @@ class ProfesionalesCollection extends Model
 
                 //Se mete en un JSON los datos por profesional
                 $to_encode[] = [
-                    'id' => $turnosProfesional["id"],
+                    'id_profesional' => $turnosProfesional["id"],
                     'matricula' => $turnosProfesional["matricula"],
                     'nombre' => $turnosProfesional["nombre"],
                     'apellido' => $turnosProfesional["apellido"],

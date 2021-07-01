@@ -263,6 +263,10 @@ footer section article a {
     display: none;
 }
 
+#profesional_input2 {
+    display: none;
+}
+
 .serviciosMedicos input[type="search"],
 .profesionales input[type="search"] {
     min-width: 26vw;

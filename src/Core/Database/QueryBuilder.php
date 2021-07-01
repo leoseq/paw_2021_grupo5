@@ -86,6 +86,8 @@ class QueryBuilder
         $sentencia = $this->pdo->prepare($query);
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
         $sentencia->execute($datos);
+
+
         /*  echo "<pre>";
          var_dump($sentencia->fetchAll());
          die;*/
@@ -106,6 +108,11 @@ class QueryBuilder
         $sentencia = $this->pdo->prepare($query);
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
         $sentencia->execute($datos);
+
+
+        /*  echo "<pre>";
+         var_dump($sentencia->fetchAll());
+         die;*/
 
         return $sentencia->fetchAll();
 

@@ -59,12 +59,17 @@ class Calendario {
 
             //
             let profesionalInput = document.querySelector('#profesional_input');
+            let profesionalInput2 = document.querySelector('#profesional_input2');
+
             let especialidadInput = document.querySelector('#specialty_input');
 
             let fechaTurnoInput = document.querySelector('#turn_date_input');
 
             //CUANDO HAY UN CAMBIO DE PROFESIONAL
             profesionalInput.addEventListener('change', event => {
+
+                //Selecciono el input de profesionales
+                let profesional = this.getProfesional(listaProfesionales, event.srcElement.value);
 
                 fechaTurnoInput.addEventListener("click", evento => {
                     let eCalendario = contenedor.querySelector("#diasQueAtiende");
@@ -73,14 +78,11 @@ class Calendario {
                         contenedor.removeChild(eCalendario);
                     }
 
-                    //Selecciono el input de profesionales
-                    let profesional = this.getProfesional(listaProfesionales, event.srcElement.value);
-
                     if (profesional == null) {
                         alert("El profesional seleccionado no existe, por favor seleccione otro")
                     } else {
                         especialidadInput.value = profesional.getAttribute("id_especialidad");
-
+                        profesionalInput2.value = profesional.getAttribute("id_profesional");
                     }
 
 
@@ -101,10 +103,6 @@ class Calendario {
 
                         });
                     }
-
-
-
-
                 })
 
             });
@@ -136,6 +134,7 @@ class Calendario {
         this.listadoTurnos.especialistas.forEach(element => {
             let nuevoProfesional = Clinica.nuevoElemento("option", element.especialidad, {
                 "id": element.matricula,
+                "id_profesional": element.id_profesional,
                 "id_especialidad": element.id_especialidad,
                 "value": element.nombre + " " + element.apellido
             })

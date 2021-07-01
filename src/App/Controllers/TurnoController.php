@@ -47,6 +47,7 @@ class TurnoController extends Controller
         $datos = [];
         $datos["id_especialidad"] = $_POST["specialty_input"];
         $datos["id_profesional"] = $_POST["profesional_input"];
+        $datos["id_usuario"] = $_SESSION["idUsuario"];
         $datos["nombre_paciente"] = $_POST["name_input"];
         $datos["apellido_paciente"] = $_POST["surname_input"];
         $datos["email_paciente"] = $_POST["email_input"];

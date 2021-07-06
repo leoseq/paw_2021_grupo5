@@ -1,0 +1,11 @@
+<article class="card-persona">
+    <img src="../assets/images/personas/doctor_1.jpg" alt="foto doctor" />
+    <h3> {{ profesional.fields.nombre }} {{ profesional.fields.apellido }}</h3>
+    <h4> {{ profesional.fields.id_especialidad }}</h4>
+    <ul>
+        <li><b>Dias de atención:</b> {{ profesional.fields.email }}</li>
+        <li><b>Horario de atención:</b> {{ profesional.horarioAtencion }}</li>
+        <li><b>Obras Sociales:</b> {{ profesional.obrasSociales }}</li>
+    </ul>
+    <a href="/solicitarTurno">Solicitar Turno</a>
+</article>

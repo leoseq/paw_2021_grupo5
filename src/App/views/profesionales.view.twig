@@ -1,0 +1,28 @@
+{% extends "parts/base.view.twig" %}
+
+{% block main %}
+    
+    <main>
+        <section class="profesionales">
+            <header>
+                <h2>Profesionales</h2>
+            </header>
+
+            <input
+                class="buscador"
+                type="search"
+                placeholder="Buscar por profesional o por especialidad"
+            />
+
+            <section class="resultado-busqueda">
+                {% for profesional in profesionales %}
+                    {% include('/cards/profesionalesCard.view.twig') %}
+                {% endfor %}
+            </section>
+        </section>
+
+        {{ parent() }}
+
+    </main>
+    
+{% endblock %}

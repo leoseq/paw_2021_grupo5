@@ -117,7 +117,7 @@ class Turno extends Model
         $this->fields["estado_turno"] = $estado_turno;
     }
 
-    public function setId_especialidad(string $especialidad)
+    public function setId_especialidad(int $especialidad)
     {
         if (is_null($especialidad)) {
             throw MandatoryValueException("La Especialidad del Turno es obligatoria.");
@@ -126,7 +126,7 @@ class Turno extends Model
         $this->fields["id_especialidad"] = $especialidad;
     }
 
-    public function setId_profesional(string $profesional)
+    public function setId_profesional(int $profesional)
     {
         if (is_null($profesional)) {
             throw MandatoryValueException("El Profesional del Turno es obligatorio.");

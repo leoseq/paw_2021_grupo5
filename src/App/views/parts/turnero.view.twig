@@ -1,0 +1,30 @@
+<section class="turnero-flotante">
+    <header>
+        <h2>Turnos</h2>
+    </header>
+    <ul class="menu-turnero" data-animation="to-top">
+        <li>
+            
+            {% if session is empty %}
+                <a href="/login">
+            {% else %}
+                <a href="/solicitarTurno?idUsuario={{ session.idUsuario }}">
+            {% endif %}
+
+                <span class="sacar-turno-icon-50"></span>
+                <span>Nuevo Turno</span>
+            </a>
+        </li>
+        <hr/>
+        <li>
+            {% if session is empty %}
+                <a href="/login">
+            {% else %}
+                <a href="/listadoTurnos?idUsuario={{ session.idUsuario }}">
+            {% endif %}
+                <span class="listado-turnos-icon-50"></span>
+                <span>Listar Turnos</span>
+            </a>
+        </li>
+    </ul>
+</section>

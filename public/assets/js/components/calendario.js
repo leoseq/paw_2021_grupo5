@@ -27,296 +27,6 @@ class Calendario {
             'Diciembre'
         ];
 
-
-        let listadoTurnos = this.listadoTurnos =
-            {
-                "especialistas": [
-                    {
-                        "matricula": "3737",
-                        "nombre": "Tekito",
-                        "apellido": "Lakarie",
-                        "especialidad": "Odontologia",
-                        "diasQueAtiende": [
-                            "Lunes",
-                            "Martes",
-                            "Jueves"
-                        ],
-                        "horarioInicio": {
-                            "horas": 9,
-                            "minutos": 0
-                        },
-                        "horarioFinalizacion": {
-                            "horas": 12,
-                            "minutos": 0
-                        },
-                        "duracionTurno": 20,
-                        "turnosTomados": [
-                            {
-                                "dia": "Lunes",
-                                "horas": 9,
-                                "minutos": 0
-                            },
-                            {
-                                "dia": "Lunes",
-                                "horas": 9,
-                                "minutos": 20
-                            },
-                            {
-                                "dia": "Martes",
-                                "horas": 10,
-                                "minutos": 0
-                            },
-                            {
-                                "dia": "Martes",
-                                "horas": 10,
-                                "minutos": 40
-                            },
-                            {
-                                "dia": "Martes",
-                                "horas": 11,
-                                "minutos": 20
-                            },
-                            {
-                                "dia": "Jueves",
-                                "horas": 9,
-                                "minutos": 0
-                            },
-                            {
-                                "dia": "Jueves",
-                                "horas": 9,
-                                "minutos": 20
-                            },
-                            {
-                                "dia": "Jueves",
-                                "horas": 10,
-                                "minutos": 40
-                            },
-                            {
-                                "dia": "Jueves",
-                                "horas": 11,
-                                "minutos": 40
-                            }
-                        ]
-                    },
-                    {
-                        "matricula": "2222",
-                        "nombre": "Tarayado",
-                        "apellido": "Tukoko",
-                        "especialidad": "Psicologia",
-                        "diasQueAtiende": [
-                            "Martes",
-                            "Jueves",
-                            "Viernes"
-                        ],
-                        "horarioInicio": {
-                            "horas": 13,
-                            "minutos": 0
-                        },
-                        "horarioFinalizacion": {
-                            "horas": 18,
-                            "minutos": 0
-                        },
-                        "duracionTurno": 30,
-                        "turnosTomados": [
-                            {
-                                "dia": "Martes",
-                                "horas": 14,
-                                "minutos": 0
-                            },
-                            {
-                                "dia": "Martes",
-                                "horas": 14,
-                                "minutos": 30
-                            },
-                            {
-                                "dia": "Martes",
-                                "horas": 16,
-                                "minutos": 0
-                            },
-                            {
-                                "dia": "Jueves",
-                                "horas": 16,
-                                "minutos": 30
-                            },
-                            {
-                                "dia": "Jueves",
-                                "horas": 17,
-                                "minutos": 0
-                            },
-                            {
-                                "dia": "Jueves",
-                                "horas": 17,
-                                "minutos": 30
-                            },
-                            {
-                                "dia": "Viernes",
-                                "horas": 13,
-                                "minutos": 30
-                            },
-                            {
-                                "dia": "Viernes",
-                                "horas": 16,
-                                "minutos": 30
-                            }
-                        ]
-                    },
-                    {
-                        "matricula": "20202",
-                        "nombre": "Tekuro",
-                        "apellido": "Lakria",
-                        "especialidad": "Pediatria",
-                        "diasQueAtiende": [
-                            "Lunes",
-                            "Jueves",
-                            "Viernes"
-                        ],
-                        "horarioInicio": {
-                            "horas": 10,
-                            "minutos": 0
-                        },
-                        "horarioFinalizacion": {
-                            "horas": 14,
-                            "minutos": 0
-                        },
-                        "duracionTurno": 25,
-                        "turnosTomados": [
-                            {
-                                "dia": "Lunes",
-                                "horas": 11,
-                                "minutos": 15
-                            },
-                            {
-                                "dia": "Lunes",
-                                "horas": 11,
-                                "minutos": 40
-                            },
-                            {
-                                "dia": "Lunes",
-                                "horas": 12,
-                                "minutos": 30
-                            },
-                            {
-                                "dia": "Jueves",
-                                "horas": 10,
-                                "minutos": 0
-                            },
-                            {
-                                "dia": "Viernes",
-                                "horas": 12,
-                                "minutos": 55
-                            },
-                            {
-                                "dia": "Viernes",
-                                "horas": 13,
-                                "minutos": 20
-                            }
-                        ]
-                    },
-                    {
-                        "matricula": "9595",
-                        "nombre": "Isee",
-                        "apellido": "Deadpeople",
-                        "especialidad": "Cardiologia",
-                        "diasQueAtiende": [
-                            "Lunes",
-                            "Miercoles",
-                            "Viernes"
-                        ],
-                        "horarioInicio": {
-                            "horas": 15,
-                            "minutos": 0
-                        },
-                        "horarioFinalizacion": {
-                            "horas": 18,
-                            "minutos": 0
-                        },
-                        "duracionTurno": 10,
-                        "turnosTomados": [
-                            {
-                                "dia": "Lunes",
-                                "horas": 15,
-                                "minutos": 0
-                            },
-                            {
-                                "dia": "Lunes",
-                                "horas": 15,
-                                "minutos": 10
-                            },
-                            {
-                                "dia": "Lunes",
-                                "horas": 15,
-                                "minutos": 20
-                            },
-                            {
-                                "dia": "Lunes",
-                                "horas": 15,
-                                "minutos": 30
-                            },
-                            {
-                                "dia": "Lunes",
-                                "horas": 15,
-                                "minutos": 50
-                            },
-                            {
-                                "dia": "Miercoles",
-                                "horas": 15,
-                                "minutos": 30
-                            },
-                            {
-                                "dia": "Miercoles",
-                                "horas": 15,
-                                "minutos": 50
-                            },
-                            {
-                                "dia": "Miercoles",
-                                "horas": 16,
-                                "minutos": 30
-                            },
-                            {
-                                "dia": "Miercoles",
-                                "horas": 17,
-                                "minutos": 0
-                            },
-                            {
-                                "dia": "Viernes",
-                                "horas": 15,
-                                "minutos": 0
-                            },
-                            {
-                                "dia": "Viernes",
-                                "horas": 15,
-                                "minutos": 30
-                            },
-                            {
-                                "dia": "Viernes",
-                                "horas": 16,
-                                "minutos": 30
-                            },
-                            {
-                                "dia": "Viernes",
-                                "horas": 16,
-                                "minutos": 40
-                            },
-                            {
-                                "dia": "Viernes",
-                                "horas": 16,
-                                "minutos": 50
-                            },
-                            {
-                                "dia": "Viernes",
-                                "horas": 17,
-                                "minutos": 0
-                            },
-                            {
-                                "dia": "Viernes",
-                                "horas": 17,
-                                "minutos": 30
-                            }
-                        ]
-                    }
-                ]
-            }
-
         let contenedor = pContenedor.tagName ? pContenedor : document.querySelector(pContenedor);
 
         if (contenedor) {
@@ -329,25 +39,43 @@ class Calendario {
 
             let listaProfesionales = contenedor.querySelector("#profesional-lista");
 
+
             //Carga de profesionales y especialidades
-            listadoTurnos.especialistas.forEach(element => {
-                let nuevoProfesional = Clinica.nuevoElemento("option", element.especialidad, {
-                    "id": element.matricula,
-                    "value": element.nombre + " " + element.apellido
+
+            var url = '/admin/profesionales';
+            fetch(url)
+                .then((r) => {
+                    if (r.status >= 200 && r.status < 300) {
+                        return r.json()
+                    }
                 })
-                listaProfesionales.appendChild(nuevoProfesional);
-            });
+                .then(async data => {
+                    this.cargarListado(data, listaProfesionales);
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
 
 
-
-            //
             let profesionalInput = document.querySelector('#profesional_input');
-            let especialidadInput = document.querySelector('#specialty_input');
+            // let profesionalInput2 = document.querySelector('#profesional_input2');
 
+            let buttonSubmit = document.querySelector("input[type=submit]");
+
+            let especialidadInput = document.querySelector('#specialty_input');
             let fechaTurnoInput = document.querySelector('#turn_date_input');
+
 
             //CUANDO HAY UN CAMBIO DE PROFESIONAL
             profesionalInput.addEventListener('change', event => {
+
+                //Selecciono el input de profesionales
+                let profesional = this.getProfesional(listaProfesionales, event.srcElement.value);
+
+                buttonSubmit.addEventListener('click', evento => {
+                    console.log("JOACO");
+                    profesionalInput.value = profesional.getAttribute("id_profesional");
+                });
 
                 fechaTurnoInput.addEventListener("click", evento => {
                     let eCalendario = contenedor.querySelector("#diasQueAtiende");
@@ -356,10 +84,12 @@ class Calendario {
                         contenedor.removeChild(eCalendario);
                     }
 
-                    //Selecciono el input de profesionales
-                    let profesional = this.getProfesional(listaProfesionales, event.srcElement.value);
+                    if (profesional == null) {
+                        alert("El profesional seleccionado no existe, por favor seleccione otro")
+                    } else {
+                        especialidadInput.value = profesional.getAttribute("id_especialidad");
+                    }
 
-                    especialidadInput.value = profesional.innerText;
 
                     //Se carga la tabla con los dias que atiende
                     this.cargarTabla(profesional, contenedor);
@@ -378,10 +108,6 @@ class Calendario {
 
                         });
                     }
-
-
-
-
                 })
 
             });
@@ -403,6 +129,22 @@ class Calendario {
     getProfesional(profesionalLista, matricula) {
         let profesionalSeleccionado = profesionalLista.querySelector('[value="' + matricula + '"]');
         return profesionalSeleccionado
+    }
+
+    cargarListado(especialistas, listaProfesionales) {
+        this.listadoTurnos =
+            {
+                especialistas
+            };
+        this.listadoTurnos.especialistas.forEach(element => {
+            let nuevoProfesional = Clinica.nuevoElemento("option", element.especialidad, {
+                "id": element.matricula,
+                "id_profesional": element.id_profesional,
+                "id_especialidad": element.id_especialidad,
+                "value": element.nombre + " " + element.apellido
+            })
+            listaProfesionales.appendChild(nuevoProfesional);
+        });
     }
 
     cargarTabla(profesionalSeleccionado, contenedor) {
@@ -459,6 +201,8 @@ class Calendario {
                 let semana = 1;
                 let contadorSemana;
                 let postSabado;
+                let iDiasAtencion;
+                let flagSabado = true;
 
                 var i = 1;
                 do {
@@ -490,16 +234,25 @@ class Calendario {
                         trSemanaN.appendChild(tdToday);
                         contadorSemana = 0;
                         postSabado = 0;
+                        iDiasAtencion = 0
+
 
                     } else {
                         let tdToday = Clinica.nuevoElemento("td", i, {class: "normal"});
                         //Control para colocar turnos dentro de la semana, a partir del dia actual
+                        let diaSemana = new Date().getDay();
+
                         if ((contadorSemana < 7) && (contadorSemana >= 0)) {
+
+                            if (diaSemana == 6 && flagSabado) {
+                                diaSemana = 5;
+                                flagSabado = false;
+                            }
                             contadorSemana++;
                             for (var h = 0; h <= especialista.diasQueAtiende.length; h++) {
                                 var day;
                                 var atiende = true;
-                                switch (new Date().getDay() + contadorSemana - postSabado) {
+                                switch (diaSemana + contadorSemana - postSabado) {
                                     case 0:
                                         day = "Domingo";
                                         postSabado = 0 ? 0 : postSabado++;
@@ -526,19 +279,20 @@ class Calendario {
                                         break;
                                     case 6:
                                         day = "Sabado";
-                                        postSabado = contadorSemana + new Date().getDay() + 1;
+                                        diaSemana == 6 ? (postSabado = contadorSemana + diaSemana) : (postSabado = contadorSemana + diaSemana + 1);
                                         break;
                                 }
 
 
-                                if ((day === especialista.diasQueAtiende[h]) && (atiende)) {
-                                    console.log(especialista.diasQueAtiende);
+                                if ((day === especialista.diasQueAtiende[iDiasAtencion]) && (atiende)) {
                                     tdToday = Clinica.nuevoElemento("td", i, {"id": day, class: "turno"});
                                     tdToday.atiende = false;
                                 }
+                                iDiasAtencion++;
                             }
                         }
 
+                        iDiasAtencion = 0;
                         trSemanaN = tablaCalendario.querySelector('#semana' + semana + '');
                         trSemanaN.appendChild(tdToday);
 
@@ -608,13 +362,12 @@ class Calendario {
 
         //Se transforma a Date, la fecha de inicio y finalizacion de atencion
         let dIndex = new Date();
-        dIndex.setHours(especialista.horarioInicio["horas"]);
-        dIndex.setMinutes(especialista.horarioInicio["minutos"]);
+        dIndex.setHours(especialista.horarioInicio[0]["horas"]);
+        dIndex.setMinutes(especialista.horarioInicio[0]["minutos"]);
 
         let dFin = new Date();
-        dFin.setHours(especialista.horarioFinalizacion["horas"]);
-        dFin.setMinutes(especialista.horarioFinalizacion["minutos"]);
-
+        dFin.setHours(especialista.horarioFinalizacion[0]["horas"]);
+        dFin.setMinutes(especialista.horarioFinalizacion[0]["minutos"]);
 
         //Se completa la tabla con los horarios
         while (dIndex <= dFin) {
@@ -647,9 +400,13 @@ class Calendario {
 
             //Sumo la duracion del turno para el siguiente
             dIndex.setMinutes(dIndex.getMinutes() + especialista.duracionTurno);
+
         }
 
-        let horariosAtencion = Clinica.nuevoElemento("div", "", {"id": "horarioAtencion", "class": "calendar perspectiveUpRetourn"})
+        let horariosAtencion = Clinica.nuevoElemento("div", "", {
+            "id": "horarioAtencion",
+            "class": "calendar perspectiveUpRetourn"
+        })
         contenedor.appendChild(horariosAtencion);
 
         horariosAtencion.appendChild(tablaTurnos);
@@ -676,35 +433,35 @@ class Calendario {
 
     }
 
-    obtenerTurno(){
+    obtenerTurno() {
         let turnosLibres = document.querySelectorAll(".libre");
         for (let i = 0; i < turnosLibres.length; i++) {
             turnosLibres[i].addEventListener("click", event => {
-               let datos = turnosLibres[i].querySelector('[estado="libre"]');
+                let datos = turnosLibres[i].querySelector('[estado="libre"]');
                 let fechaTurnoInput = document.querySelector('#turn_date_input');
                 document.querySelector("#horarioAtencion").style.display = 'none';
 
                 var fecha = new Date(); //Fecha actual
-                var mes = fecha.getMonth()+1; //obteniendo mes
+                var mes = fecha.getMonth() + 1; //obteniendo mes
                 var dia = datos.getAttribute("fecha"); //obteniendo dia
                 var ano = fecha.getFullYear(); //obteniendo año
                 var hora = datos.getAttribute("hora"); //obteniendo hora
                 var minutos = datos.getAttribute("min"); //obteniendo minuto
 
-               fechaTurnoInput.value=ano+"-"+minTwoDigits(mes)+"-"+minTwoDigits(dia)+"T"+minTwoDigits(hora)+":"+minTwoDigits(minutos);
+                fechaTurnoInput.value = ano + "-" + minTwoDigits(mes) + "-" + minTwoDigits(dia) + "T" + minTwoDigits(hora) + ":" + minTwoDigits(minutos);
 
 
-            function minTwoDigits(n) {
-                return (n < 10 ? '0' : '') + n;
-            }
+                function minTwoDigits(n) {
+                    return (n < 10 ? '0' : '') + n;
+                }
 
-            this.removeHorarios();
+                this.removeHorarios();
 
             });
         }
     }
 
-    removeHorarios(){
+    removeHorarios() {
         let sectionTurnos = document.querySelector("#sectionTurno");
         sectionTurnos.removeChild(document.querySelector("#horarioAtencion"));
     }

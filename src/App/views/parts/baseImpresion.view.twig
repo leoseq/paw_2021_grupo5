@@ -1,0 +1,26 @@
+<html>
+    <head>
+        {% block head %}
+            {{ include('/parts/head.view.twig') }}
+        {% endblock %}
+    </head>
+    <body>
+
+        <header class="headerImpresion">
+            {% block header %}
+                {{ include('/parts/header.view.twig') }}
+            {% endblock %}
+        </header>
+
+        <main>
+            {% block main %}
+            {% endblock %}
+        </main>
+        
+        <footer>
+            {% block footer %}
+                {{ include('/parts/footerImpresion.view.twig') }}
+            {% endblock %}
+        </footer>
+    </body>
+</html>

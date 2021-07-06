@@ -1,0 +1,43 @@
+<header>
+    <h2>Turno Solicitado</h2>
+    <a href="/imprimirTurnoSolicitado">
+        <span class="impresora-icon-36"></span>
+    </a>
+</header>
+
+<h3>Datos del profesional</h3>
+
+<article>
+    <h5>Profesional y especialidad seleccionada</h5>
+    <p>Profesional: {{ turnoArray.profesional }} </p>
+    <p>Especialidad: {{ turnoArray.especialidad }} </p>
+</article>
+
+<hr>
+
+<h3>Paciente</h3>
+<h4>Datos personales</h4>
+<article>
+    <h5>Datos personales del paciente</h5>
+    <p>Nombre y Apellido: {{ turnoArray.nombrePaciente }}, {{ turnoArray.apellidoPaciente}} </p>
+    <p>Fecha de nacimiento: {{ turnoArray.fechaNacimiento }} </p>
+    <p>Edad: {{ turnoArray.edad }} </p>
+</article>
+
+<hr />
+
+<h4>Datos de contacto</h4>
+<article>
+    <h5>Datos de contacto del paciente</h5>
+    <p>Telefono: {{ turnoArray.telefono }} </p>
+    <p>Email: {{ turnoArray.email }} </p>
+</article>
+
+<hr />
+
+<h4>Datos de turno</h4>
+<article>
+    <h5>Datos del turno solicitado por el paciente</h5>
+    <p>Fecha: {{ turnoArray.fechaTurno}} </p>
+    <p>Hora: {{ turnoArray.fechaTurno}} </p>
+</article>

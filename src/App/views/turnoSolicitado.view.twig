@@ -1,0 +1,21 @@
+{% extends "parts/base.view.twig" %}
+
+{% block main %}
+
+    <main>
+        <section class="turnoSolicitado">
+            
+            {% include('/sections/turnoInfo.view.twig') %}
+            
+            <article style="justify-content: space-around">
+                <h5>Botones</h5>
+                <a href="/listadoTurnos">Ver turnos</a>
+                <button>Agregar al calendario</button>
+            </article>
+        </section>
+
+        {{ parent() }}
+
+    </main>
+
+{% endblock %}

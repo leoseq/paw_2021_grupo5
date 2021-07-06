@@ -1,0 +1,35 @@
+{% extends "parts/base.view.twig" %}
+
+{% block main %}
+
+    <section class="profesionales">
+        <header>
+            <h2>Especialidades</h2>
+        </header>
+
+        <a href="/especialidades/add"> Nueva Especialidad</a>
+
+
+        <table class="tableAdmin">
+            <thead>
+            <th>Especialidad</th>
+            <th>Estado</th>
+            <th>Opciones</th>
+            </thead>
+            <tbody>
+            {% for especialidad in especialidades %}
+                <tr>
+                    <td> {{ especialidad.fields.nombre }}</td>
+                    <td> {{ especialidad.fields.estado }}</td>
+                    <td> Editar - Eliminar</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+    </section>
+
+    {{ parent() }}
+
+{% endblock %}

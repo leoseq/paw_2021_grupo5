@@ -1,0 +1,109 @@
+<section id="sectionTurno" class="sectionForm">
+    <header>
+        <h2>Nuevo Turno</h2>
+    </header>
+
+    <hr/>
+
+    <form id="formNuevoTurno" action="/saveTurno" method="POST" class="form" enctype='multipart/form-data'>
+        <h3>Datos del Profesional</h3>
+
+
+        <input list="especialidad-lista" id="specialty_input" name="specialty_input"
+            placeholder="Cardiologia"
+            autofocus tabindex="1"
+            class="datalist"
+            required/>
+        <!--     <label for="specialty_input">Especialidad:</label>
+            <datalist id="especialidad-lista"></datalist>-->
+
+
+        <label for="profesional_input">Profesional:</label>
+        <input list="profesional-lista" id="profesional_input" name="profesional_input"
+            placeholder="Juan Perez"
+            class="datalist"
+            required/>
+
+        <datalist id="profesional-lista"></datalist>
+
+        <hr/>
+        <h3>Datos del Paciente</h3>
+
+        <label for="name_input">Nombre:</label>
+        <input
+                type="text"
+                name="name_input"
+                id="name_input"
+                placeholder="Juan"
+                required
+        />
+
+        <label for="surname_input">Apellido:</label>
+        <input
+                type="text"
+                name="surname_input"
+                id="surname_input"
+                placeholder="Pérez"
+                required
+        />
+
+        <label for="email_input">Email:</label>
+        <input
+                type="email"
+                name="email_input"
+                id="email_input"
+                placeholder="usuario@gmail.com"
+                required
+        />
+
+        <label for="tel_input">Telefono celular:</label>
+        <input
+                type="tel"
+                name="tel_input"
+                id="tel_input"
+                placeholder="2364-123456"
+                required
+        />
+
+        <label for="birth_date_input">Fecha de nacimiento:</label>
+        <input
+                type="date"
+                name="birth_date_input"
+                id="birth_date_input"
+                required
+        />
+
+        <label for="age_input">Edad:</label>
+        <input
+                type="number"
+                name="age_input"
+                id="age_input"
+                placeholder="23"
+                required
+        />
+
+        <label for="turn_date_input">Fecha del turno:</label>
+        <input
+                type="datetime-local"
+                name="turn_date_input"
+                id="turn_date_input"
+                required
+        />
+        <label for="file" >Orden Médica:</label>
+        
+        <fieldset class="inputDrop">
+            <input type="file" name="archivo" id="archivo" accept="image/png, image/gif, image/jpeg , image/jpg">
+        </fieldset>
+
+        <input type="submit" value="Solicitar"/>
+
+        <i class="escoba-icon-24"> <input type="reset" value=" "/></i>
+    </form>
+
+    <section class="block">
+        <div class="calendar-wrapper">
+            <div id="calendar"></div>
+        </div>
+    </section>
+
+</section>

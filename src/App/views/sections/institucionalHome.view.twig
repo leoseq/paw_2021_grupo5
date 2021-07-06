@@ -1,0 +1,13 @@
+<header>
+    <h2>Institucional</h2>
+</header>
+
+<section style="display: flex; margin-bottom: 10px">
+    <header>
+        <h3>Autoridades</h3>
+    </header>
+        {% for directivo in directivos %}
+            {% include('/cards/institucionalCardHome.view.twig') %}
+        {% endfor %}
+
+</section>

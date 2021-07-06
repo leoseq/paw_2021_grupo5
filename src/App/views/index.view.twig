@@ -1,0 +1,21 @@
+{% extends "parts/base.view.twig" %}
+
+{% block main %}
+    
+    <main class="homeContainer">
+
+        {{ include('/parts/turnero.view.twig') }}
+        {{ include('/parts/carrusel.view.twig') }}
+        {{ include('/sections/serviciosMedicos.view.twig') }}
+        {{ include('/sections/contactenos.view.twig') }}
+        {{ include('/sections/noticiaHome.view.twig') }}
+
+        <section class="cardInstitucional">
+            {{ include('/sections/institucionalHome.view.twig') }}
+        </section>
+
+        {{ parent() }}
+
+    </main>
+
+{% endblock %}
